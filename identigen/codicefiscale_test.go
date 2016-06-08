@@ -30,9 +30,9 @@ var cfTests = []struct {
 	input    Person
 	expected string
 }{
-	{input: Person{FirstName: "Roberto", Surname: "Clapis", Town: "CARATE BRIANZA (MB)", TownCode: "B729", BirthDate: time.Date(1992, time.January, 31, 12, 0, 0, 0, time.UTC)},
+	{input: Person{firstName: "Roberto", surname: "Clapis", town: "CARATE BRIANZA (MB)", townCode: "B729", birthDate: time.Date(1992, time.January, 31, 12, 0, 0, 0, time.UTC)},
 		expected: "CLPRRT92A31B729B"},
-	{input: Person{FirstName: "Samantha", Surname: "Miller", Town: "Murica", TownCode: "Z404", GenderIsFemale: true, BirthDate: time.Date(1982, time.September, 25, 12, 0, 0, 0, time.UTC)},
+	{input: Person{firstName: "Samantha", surname: "Miller", town: "Murica", townCode: "Z404", genderIsFemale: true, birthDate: time.Date(1982, time.September, 25, 12, 0, 0, 0, time.UTC)},
 		expected: "MLLSNT82P65Z404U"},
 }
 

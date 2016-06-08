@@ -8,19 +8,23 @@ import (
 )
 
 func (p *Person) CodiceFiscale() (cf string, err error) {
+	if p.fiscalCode != "" {
+		return p.fiscalCode, nil
+	}
 	var startTime time.Time
-	if p.FirstName == "" || p.Surname == "" || p.BirthDate == startTime || p.Town == "" {
+	if p.firstName == "" || p.surname == "" || p.birthDate == startTime || p.town == "" {
 		err = fmt.Errorf("Missing fields in person")
 		return
 	}
-	cf += threePad(getConsonants(p.Surname), p.Surname)
-	cf += threePad(fixFirstNameConsonants(getConsonants(p.FirstName)), p.FirstName)
+	cf += threePad(getConsonants(p.surname), p.surname)
+	cf += threePad(fixFirstNameConsonants(getConsonants(p.firstName)), p.firstName)
 	cf += p.birthDayStringCalc()
-	if p.TownCode == "" {
+	if p.townCode == "" {
 		//TODO
 	}
-	cf += p.TownCode
+	cf += p.townCode
 	cf += checksum(cf)
+	p.fiscalCode = cf
 	return
 }
 
@@ -73,11 +77,11 @@ func getConsonants(input string) (output string) {
 }
 
 func (p *Person) birthDayStringCalc() (seq string) {
-	seq += strconv.Itoa(p.BirthDate.Year())
+	seq += strconv.Itoa(p.birthDate.Year())
 	seq = seq[2:]
-	seq += string("ABCDEHLMPRST"[p.BirthDate.Month()-1])
-	tmp := p.BirthDate.Day()
-	if p.GenderIsFemale {
+	seq += string("ABCDEHLMPRST"[p.birthDate.Month()-1])
+	tmp := p.birthDate.Day()
+	if p.genderIsFemale {
 		tmp += 40
 	}
 	seq += strconv.Itoa(tmp)
