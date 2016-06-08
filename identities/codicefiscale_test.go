@@ -34,6 +34,8 @@ var cfTests = []struct {
 		expected: "CLPRRT92A31B729B"},
 	{input: Person{firstName: "Samantha", surname: "Miller", town: "Murica", townCode: "Z404", genderIsFemale: true, birthDate: time.Date(1982, time.September, 25, 12, 0, 0, 0, time.UTC)},
 		expected: "MLLSNT82P65Z404U"},
+	{input: Person{firstName: "Na", surname: "OOO", town: "Murica", townCode: "Z404", genderIsFemale: true, birthDate: time.Date(1982, time.September, 25, 12, 0, 0, 0, time.UTC)},
+		expected: "OOONAX82P65Z404D"},
 }
 
 func TestCodiceFiscale(t *testing.T) {
@@ -51,21 +53,6 @@ func TestCodiceFiscaleErr(t *testing.T) {
 		return
 	}
 	t.Fatal("Expected error")
-}
-
-var threePadTests = []struct {
-	cons, name string
-	expected   string
-}{
-	{cons: "N", name: "Na", expected: "NAX"},
-}
-
-func TestThreePad(t *testing.T) {
-	for _, tc := range threePadTests {
-		if tp := threePad(tc.cons, tc.name); tp != tc.expected {
-			t.Fatalf("Failed test with %#v, calculated: %v", tc, tp, tc.expected)
-		}
-	}
 }
 
 //TODO test with ÀÈÒÌÉ AND with less data than necessary

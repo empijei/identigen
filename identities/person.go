@@ -7,8 +7,12 @@ import (
 	"strings"
 	"time"
 
-	"./lists"
+	"github.com/empijei/identigen/identities/lists"
 )
+
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
 type Person struct {
 	//TODO protect these fields, use accessor and cache data
@@ -47,10 +51,7 @@ func (p *Person) ID() string {
 	return p.id
 }
 
-func init() {
-	rand.Seed(time.Now().UnixNano())
-}
-
+//TODO test
 func (p Person) String() string {
 	var buf bytes.Buffer
 	_, _ = buf.WriteString(p.firstName)
@@ -63,6 +64,7 @@ func (p Person) String() string {
 	return buf.String()
 }
 
+//TODO test
 func RandomPeople(minage, maxage int, count int) (people []Person) {
 	for count > 0 {
 		person := Person{}
