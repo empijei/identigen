@@ -5,6 +5,7 @@
 *.o
 *.a
 *.so
+identigen
 
 # Folders
 _obj
