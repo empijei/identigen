@@ -20,6 +20,7 @@ type Person struct {
 	genderIsFemale     bool
 	birthDate          time.Time
 	town, townCode     string
+	residence          string
 	fiscalCode         string
 	phone              string
 	id                 string
@@ -44,10 +45,20 @@ func (p *Person) BirthDate() time.Time {
 func (p *Person) BirthTown() string {
 	return p.town
 }
+func (p *Person) Town() string {
+	//TODO
+	return p.residence
+}
 func (p *Person) Phone() string {
+	//TODO
 	return p.phone
 }
 func (p *Person) ID() string {
+	//TODO
+	if p.id != "" {
+		return p.id
+	}
+	p.id = fmt.Sprintf("A%s%d", string("QWERTYUIOPASDFGHJKLZXCVBNM"[rand.Int()%26]), rand.Int()%10000000)
 	return p.id
 }
 
