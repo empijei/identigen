@@ -12,9 +12,9 @@ func (p *Person) PartitaIva() (pi string, err error) {
 	//	return p.partitaiva, nil
 	//}
 
-	pi = fmt.Sprintf("%d%d", rand.Int()%10000000, rand.Int()%100+1)
+	pi = fmt.Sprintf("%d%3d", rand.Int()%10000000, rand.Int()%100+1)
 	fmt.Println(pi)
-	num, err := strconv.Atoi(pi)
+	num, _ := strconv.Atoi(pi)
 	lastDigit := transformation(num, 10)
 	fmt.Println(lastDigit)
 	return
