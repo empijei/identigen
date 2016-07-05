@@ -8,27 +8,23 @@ import (
 )
 
 func (p *Person) PartitaIva() (pi string, err error) {
-	//if p.partitaiva != "" {
-	//	return p.partitaiva, nil
-	//}
 
-	pi = fmt.Sprintf("%d%3d", rand.Int()%10000000, rand.Int()%100+1)
-	fmt.Println(pi)
+	pi = fmt.Sprintf("%07d%03d", rand.Int()%10000000, rand.Int()%100+1)
 	num, _ := strconv.Atoi(pi)
 	lastDigit := transformation(num, 10)
-	fmt.Println(lastDigit)
+	pi = fmt.Sprintf("%s%d", pi, lastDigit)
 	return
 }
 
-func nthdigit(pos, num int) int {
+func nthdigit(num, pos int) int {
 	return int(float64(num)/math.Pow10(pos)) % 10
 }
 
 func transformation(num, len int) int {
 	var digit, Z, evenSum, oddSum int
 	for pos := 0; pos < len; pos++ {
+		digit = nthdigit(num, pos)
 		if (pos+1)%2 == 0 {
-			digit = nthdigit(num, pos)
 			tmp := digit * 2
 			if tmp > 9 {
 				tmp -= 9
@@ -38,10 +34,9 @@ func transformation(num, len int) int {
 				Z += 1
 			}
 		} else {
-			oddSum += nthdigit(num, pos)
+			oddSum += digit
 		}
 	}
-	fmt.Println(evenSum, oddSum, Z)
 	T := (Z + evenSum + oddSum) % 10
 	return (10 - T) % 10
 }
