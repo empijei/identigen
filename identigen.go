@@ -21,8 +21,8 @@ func main() {
 	ppl := identigen.RandomPeople(*minage, *maxage, *n)
 	for _, ppl := range ppl {
 		cf, _ := ppl.CodiceFiscale()
-		pi, _ := ppl.PartitaIva()
+		pi, county, _ := ppl.PartitaIva()
 		id := ppl.ID()
-		fmt.Printf("%v, CF: %v, ID: %v, Partita iva: %v", ppl, cf, id, pi)
+		fmt.Printf("%v, CF: %v, ID: %v, Partita iva: %v, emessa in %s", ppl, cf, id, pi, county)
 	}
 }
