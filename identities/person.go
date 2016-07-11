@@ -68,7 +68,7 @@ func (p Person) String() string {
 	_, _ = buf.WriteString(p.firstName)
 	_, _ = buf.WriteString(" ")
 	_, _ = buf.WriteString(p.surname)
-	_, _ = buf.WriteString(",")
+	_, _ = buf.WriteString(", ")
 	_, _ = buf.WriteString(p.Gender())
 	_, _ = buf.WriteString(fmt.Sprintf(" %d/%d/%d ", p.birthDate.Day(), int(p.birthDate.Month()), p.birthDate.Year()))
 	_, _ = buf.WriteString(p.town)
