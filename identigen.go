@@ -23,6 +23,7 @@ func main() {
 		cf, _ := ppl.CodiceFiscale()
 		pi, county, _ := ppl.PartitaIva()
 		id := ppl.ID()
-		fmt.Printf("%v, CF: %v, ID: %v, Partita iva: %v, emessa in %s", ppl, cf, id, pi, county)
+		cc, _ := ppl.CartaCredito()
+		fmt.Printf("%v, CF: %v, ID: %v, Partita iva: %v, emessa in %s, Carta di Credito: %v", ppl, cf, id, pi, county, cc)
 	}
 }
