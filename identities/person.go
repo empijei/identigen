@@ -2,6 +2,7 @@ package identigen
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"math/rand"
 	"strings"
@@ -73,6 +74,31 @@ func (p Person) String() string {
 	_, _ = buf.WriteString(fmt.Sprintf(" %d/%d/%d ", p.birthDate.Day(), int(p.birthDate.Month()), p.birthDate.Year()))
 	_, _ = buf.WriteString(p.town)
 	return buf.String()
+}
+
+func (p *Person) MarshalJSON() (b []byte, err error) {
+	cf, err := p.CodiceFiscale()
+	pi, county, err := p.PartitaIva()
+	id := p.ID()
+	cc, err := p.CartaCredito()
+	if err != nil {
+		return
+	}
+
+	var wrapper = struct {
+		CodiceFiscale    string
+		PartitaIva       string
+		ComunePartitaIva string
+		Documento        string
+		CartaCredito     string
+	}{
+		CodiceFiscale:    cf,
+		PartitaIva:       pi,
+		ComunePartitaIva: county,
+		Documento:        id,
+		CartaCredito:     cc,
+	}
+	return json.Marshal(wrapper)
 }
 
 //TODO test

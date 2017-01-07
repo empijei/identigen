@@ -16,38 +16,18 @@ var maxage = flag.Int("maxage", 50, "The maximum age for random people generatio
 var n = flag.Int("n", 1, "The amount of random people to generate. Must be positive.")
 
 func main() {
-	type toPrint struct {
-		CodiceFiscale    string
-		PartitaIva       string
-		ComunePartitaIva string
-		Documento        string
-		CartaCredito     string
-	}
-	var items toPrint
-
 	flag.Parse()
 	if *minage >= *maxage || *n <= 0 {
 		flag.PrintDefaults()
 	}
-	ppl := identigen.RandomPeople(*minage, *maxage, *n)
-	for _, ppl := range ppl {
-		cf, _ := ppl.CodiceFiscale()
-		pi, county, _ := ppl.PartitaIva()
-		id := ppl.ID()
-		cc, _ := ppl.CartaCredito()
-		fmt.Printf("%v\n", ppl)
+	people := identigen.RandomPeople(*minage, *maxage, *n)
+	for _, person := range people {
+		fmt.Printf("%v\n", person)
 
-		items = toPrint{
-			CodiceFiscale:    cf,
-			PartitaIva:       pi,
-			ComunePartitaIva: county,
-			Documento:        id,
-			CartaCredito:     cc,
-		}
-
-		b, err := json.MarshalIndent(items, " ", "   ")
+		b, err := json.MarshalIndent(&person, " ", "\t")
 		if err != nil {
 			fmt.Println("error:", err)
+			return
 		}
 		os.Stdout.Write(b)
 		fmt.Println()
