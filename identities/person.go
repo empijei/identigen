@@ -5,10 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"math/rand"
-	"strings"
 	"time"
-
-	"github.com/empijei/identigen/identities/lists"
 )
 
 func init() {
@@ -112,28 +109,4 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 		cc,
 	}
 	return json.Marshal(wrapper)
-}
-
-//TODO test
-func RandomPeople(minage, maxage int, count int) (people []Person) {
-	for count > 0 {
-		person := Person{}
-		person.genderIsFemale = rand.Int()%2 == 0
-		var names []string
-		if person.genderIsFemale {
-			names = lists.ItalianFemaleNames
-		} else {
-			names = lists.ItalianMaleNames
-		}
-		person.firstName = names[rand.Int()%len(names)]
-		age := rand.Int()%(maxage-minage) + minage
-		person.birthDate = time.Date(time.Now().Year()-age, time.Month(rand.Int()%12+1), rand.Int()%28+1, 12, 0, 0, 0, time.UTC)
-		person.lastName = lists.ItalianSurnames[rand.Int()%len(lists.ItalianSurnames)]
-		townAndCode := strings.Split(lists.Comuni[rand.Int()%len(lists.Comuni)], "|")
-		person.town = townAndCode[0]
-		person.townCode = townAndCode[1]
-		people = append(people, person)
-		count--
-	}
-	return
 }
