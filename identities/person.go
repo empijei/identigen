@@ -17,21 +17,21 @@ func init() {
 
 type Person struct {
 	//TODO protect these fields, use accessor and cache data
-	firstName, surname string
-	genderIsFemale     bool
-	birthDate          time.Time
-	town, townCode     string
-	residence          string
-	fiscalCode         string
-	phone              string
-	id                 string
+	firstName, lastName string
+	genderIsFemale      bool
+	birthDate           time.Time
+	town, townCode      string
+	residence           string
+	fiscalCode          string
+	phone               string
+	id                  string
 }
 
 func (p *Person) FirstName() string {
 	return p.firstName
 }
-func (p *Person) Surname() string {
-	return p.surname
+func (p *Person) LastName() string {
+	return p.lastName
 }
 func (p *Person) Gender() string {
 	if p.genderIsFemale {
@@ -68,7 +68,7 @@ func (p Person) String() string {
 	var buf bytes.Buffer
 	_, _ = buf.WriteString(p.firstName)
 	_, _ = buf.WriteString(" ")
-	_, _ = buf.WriteString(p.surname)
+	_, _ = buf.WriteString(p.lastName)
 	_, _ = buf.WriteString(", ")
 	_, _ = buf.WriteString(p.Gender())
 	_, _ = buf.WriteString(fmt.Sprintf(" %d/%d/%d ", p.birthDate.Day(), int(p.birthDate.Month()), p.birthDate.Year()))
@@ -79,24 +79,37 @@ func (p Person) String() string {
 func (p *Person) MarshalJSON() (b []byte, err error) {
 	cf, err := p.CodiceFiscale()
 	pi, county, err := p.PartitaIva()
-	id := p.ID()
 	cc, err := p.CartaCredito()
+	bd := fmt.Sprintf("%02d/%02d/%04d", p.birthDate.Day(), int(p.birthDate.Month()), p.birthDate.Year())
+	//bd := fmt.Sprintf("%02d/%02d/%04d", p.BirthDate().Day, p.BirthDate().Month, p.BirthDate().Year)
 	if err != nil {
 		return
 	}
 
 	var wrapper = struct {
+		Nome             string
+		Cognome          string
+		Gender           string
+		PaeseDiNascita   string
+		NumeroDiTelefono string
+		DataDiNascita    string
 		CodiceFiscale    string
 		PartitaIva       string
 		ComunePartitaIva string
 		Documento        string
 		CartaCredito     string
 	}{
-		CodiceFiscale:    cf,
-		PartitaIva:       pi,
-		ComunePartitaIva: county,
-		Documento:        id,
-		CartaCredito:     cc,
+		p.FirstName(),
+		p.LastName(),
+		p.Gender(),
+		p.BirthTown(),
+		p.Phone(),
+		bd,
+		cf,
+		pi,
+		county,
+		p.ID(),
+		cc,
 	}
 	return json.Marshal(wrapper)
 }
@@ -115,7 +128,7 @@ func RandomPeople(minage, maxage int, count int) (people []Person) {
 		person.firstName = names[rand.Int()%len(names)]
 		age := rand.Int()%(maxage-minage) + minage
 		person.birthDate = time.Date(time.Now().Year()-age, time.Month(rand.Int()%12+1), rand.Int()%28+1, 12, 0, 0, 0, time.UTC)
-		person.surname = lists.ItalianSurnames[rand.Int()%len(lists.ItalianSurnames)]
+		person.lastName = lists.ItalianSurnames[rand.Int()%len(lists.ItalianSurnames)]
 		townAndCode := strings.Split(lists.Comuni[rand.Int()%len(lists.Comuni)], "|")
 		person.town = townAndCode[0]
 		person.townCode = townAndCode[1]

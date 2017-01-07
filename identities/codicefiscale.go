@@ -13,7 +13,7 @@ func (p *Person) CodiceFiscale() (cf string, err error) {
 	}
 
 	var startTime time.Time
-	if p.firstName == "" || p.surname == "" || p.birthDate == startTime || p.town == "" {
+	if p.firstName == "" || p.lastName == "" || p.birthDate == startTime || p.town == "" {
 		err = fmt.Errorf("Missing fields in person")
 		return
 	}
@@ -105,7 +105,7 @@ func (p *Person) CodiceFiscale() (cf string, err error) {
 		return tmp
 	}
 
-	cf += threePad(getConsonants(p.surname), p.surname)
+	cf += threePad(getConsonants(p.lastName), p.lastName)
 	cf += threePad(fixFirstNameConsonants(getConsonants(p.firstName)), p.firstName)
 	cf += birthDayStringCalc(p)
 	if p.townCode == "" {
