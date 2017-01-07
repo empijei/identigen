@@ -44,11 +44,12 @@ func main() {
 			Documento:        id,
 			CartaCredito:     cc,
 		}
-	}
 
-	b, err := json.MarshalIndent(items, " ", "   ")
-	if err != nil {
-		fmt.Println("error:", err)
+		b, err := json.MarshalIndent(items, " ", "   ")
+		if err != nil {
+			fmt.Println("error:", err)
+		}
+		os.Stdout.Write(b)
+		fmt.Println()
 	}
-	os.Stdout.Write(b)
 }
