@@ -8,17 +8,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Agrigento",
+               "long_name" : "Provincia di Agrigento",
                "short_name" : "AG",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sicily",
-               "short_name" : "Sicily",
+               "long_name" : "Sicilia",
+               "short_name" : "Sicilia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -28,7 +28,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "92100 Agrigento, Province of Agrigento, Italy",
+         "formatted_address" : "92100 Agrigento AG, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -72,22 +72,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Alessandria",
+               "long_name" : "Provincia di Alessandria",
                "short_name" : "AL",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Piedmont",
-               "short_name" : "Piedmont",
+               "long_name" : "Piemonte",
+               "short_name" : "Piemonte",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Alessandria, Province of Alessandria, Italy",
+         "formatted_address" : "Alessandria AL, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -124,94 +124,45 @@
 {
    "results" : [
       {
-         "address_components" : [
-            {
-               "long_name" : "Ancona",
-               "short_name" : "Ancona",
-               "types" : [ "locality", "political" ]
-            },
-            {
-               "long_name" : "Province of Ancona",
-               "short_name" : "AN",
-               "types" : [ "administrative_area_level_2", "political" ]
-            },
-            {
-               "long_name" : "Marche",
-               "short_name" : "Marche",
-               "types" : [ "administrative_area_level_1", "political" ]
-            },
-            {
-               "long_name" : "Italy",
-               "short_name" : "IT",
-               "types" : [ "country", "political" ]
-            }
-         ],
-         "formatted_address" : "Ancona, Italy",
-         "geometry" : {
-            "bounds" : {
-               "northeast" : {
-                  "lat" : 43.6315103,
-                  "lng" : 13.5498571
-               },
-               "southwest" : {
-                  "lat" : 43.532833,
-                  "lng" : 13.4637957
-               }
-            },
-            "location" : {
-               "lat" : 43.6158299,
-               "lng" : 13.518915
-            },
-            "location_type" : "APPROXIMATE",
-            "viewport" : {
-               "northeast" : {
-                  "lat" : 43.6314669,
-                  "lng" : 13.5498571
-               },
-               "southwest" : {
-                  "lat" : 43.532833,
-                  "lng" : 13.4637957
-               }
-            }
-         },
-         "place_id" : "ChIJw6lHJCqALRMRrMU_VIBWrQ8",
-         "types" : [ "locality", "political" ]
-      }
-   ],
-   "status" : "OK"
-}
-{
-   "results" : [
-      {
-         "address_components" : [
-            {
-               "long_name" : "Aosta",
-               "short_name" : "Aosta",
-               "types" : [ "locality", "political" ]
-            },
-            {
-               "long_name" : "Aosta Valley",
-               "short_name" : "AO",
-               "types" : [ "administrative_area_level_2", "political" ]
-            },
-            {
-               "long_name" : "Aosta",
-               "short_name" : "Aosta",
-               "types" : [ "administrative_area_level_1", "political" ]
-            },
-            {
-               "long_name" : "Italy",
-               "short_name" : "IT",
-               "types" : [ "country", "political" ]
-            },
-            {
-               "long_name" : "11100",
-               "short_name" : "11100",
-               "types" : [ "postal_code" ]
-            }
-         ],
-         "formatted_address" : "11100 Aosta, Italy",
-         "geometry" : {
+       [?1000h[?1049h[?1h=[1;38r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[38;1H"locations.tmp" 5837L, 172076C[1;1H[38;5;130m   1 [m{[78C[104m [m
+[38;5;130m   2 [m   "results" : [[63C[104m [m
+[38;5;130m   3 [m      {[72C[104m [m
+[38;5;130m   4 [m[9C"address_components" : [[46C[104m [m
+[38;5;130m   5 [m[12C{[66C[104m [m
+[38;5;130m   6 [m[15C"long_name" : "Agrigento",[38C[104m [m
+[38;5;130m   7 [m[15C"short_name" : "Agrigento",[37C[104m [m
+[38;5;130m   8 [m[15C"types" : [ "locality", "political" ][27C[104m [m
+[38;5;130m   9 [m[12C},[65C[104m [m
+[38;5;130m  10 [m[12C{[66C[104m [m
+[38;5;130m  11 [m[15C"long_name" : "Provincia di Agrigento",[25C[104m [m
+[38;5;130m  12 [m[15C"short_name" : "AG",[44C[104m [m
+[38;5;130m  13 [m[15C"types" : [ "administrative_area_level_2", "political" ][8C[104m [m
+[38;5;130m  14 [m[12C},[65C[104m [m
+[38;5;130m  15 [m[12C{[66C[104m [m
+[38;5;130m  16 [m[15C"long_name" : "Sicilia",[40C[104m [m
+[38;5;130m  17 [m[15C"short_name" : "Sicilia",[39C[104m [m
+[38;5;130m  18 [m[15C"types" : [ "administrative_area_level_1", "political" ][8C[104m [m
+[38;5;130m  19 [m[12C},[65C[104m [m
+[38;5;130m  20 [m[12C{[66C[104m [m
+[38;5;130m  21 [m[15C"long_name" : "Italia",[41C[104m [m
+[38;5;130m  22 [m[15C"short_name" : "IT",[44C[104m [m
+[38;5;130m  23 [m[15C"types" : [ "country", "political" ][28C[104m [m
+[38;5;130m  24 [m[12C},[65C[104m [m
+[38;5;130m  25 [m[12C{[66C[104m [m
+[38;5;130m  26 [m[15C"long_name" : "92100",[42C[104m [m
+[38;5;130m  27 [m[15C"short_name" : "92100",[41C[104m [m
+[38;5;130m  28 [m[15C"types" : [ "postal_code" ][37C[104m [m
+[38;5;130m  29 [m[12C}[66C[104m [m
+[38;5;130m  30 [m[9C],[68C[104m [m
+[38;5;130m  31 [m[9C"formatted_address" : "92100 Agrigento AG, Italia",[19C[104m [m
+[38;5;130m  32 [m[9C"geometry" : {[56C[104m [m
+[38;5;130m  33 [m[12C"bounds" : {[55C[104m [m
+[38;5;130m  34 [m[15C"northeast" : {[49C[104m [m
+[38;5;130m  35 [m[18C"lat" : 37.3402724,[42C[104m [m
+[38;5;130m  36 [m[18C"lng" : 13.6034021[43C[104m [m
+[1m[7m 1:locations.tmp                                                                                                                                line: 1 of 5837, col: 1 [Top][1;6H[?12l[?25h[?25l[m[38;1HType  :quit<Enter>  to exit Vim[1;6H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[38;1H[?1l>[?1049lVim: Caught deadly signal HUP
+Vim: Finished.
+[38;1H  "geometry" : {
             "bounds" : {
                "northeast" : {
                   "lat" : 45.7614425,
@@ -254,17 +205,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Arezzo",
+               "long_name" : "Provincia di Arezzo",
                "short_name" : "AR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Tuscany",
-               "short_name" : "Tuscany",
+               "long_name" : "Toscana",
+               "short_name" : "Toscana",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -274,7 +225,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "52100 Arezzo, Province of Arezzo, Italy",
+         "formatted_address" : "52100 Arezzo AR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -308,17 +259,70 @@
    ],
    "status" : "OK"
 }
-<!DOCTYPE html>
-<html lang=en>
-  <meta charset=utf-8>
-  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
-  <title>Error 400 (Bad Request)!!1</title>
-  <style>
-    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
-  </style>
-  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
-  <p><b>400.</b> <ins>That’s an error.</ins>
-  <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "Ascoli Piceno",
+               "short_name" : "Ascoli Piceno",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Provincia di Ascoli Piceno",
+               "short_name" : "AP",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Marche",
+               "short_name" : "Marche",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Italia",
+               "short_name" : "IT",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "63100",
+               "short_name" : "63100",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "63100 Ascoli Piceno AP, Italia",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 42.8681651,
+                  "lng" : 13.6656375
+               },
+               "southwest" : {
+                  "lat" : 42.8376024,
+                  "lng" : 13.552394
+               }
+            },
+            "location" : {
+               "lat" : 42.8536043,
+               "lng" : 13.5749442
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 42.8681651,
+                  "lng" : 13.6656375
+               },
+               "southwest" : {
+                  "lat" : 42.8376024,
+                  "lng" : 13.552394
+               }
+            }
+         },
+         "place_id" : "ChIJLzsqJe78MRMRfr808vzvTI8",
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "status" : "OK"
+}
 {
    "results" : [
       {
@@ -329,22 +333,22 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Asti",
+               "long_name" : "Provincia di Asti",
                "short_name" : "AT",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Piedmont",
-               "short_name" : "Piedmont",
+               "long_name" : "Piemonte",
+               "short_name" : "Piemonte",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Asti, Province of Asti, Italy",
+         "formatted_address" : "Asti AT, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -388,7 +392,7 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Avellino",
+               "long_name" : "Provincia di Avellino",
                "short_name" : "AV",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -398,12 +402,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Avellino, Province of Avellino, Italy",
+         "formatted_address" : "Avellino AV, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -447,22 +451,22 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Metropolitan City of Bari",
+               "long_name" : "Città Metropolitana di Bari",
                "short_name" : "BA",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Apulia",
-               "short_name" : "Apulia",
+               "long_name" : "Puglia",
+               "short_name" : "Puglia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Bari, Metropolitan City of Bari, Italy",
+         "formatted_address" : "Bari BA, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -506,7 +510,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Belluno",
+               "long_name" : "Provincia di Belluno",
                "short_name" : "BL",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -516,7 +520,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -526,7 +530,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "32100 Belluno, Province of Belluno, Italy",
+         "formatted_address" : "32100 Belluno BL, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -570,7 +574,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Benevento",
+               "long_name" : "Provincia di Benevento",
                "short_name" : "BN",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -580,7 +584,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -590,7 +594,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "82100 Benevento, Province of Benevento, Italy",
+         "formatted_address" : "82100 Benevento BN, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -634,22 +638,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Bergamo",
+               "long_name" : "Provincia di Bergamo",
                "short_name" : "BG",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Lombardy",
-               "short_name" : "Lombardy",
+               "long_name" : "Lombardia",
+               "short_name" : "Lombardia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Bergamo, Province of Bergamo, Italy",
+         "formatted_address" : "Bergamo BG, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -693,7 +697,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Metropolitan City of Bologna",
+               "long_name" : "Città Metropolitana di Bologna",
                "short_name" : "BO",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -703,12 +707,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Bologna, Italy",
+         "formatted_address" : "Bologna, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -752,17 +756,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Bolzano - South Tyrol",
+               "long_name" : "Provincia di Bolzano - Alto Adige",
                "short_name" : "BZ",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Trentino-Alto Adige/South Tyrol",
-               "short_name" : "Trentino-Alto Adige/South Tyrol",
+               "long_name" : "Trentino-Alto Adige",
+               "short_name" : "Trentino-Alto Adige",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -772,7 +776,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "39100 Bolzano, Province of Bolzano - South Tyrol, Italy",
+         "formatted_address" : "39100 Bolzano BZ, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -816,22 +820,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Brescia",
+               "long_name" : "Provincia di Brescia",
                "short_name" : "BS",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Lombardy",
-               "short_name" : "Lombardy",
+               "long_name" : "Lombardia",
+               "short_name" : "Lombardia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Brescia, Province of Brescia, Italy",
+         "formatted_address" : "Brescia BS, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -875,17 +879,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Brindisi",
+               "long_name" : "Provincia di Brindisi",
                "short_name" : "BR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Apulia",
-               "short_name" : "Apulia",
+               "long_name" : "Puglia",
+               "short_name" : "Puglia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -895,7 +899,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "72100 Brindisi, Province of Brindisi, Italy",
+         "formatted_address" : "72100 Brindisi BR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -939,22 +943,22 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Cagliari",
+               "long_name" : "Provincia di Cagliari",
                "short_name" : "CA",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sardinia",
-               "short_name" : "Sardinia",
+               "long_name" : "Sardegna",
+               "short_name" : "Sardegna",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Cagliari, Province of Cagliari, Italy",
+         "formatted_address" : "Cagliari CA, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -998,17 +1002,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Caltanissetta",
+               "long_name" : "Provincia di Caltanissetta",
                "short_name" : "CL",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sicily",
-               "short_name" : "Sicily",
+               "long_name" : "Sicilia",
+               "short_name" : "Sicilia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -1018,7 +1022,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "93100 Caltanissetta, Province of Caltanissetta, Italy",
+         "formatted_address" : "93100 Caltanissetta CL, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1062,7 +1066,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Campobasso",
+               "long_name" : "Provincia di Campobasso",
                "short_name" : "CB",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -1072,7 +1076,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -1082,7 +1086,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "86100 Campobasso, Italy",
+         "formatted_address" : "86100 Campobasso, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1126,7 +1130,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Caserta",
+               "long_name" : "Provincia di Caserta",
                "short_name" : "CE",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -1136,7 +1140,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -1146,7 +1150,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "81100 Caserta, Province of Caserta, Italy",
+         "formatted_address" : "81100 Caserta CE, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1190,22 +1194,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Catania",
+               "long_name" : "Provincia di Catania",
                "short_name" : "CT",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sicily",
-               "short_name" : "Sicily",
+               "long_name" : "Sicilia",
+               "short_name" : "Sicilia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Catania, Province of Catania, Italy",
+         "formatted_address" : "Catania CT, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1249,7 +1253,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Catanzaro",
+               "long_name" : "Provincia di Catanzaro",
                "short_name" : "CZ",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -1259,7 +1263,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -1269,7 +1273,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "88100 Catanzaro, Italy",
+         "formatted_address" : "88100 Catanzaro, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1313,7 +1317,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Chieti",
+               "long_name" : "Provincia di Chieti",
                "short_name" : "CH",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -1323,7 +1327,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -1333,7 +1337,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "66100 Chieti, Province of Chieti, Italy",
+         "formatted_address" : "66100 Chieti CH, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1377,22 +1381,22 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Como",
+               "long_name" : "Provincia di Como",
                "short_name" : "CO",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Lombardy",
-               "short_name" : "Lombardy",
+               "long_name" : "Lombardia",
+               "short_name" : "Lombardia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Como, Province of Como, Italy",
+         "formatted_address" : "Como CO, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1436,7 +1440,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Cosenza",
+               "long_name" : "Provincia di Cosenza",
                "short_name" : "CS",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -1446,7 +1450,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -1456,7 +1460,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "87100 Cosenza, Province of Cosenza, Italy",
+         "formatted_address" : "87100 Cosenza CS, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1500,17 +1504,17 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Cremona",
+               "long_name" : "Provincia di Cremona",
                "short_name" : "CR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Lombardy",
-               "short_name" : "Lombardy",
+               "long_name" : "Lombardia",
+               "short_name" : "Lombardia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -1520,7 +1524,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "26100 Cremona, Province of Cremona, Italy",
+         "formatted_address" : "26100 Cremona CR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1564,17 +1568,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Cuneo",
+               "long_name" : "Provincia di Cuneo",
                "short_name" : "CN",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Piedmont",
-               "short_name" : "Piedmont",
+               "long_name" : "Piemonte",
+               "short_name" : "Piemonte",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -1584,7 +1588,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "12100 Cuneo, Province of Cuneo, Italy",
+         "formatted_address" : "12100 Cuneo CN, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1628,17 +1632,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Enna",
+               "long_name" : "Provincia di Enna",
                "short_name" : "EN",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sicily",
-               "short_name" : "Sicily",
+               "long_name" : "Sicilia",
+               "short_name" : "Sicilia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -1648,7 +1652,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "94100 Enna, Province of Enna, Italy",
+         "formatted_address" : "94100 Enna EN, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1692,7 +1696,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Ferrara",
+               "long_name" : "Provincia di Ferrara",
                "short_name" : "FE",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -1702,12 +1706,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Ferrara, Province of Ferrara, Italy",
+         "formatted_address" : "Ferrara FE, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1746,27 +1750,27 @@
       {
          "address_components" : [
             {
-               "long_name" : "Florence",
-               "short_name" : "Florence",
+               "long_name" : "Firenze",
+               "short_name" : "Firenze",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Metropolitan City of Florence",
+               "long_name" : "Città Metropolitana di Firenze",
                "short_name" : "FI",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Tuscany",
-               "short_name" : "Tuscany",
+               "long_name" : "Toscana",
+               "short_name" : "Toscana",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Florence, Italy",
+         "formatted_address" : "Firenze, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1810,22 +1814,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Foggia",
+               "long_name" : "Provincia di Foggia",
                "short_name" : "FG",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Apulia",
-               "short_name" : "Apulia",
+               "long_name" : "Puglia",
+               "short_name" : "Puglia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Foggia, Province of Foggia, Italy",
+         "formatted_address" : "Foggia FG, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1864,12 +1868,12 @@
       {
          "address_components" : [
             {
-               "long_name" : "Forli",
-               "short_name" : "Forli",
+               "long_name" : "Forlì",
+               "short_name" : "Forlì",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Forlì-Cesena",
+               "long_name" : "Provincia di Forlì-Cesena",
                "short_name" : "FC",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -1879,12 +1883,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Forli, Province of Forlì-Cesena, Italy",
+         "formatted_address" : "Forlì FC, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1928,7 +1932,7 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Frosinone",
+               "long_name" : "Provincia di Frosinone",
                "short_name" : "FR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -1938,12 +1942,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Frosinone, Province of Frosinone, Italy",
+         "formatted_address" : "Frosinone FR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -1982,12 +1986,12 @@
       {
          "address_components" : [
             {
-               "long_name" : "Genoa",
-               "short_name" : "Genoa",
+               "long_name" : "Genova",
+               "short_name" : "Genova",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Metropolitan City of Genoa",
+               "long_name" : "Città Metropolitana di Genova",
                "short_name" : "GE",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -1997,12 +2001,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Genoa, Italy",
+         "formatted_address" : "Genova, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2046,7 +2050,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Gorizia",
+               "long_name" : "Provincia di Gorizia",
                "short_name" : "GO",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -2056,7 +2060,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -2066,7 +2070,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "34170 Gorizia, Province of Gorizia, Italy",
+         "formatted_address" : "34170 Gorizia GO, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2110,17 +2114,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Grosseto",
+               "long_name" : "Provincia di Grosseto",
                "short_name" : "GR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Tuscany",
-               "short_name" : "Tuscany",
+               "long_name" : "Toscana",
+               "short_name" : "Toscana",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -2130,7 +2134,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "58100 Grosseto, Province of Grosseto, Italy",
+         "formatted_address" : "58100 Grosseto GR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2174,7 +2178,7 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Imperia",
+               "long_name" : "Provincia di Imperia",
                "short_name" : "IM",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -2184,12 +2188,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Imperia, Province of Imperia, Italy",
+         "formatted_address" : "Imperia IM, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2233,7 +2237,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Isernia",
+               "long_name" : "Provincia di Isernia",
                "short_name" : "IS",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -2243,7 +2247,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -2253,7 +2257,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "86170 Isernia, Province of Isernia, Italy",
+         "formatted_address" : "86170 Isernia IS, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2297,7 +2301,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of L'Aquila",
+               "long_name" : "Provincia dell'Aquila",
                "short_name" : "AQ",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -2307,7 +2311,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -2317,7 +2321,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "67100 L'Aquila, Italy",
+         "formatted_address" : "67100 L'Aquila, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2351,17 +2355,65 @@
    ],
    "status" : "OK"
 }
-<!DOCTYPE html>
-<html lang=en>
-  <meta charset=utf-8>
-  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
-  <title>Error 400 (Bad Request)!!1</title>
-  <style>
-    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
-  </style>
-  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
-  <p><b>400.</b> <ins>That’s an error.</ins>
-  <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "La Spezia",
+               "short_name" : "La Spezia",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Provincia della Spezia",
+               "short_name" : "SP",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Liguria",
+               "short_name" : "Liguria",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Italia",
+               "short_name" : "IT",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "La Spezia SP, Italia",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 44.1367074,
+                  "lng" : 9.888580299999999
+               },
+               "southwest" : {
+                  "lat" : 44.0777423,
+                  "lng" : 9.7850968
+               }
+            },
+            "location" : {
+               "lat" : 44.1024504,
+               "lng" : 9.824082599999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 44.1367074,
+                  "lng" : 9.888580299999999
+               },
+               "southwest" : {
+                  "lat" : 44.0777423,
+                  "lng" : 9.7850968
+               }
+            }
+         },
+         "place_id" : "ChIJrV7xusD81BIRgE9aKK2HMjI",
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "status" : "OK"
+}
 {
    "results" : [
       {
@@ -2372,7 +2424,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Latina",
+               "long_name" : "Provincia di Latina",
                "short_name" : "LT",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -2382,7 +2434,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -2392,7 +2444,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "04100 Latina, Province of Latina, Italy",
+         "formatted_address" : "04100 Latina LT, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2436,17 +2488,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Lecce",
+               "long_name" : "Provincia di Lecce",
                "short_name" : "LE",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Apulia",
-               "short_name" : "Apulia",
+               "long_name" : "Puglia",
+               "short_name" : "Puglia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -2456,7 +2508,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "73100 Lecce, Province of Lecce, Italy",
+         "formatted_address" : "73100 Lecce LE, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2500,22 +2552,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Livorno",
+               "long_name" : "Provincia di Livorno",
                "short_name" : "LI",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Tuscany",
-               "short_name" : "Tuscany",
+               "long_name" : "Toscana",
+               "short_name" : "Toscana",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Livorno, Province of Livorno, Italy",
+         "formatted_address" : "Livorno LI, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2559,22 +2611,22 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Lucca",
+               "long_name" : "Provincia di Lucca",
                "short_name" : "LU",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Tuscany",
-               "short_name" : "Tuscany",
+               "long_name" : "Toscana",
+               "short_name" : "Toscana",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Lucca, Province of Lucca, Italy",
+         "formatted_address" : "Lucca LU, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2618,7 +2670,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Macerata",
+               "long_name" : "Provincia di Macerata",
                "short_name" : "MC",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -2628,7 +2680,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -2638,7 +2690,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "62100 Macerata, Province of Macerata, Italy",
+         "formatted_address" : "62100 Macerata MC, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2677,22 +2729,22 @@
       {
          "address_components" : [
             {
-               "long_name" : "Mantua",
-               "short_name" : "Mantua",
+               "long_name" : "Mantova",
+               "short_name" : "Mantova",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Mantua",
+               "long_name" : "Provincia di Mantova",
                "short_name" : "MN",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Lombardy",
-               "short_name" : "Lombardy",
+               "long_name" : "Lombardia",
+               "short_name" : "Lombardia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -2702,7 +2754,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "46100 Mantua, Province of Mantua, Italy",
+         "formatted_address" : "46100 Mantova MN, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2736,17 +2788,60 @@
    ],
    "status" : "OK"
 }
-<!DOCTYPE html>
-<html lang=en>
-  <meta charset=utf-8>
-  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
-  <title>Error 400 (Bad Request)!!1</title>
-  <style>
-    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
-  </style>
-  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
-  <p><b>400.</b> <ins>That’s an error.</ins>
-  <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "Provincia di Massa e Carrara",
+               "short_name" : "MS",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Toscana",
+               "short_name" : "Toscana",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Italia",
+               "short_name" : "IT",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Provincia di Massa e Carrara, Italia",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 44.4726899,
+                  "lng" : 10.255591
+               },
+               "southwest" : {
+                  "lat" : 43.9754263,
+                  "lng" : 9.6867213
+               }
+            },
+            "location" : {
+               "lat" : 44.2213998,
+               "lng" : 10.0359661
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 44.4726899,
+                  "lng" : 10.255591
+               },
+               "southwest" : {
+                  "lat" : 43.9754628,
+                  "lng" : 9.6867213
+               }
+            }
+         },
+         "place_id" : "ChIJmTlARt4e1RIRMIDk45AsCAM",
+         "types" : [ "administrative_area_level_2", "political" ]
+      }
+   ],
+   "status" : "OK"
+}
 {
    "results" : [
       {
@@ -2757,7 +2852,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Matera",
+               "long_name" : "Provincia di Matera",
                "short_name" : "MT",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -2767,7 +2862,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -2777,7 +2872,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "75100 Matera, Province of Matera, Italy",
+         "formatted_address" : "75100 Matera MT, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2821,22 +2916,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Messina",
+               "long_name" : "Provincia di Messina",
                "short_name" : "ME",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sicily",
-               "short_name" : "Sicily",
+               "long_name" : "Sicilia",
+               "short_name" : "Sicilia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Messina, Province of Messina, Italy",
+         "formatted_address" : "Messina ME, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2875,27 +2970,27 @@
       {
          "address_components" : [
             {
-               "long_name" : "Milan",
-               "short_name" : "Milan",
+               "long_name" : "Milano",
+               "short_name" : "Milano",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Metropolitan City of Milan",
+               "long_name" : "Città Metropolitana di Milano",
                "short_name" : "MI",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Lombardy",
-               "short_name" : "Lombardy",
+               "long_name" : "Lombardia",
+               "short_name" : "Lombardia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Milan, Italy",
+         "formatted_address" : "Milano, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2939,7 +3034,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Modena",
+               "long_name" : "Provincia di Modena",
                "short_name" : "MO",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -2949,12 +3044,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Modena, Province of Modena, Italy",
+         "formatted_address" : "Modena MO, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -2993,12 +3088,12 @@
       {
          "address_components" : [
             {
-               "long_name" : "Naples",
-               "short_name" : "Naples",
+               "long_name" : "Napoli",
+               "short_name" : "Napoli",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Metropolitan City of Naples",
+               "long_name" : "Città Metropolitana di Napoli",
                "short_name" : "NA",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -3008,12 +3103,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Naples, Italy",
+         "formatted_address" : "Napoli, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3067,7 +3162,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -3077,7 +3172,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "28100 Novara NO, Italy",
+         "formatted_address" : "28100 Novara NO, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3121,17 +3216,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Nuoro",
+               "long_name" : "Provincia di Nuoro",
                "short_name" : "NU",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sardinia",
-               "short_name" : "Sardinia",
+               "long_name" : "Sardegna",
+               "short_name" : "Sardegna",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -3141,7 +3236,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "08100 Nuoro, Province of Nuoro, Italy",
+         "formatted_address" : "08100 Nuoro NU, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3185,17 +3280,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Oristano",
+               "long_name" : "Provincia di Oristano",
                "short_name" : "OR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sardinia",
-               "short_name" : "Sardinia",
+               "long_name" : "Sardegna",
+               "short_name" : "Sardegna",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -3205,7 +3300,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "09170 Oristano, Province of Oristano, Italy",
+         "formatted_address" : "09170 Oristano OR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3244,12 +3339,12 @@
       {
          "address_components" : [
             {
-               "long_name" : "Padua",
-               "short_name" : "Padua",
+               "long_name" : "Padova",
+               "short_name" : "Padova",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Padua",
+               "long_name" : "Provincia di Padova",
                "short_name" : "PD",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -3259,12 +3354,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Padua, Province of Padua, Italy",
+         "formatted_address" : "Padova PD, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3308,22 +3403,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Palermo",
+               "long_name" : "Provincia di Palermo",
                "short_name" : "PA",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sicily",
-               "short_name" : "Sicily",
+               "long_name" : "Sicilia",
+               "short_name" : "Sicilia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Palermo, Italy",
+         "formatted_address" : "Palermo, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3367,7 +3462,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Parma",
+               "long_name" : "Provincia di Parma",
                "short_name" : "PR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -3377,12 +3472,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Parma, Province of Parma, Italy",
+         "formatted_address" : "Parma PR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3436,7 +3531,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -3446,7 +3541,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "27100 Pavia PV, Italy",
+         "formatted_address" : "27100 Pavia PV, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3490,7 +3585,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Perugia",
+               "long_name" : "Provincia di Perugia",
                "short_name" : "PG",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -3500,12 +3595,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Perugia, Italy",
+         "formatted_address" : "Perugia, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3549,7 +3644,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Pesaro and Urbino",
+               "long_name" : "Provincia di Pesaro e Urbino",
                "short_name" : "PU",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -3559,12 +3654,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Pesaro, Province of Pesaro and Urbino, Italy",
+         "formatted_address" : "Pesaro PU, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3608,7 +3703,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Pescara",
+               "long_name" : "Provincia di Pescara",
                "short_name" : "PE",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -3618,12 +3713,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Pescara, Province of Pescara, Italy",
+         "formatted_address" : "Pescara PE, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3667,7 +3762,7 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Piacenza",
+               "long_name" : "Provincia di Piacenza",
                "short_name" : "PC",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -3677,12 +3772,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Piacenza, Province of Piacenza, Italy",
+         "formatted_address" : "Piacenza PC, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3726,22 +3821,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Pisa",
+               "long_name" : "Provincia di Pisa",
                "short_name" : "PI",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Tuscany",
-               "short_name" : "Tuscany",
+               "long_name" : "Toscana",
+               "short_name" : "Toscana",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Pisa, Province of Pisa, Italy",
+         "formatted_address" : "Pisa PI, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3785,17 +3880,17 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Pistoia",
+               "long_name" : "Provincia di Pistoia",
                "short_name" : "PT",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Tuscany",
-               "short_name" : "Tuscany",
+               "long_name" : "Toscana",
+               "short_name" : "Toscana",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -3805,7 +3900,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "51100 Pistoia, Province of Pistoia, Italy",
+         "formatted_address" : "51100 Pistoia PT, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3849,7 +3944,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Pordenone",
+               "long_name" : "Provincia di Pordenone",
                "short_name" : "PN",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -3859,7 +3954,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -3869,7 +3964,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "33170 Pordenone, Province of Pordenone, Italy",
+         "formatted_address" : "33170 Pordenone PN, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3923,7 +4018,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -3933,7 +4028,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "85100 Potenza, Italy",
+         "formatted_address" : "85100 Potenza, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -3977,22 +4072,22 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Ragusa",
+               "long_name" : "Provincia di Ragusa",
                "short_name" : "RG",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sicily",
-               "short_name" : "Sicily",
+               "long_name" : "Sicilia",
+               "short_name" : "Sicilia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Ragusa, Province of Ragusa, Italy",
+         "formatted_address" : "Ragusa RG, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4036,7 +4131,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Ravenna",
+               "long_name" : "Provincia di Ravenna",
                "short_name" : "RA",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -4046,12 +4141,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Ravenna, Province of Ravenna, Italy",
+         "formatted_address" : "Ravenna RA, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4085,28 +4180,124 @@
    ],
    "status" : "OK"
 }
-<!DOCTYPE html>
-<html lang=en>
-  <meta charset=utf-8>
-  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
-  <title>Error 400 (Bad Request)!!1</title>
-  <style>
-    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
-  </style>
-  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
-  <p><b>400.</b> <ins>That’s an error.</ins>
-  <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
-<!DOCTYPE html>
-<html lang=en>
-  <meta charset=utf-8>
-  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
-  <title>Error 400 (Bad Request)!!1</title>
-  <style>
-    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
-  </style>
-  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
-  <p><b>400.</b> <ins>That’s an error.</ins>
-  <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "Reggio Calabria",
+               "short_name" : "Reggio Calabria",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Provincia di Reggio Calabria",
+               "short_name" : "RC",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Calabria",
+               "short_name" : "Calabria",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Italia",
+               "short_name" : "IT",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Reggio Calabria RC, Italia",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 38.204364,
+                  "lng" : 15.7133153
+               },
+               "southwest" : {
+                  "lat" : 37.9913949,
+                  "lng" : 15.6300618
+               }
+            },
+            "location" : {
+               "lat" : 38.1113006,
+               "lng" : 15.6472914
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 38.204364,
+                  "lng" : 15.7133153
+               },
+               "southwest" : {
+                  "lat" : 37.9914216,
+                  "lng" : 15.6302247
+               }
+            }
+         },
+         "place_id" : "ChIJlSDqSZdQFBMRIj6cHj0TXcc",
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "status" : "OK"
+}
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "Reggio Emilia",
+               "short_name" : "Reggio Emilia",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Provincia di Reggio Emilia",
+               "short_name" : "RE",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Emilia-Romagna",
+               "short_name" : "Emilia-Romagna",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Italia",
+               "short_name" : "IT",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Reggio Emilia RE, Italia",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 44.7482256,
+                  "lng" : 10.7245189
+               },
+               "southwest" : {
+                  "lat" : 44.6550334,
+                  "lng" : 10.5520175
+               }
+            },
+            "location" : {
+               "lat" : 44.6989932,
+               "lng" : 10.6296859
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 44.7482256,
+                  "lng" : 10.7245189
+               },
+               "southwest" : {
+                  "lat" : 44.6550334,
+                  "lng" : 10.5520175
+               }
+            }
+         },
+         "place_id" : "ChIJs_nlB1scgEcRNQOGTL5Q5tk",
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "status" : "OK"
+}
 {
    "results" : [
       {
@@ -4117,7 +4308,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Rieti",
+               "long_name" : "Provincia di Rieti",
                "short_name" : "RI",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -4127,7 +4318,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -4137,7 +4328,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "02100 Rieti, Province of Rieti, Italy",
+         "formatted_address" : "02100 Rieti RI, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4176,12 +4367,12 @@
       {
          "address_components" : [
             {
-               "long_name" : "Rome",
-               "short_name" : "Rome",
+               "long_name" : "Roma",
+               "short_name" : "Roma",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Metropolitan City of Rome",
+               "long_name" : "Città Metropolitana di Roma",
                "short_name" : "RM",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -4191,12 +4382,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Rome, Italy",
+         "formatted_address" : "Roma, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4240,7 +4431,7 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Rovigo",
+               "long_name" : "Provincia di Rovigo",
                "short_name" : "RO",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -4250,12 +4441,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Rovigo, Province of Rovigo, Italy",
+         "formatted_address" : "Rovigo RO, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4299,7 +4490,7 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Salerno",
+               "long_name" : "Provincia di Salerno",
                "short_name" : "SA",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -4309,12 +4500,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Salerno, Province of Salerno, Italy",
+         "formatted_address" : "Salerno SA, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4358,17 +4549,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Sassari",
+               "long_name" : "Provincia di Sassari",
                "short_name" : "SS",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sardinia",
-               "short_name" : "Sardinia",
+               "long_name" : "Sardegna",
+               "short_name" : "Sardegna",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -4378,7 +4569,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "07100 Sassari, Province of Sassari, Italy",
+         "formatted_address" : "07100 Sassari SS, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4422,7 +4613,7 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Savona",
+               "long_name" : "Provincia di Savona",
                "short_name" : "SV",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -4432,7 +4623,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -4442,7 +4633,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "17100 Savona, Province of Savona, Italy",
+         "formatted_address" : "17100 Savona SV, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4486,17 +4677,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Siena",
+               "long_name" : "Provincia di Siena",
                "short_name" : "SI",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Tuscany",
-               "short_name" : "Tuscany",
+               "long_name" : "Toscana",
+               "short_name" : "Toscana",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -4506,7 +4697,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "53100 Siena, Province of Siena, Italy",
+         "formatted_address" : "53100 Siena SI, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4545,22 +4736,22 @@
       {
          "address_components" : [
             {
-               "long_name" : "Syracuse",
-               "short_name" : "Syracuse",
+               "long_name" : "Siracusa",
+               "short_name" : "Siracusa",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Syracuse",
+               "long_name" : "Provincia di Siracusa",
                "short_name" : "SR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sicily",
-               "short_name" : "Sicily",
+               "long_name" : "Sicilia",
+               "short_name" : "Sicilia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -4570,7 +4761,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "96100 Syracuse, Province of Syracuse, Italy",
+         "formatted_address" : "96100 Siracusa SR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4614,17 +4805,17 @@
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
-               "long_name" : "Province of Sondrio",
+               "long_name" : "Provincia di Sondrio",
                "short_name" : "SO",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Lombardy",
-               "short_name" : "Lombardy",
+               "long_name" : "Lombardia",
+               "short_name" : "Lombardia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -4634,7 +4825,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "23100 Sondrio, Province of Sondrio, Italy",
+         "formatted_address" : "23100 Sondrio SO, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4678,22 +4869,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Taranto",
+               "long_name" : "Provincia di Taranto",
                "short_name" : "TA",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Apulia",
-               "short_name" : "Apulia",
+               "long_name" : "Puglia",
+               "short_name" : "Puglia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Taranto, Province of Taranto, Italy",
+         "formatted_address" : "Taranto TA, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4737,7 +4928,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Teramo",
+               "long_name" : "Provincia di Teramo",
                "short_name" : "TE",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -4747,7 +4938,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -4757,7 +4948,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "64100 Teramo, Province of Teramo, Italy",
+         "formatted_address" : "64100 Teramo TE, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4801,7 +4992,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Terni",
+               "long_name" : "Provincia di Terni",
                "short_name" : "TR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -4811,7 +5002,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -4821,7 +5012,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "05100 Terni, Province of Terni, Italy",
+         "formatted_address" : "05100 Terni TR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4860,27 +5051,27 @@
       {
          "address_components" : [
             {
-               "long_name" : "Turin",
-               "short_name" : "Turin",
+               "long_name" : "Torino",
+               "short_name" : "Torino",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Metropolitan City of Turin",
+               "long_name" : "Città Metropolitana di Torino",
                "short_name" : "TO",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Piedmont",
-               "short_name" : "Piedmont",
+               "long_name" : "Piemonte",
+               "short_name" : "Piemonte",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Turin, Italy",
+         "formatted_address" : "Torino, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4924,17 +5115,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Trapani",
+               "long_name" : "Provincia di Trapani",
                "short_name" : "TP",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Sicily",
-               "short_name" : "Sicily",
+               "long_name" : "Sicilia",
+               "short_name" : "Sicilia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -4944,7 +5135,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "91100 Trapani, Province of Trapani, Italy",
+         "formatted_address" : "91100 Trapani TP, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -4988,22 +5179,22 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Trento",
+               "long_name" : "Provincia di Trento",
                "short_name" : "TN",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Trentino-Alto Adige/South Tyrol",
-               "short_name" : "Trentino-Alto Adige/South Tyrol",
+               "long_name" : "Trentino-Alto Adige",
+               "short_name" : "Trentino-Alto Adige",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Trento, Italy",
+         "formatted_address" : "Trento, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -5047,7 +5238,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Treviso",
+               "long_name" : "Provincia di Treviso",
                "short_name" : "TV",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -5057,7 +5248,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -5067,7 +5258,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "31100 Treviso, Province of Treviso, Italy",
+         "formatted_address" : "31100 Treviso TV, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -5111,7 +5302,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Trieste",
+               "long_name" : "Provincia di Trieste",
                "short_name" : "TS",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -5121,12 +5312,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Trieste, Italy",
+         "formatted_address" : "Trieste, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -5180,7 +5371,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -5190,7 +5381,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "33100 Udine UD, Italy",
+         "formatted_address" : "33100 Udine UD, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -5234,17 +5425,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Varese",
+               "long_name" : "Provincia di Varese",
                "short_name" : "VA",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Lombardy",
-               "short_name" : "Lombardy",
+               "long_name" : "Lombardia",
+               "short_name" : "Lombardia",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -5254,7 +5445,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "21100 Varese, Province of Varese, Italy",
+         "formatted_address" : "21100 Varese VA, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -5293,12 +5484,12 @@
       {
          "address_components" : [
             {
-               "long_name" : "Venice",
-               "short_name" : "Venice",
+               "long_name" : "Venezia",
+               "short_name" : "Venezia",
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Metropolitan City of Venice",
+               "long_name" : "Città Metropolitana di Venezia",
                "short_name" : "VE",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -5308,12 +5499,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Venice, Italy",
+         "formatted_address" : "Venezia, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -5357,17 +5548,17 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Vercelli",
+               "long_name" : "Provincia di Vercelli",
                "short_name" : "VC",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Piedmont",
-               "short_name" : "Piedmont",
+               "long_name" : "Piemonte",
+               "short_name" : "Piemonte",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -5377,7 +5568,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "13100 Vercelli, Province of Vercelli, Italy",
+         "formatted_address" : "13100 Vercelli VC, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -5421,7 +5612,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Verona",
+               "long_name" : "Provincia di Verona",
                "short_name" : "VR",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -5431,12 +5622,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Verona, Province of Verona, Italy",
+         "formatted_address" : "Verona VR, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -5480,7 +5671,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Vicenza",
+               "long_name" : "Provincia di Vicenza",
                "short_name" : "VI",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -5490,7 +5681,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -5500,7 +5691,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "36100 Vicenza, Province of Vicenza, Italy",
+         "formatted_address" : "36100 Vicenza VI, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -5544,7 +5735,7 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Province of Viterbo",
+               "long_name" : "Provincia di Viterbo",
                "short_name" : "VT",
                "types" : [ "administrative_area_level_2", "political" ]
             },
@@ -5554,7 +5745,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Italy",
+               "long_name" : "Italia",
                "short_name" : "IT",
                "types" : [ "country", "political" ]
             },
@@ -5564,7 +5755,7 @@
                "types" : [ "postal_code" ]
             }
          ],
-         "formatted_address" : "01100 Viterbo, Province of Viterbo, Italy",
+         "formatted_address" : "01100 Viterbo VT, Italia",
          "geometry" : {
             "bounds" : {
                "northeast" : {
