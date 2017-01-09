@@ -2,7 +2,6 @@ package identigen
 
 import (
 	"fmt"
-	"math"
 	"math/rand"
 	"strconv"
 )
@@ -17,10 +16,6 @@ func (p *Person) PartitaIva() (pi string, county string, err error) {
 	lastDigit := transformation(num, 10)
 	pi = fmt.Sprintf("%s%d", pi, lastDigit)
 	return
-}
-
-func nthdigit(num, pos int) int {
-	return int(float64(num)/math.Pow10(pos)) % 10
 }
 
 func transformation(num, len int) int {

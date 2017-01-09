@@ -2,7 +2,6 @@ package identigen
 
 import (
 	"fmt"
-	"math"
 	"math/rand"
 	"strconv"
 )
@@ -14,10 +13,6 @@ func (p *Person) CartaCredito() (cc string, err error) {
 	//cc = strconv.Atoi(fmt.Sprintf("%s%d", strconv.Itoa(num), lastDigit))
 	cc = fmt.Sprintf("%s%d", strconv.Itoa(num), lastDigit)
 	return
-}
-
-func nthdigit2(num, pos int) int {
-	return int(float64(num)/math.Pow10(pos)) % 10
 }
 
 func transform(num int) int {
@@ -37,7 +32,7 @@ func transform(num int) int {
 		summed = summed + multiplied
 	}
 	if summed%10 != 0 {
-		return 10 - nthdigit2(summed, 0)
+		return 10 - nthdigit(summed, 0)
 	}
 	return 0
 }
