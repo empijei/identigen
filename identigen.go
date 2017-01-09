@@ -22,8 +22,6 @@ func main() {
 	}
 	people := identigen.RandomPeople(*minage, *maxage, *n)
 	for _, person := range people {
-		fmt.Printf("%v\n", person)
-
 		b, err := json.MarshalIndent(&person, " ", "\t")
 		if err != nil {
 			fmt.Println("error:", err)
