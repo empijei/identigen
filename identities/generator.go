@@ -26,7 +26,7 @@ func RandomPeople(minage, maxage int, count int) (people []Person) {
 		townAndCode := strings.Split(lists.Comuni[rand.Int()%len(lists.Comuni)], "|")
 		person.town = townAndCode[0]
 		person.townCode = townAndCode[1]
-		person.phone = "3" + randString([]rune("1234567890"), 9)
+		person.mobilePhone = "3" + randString([]rune("1234567890"), 9)
 		people = append(people, person)
 		count--
 	}

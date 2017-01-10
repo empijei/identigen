@@ -23,7 +23,7 @@ type Person struct {
 	partitaIva          string
 	partitaIvaCounty    string
 	cc                  string
-	phone               string
+	mobilePhone         string
 	id                  string
 }
 
@@ -52,7 +52,7 @@ func (p *Person) Town() string {
 }
 func (p *Person) Phone() string {
 	//TODO
-	return p.phone
+	return p.mobilePhone
 }
 func (p *Person) ID() string {
 	//TODO
