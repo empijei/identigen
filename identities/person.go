@@ -20,6 +20,9 @@ type Person struct {
 	town, townCode      string
 	residence           string
 	fiscalCode          string
+	partitaIva          string
+	partitaIvaCounty    string
+	cc                  string
 	phone               string
 	id                  string
 }

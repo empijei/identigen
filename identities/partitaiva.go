@@ -9,6 +9,9 @@ import (
 )
 
 func (p *Person) PartitaIva() (pi string, county string, err error) {
+	if p.partitaIva != "" {
+		return p.partitaIva, p.partitaIvaCounty, nil
+	}
 	var location int
 	//Getting a random element from the map.
 	for location, county = range lists.Cities {
@@ -18,6 +21,8 @@ func (p *Person) PartitaIva() (pi string, county string, err error) {
 	num, _ := strconv.Atoi(pi)
 	lastDigit := transformation(num, 10)
 	pi = fmt.Sprintf("%s%d", pi, lastDigit)
+	p.partitaIva = pi
+	p.partitaIvaCounty = county
 	return
 }
 

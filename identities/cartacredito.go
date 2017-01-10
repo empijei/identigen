@@ -7,11 +7,15 @@ import (
 )
 
 func (p *Person) CartaCredito() (cc string, err error) {
+	if p.cc != "" {
+		return p.cc, nil
+	}
 	num := rand.Intn(10000000000)
 	lastDigit := transform(num)
 
 	//cc = strconv.Atoi(fmt.Sprintf("%s%d", strconv.Itoa(num), lastDigit))
 	cc = fmt.Sprintf("%s%d", strconv.Itoa(num), lastDigit)
+	p.cc = cc
 	return
 }
 
