@@ -11,8 +11,15 @@ func TestAddresses(t *testing.T) {
 			t.Errorf("%s doesn't have an address!", city)
 		}
 	}
-	for city, _ := range Addresses {
+	addresses := make(map[string]struct{}, len(Addresses))
+	for city, address := range Addresses {
 		_, ok := cities[city]
+		_, notOk := addresses[address]
+		if !notOk {
+			addresses[address] = struct{}{}
+		} else {
+			t.Errorf("Address %s is used more than once!", address)
+		}
 		if !ok {
 			t.Errorf("%s has an address but is not in Cities!", city)
 		}

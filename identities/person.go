@@ -40,18 +40,16 @@ func (p *Person) Gender() string {
 		return "Male"
 	}
 }
+func (p *Person) Address() string {
+	return p.residence
+}
 func (p *Person) BirthDate() time.Time {
 	return p.birthDate
 }
 func (p *Person) BirthTown() string {
 	return p.town
 }
-func (p *Person) Town() string {
-	//TODO
-	return p.residence
-}
 func (p *Person) Phone() string {
-	//TODO
 	return p.mobilePhone
 }
 func (p *Person) ID() string {
@@ -91,6 +89,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 		Cognome          string
 		Gender           string
 		PaeseDiNascita   string
+		Indirizzo        string
 		NumeroDiTelefono string
 		DataDiNascita    string
 		CodiceFiscale    string
@@ -103,6 +102,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 		p.LastName(),
 		p.Gender(),
 		p.BirthTown(),
+		p.Address(),
 		p.Phone(),
 		bd,
 		cf,

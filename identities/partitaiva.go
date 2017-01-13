@@ -23,6 +23,7 @@ func (p *Person) PartitaIva() (pi string, county string, err error) {
 	pi = fmt.Sprintf("%s%d", pi, lastDigit)
 	p.partitaIva = pi
 	p.partitaIvaCounty = county
+	p.residence = lists.Addresses[county]
 	return
 }
 
