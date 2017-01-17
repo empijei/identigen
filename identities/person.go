@@ -25,6 +25,7 @@ type Person struct {
 	cc                  string
 	mobilePhone         string
 	id                  string
+	iban                string
 }
 
 func (p *Person) FirstName() string {
@@ -78,6 +79,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 	cf, err := p.CodiceFiscale()
 	pi, county, err := p.PartitaIva()
 	cc, err := p.CartaCredito()
+	iban, err := p.IBAN()
 	bd := fmt.Sprintf("%02d/%02d/%04d", p.birthDate.Day(), int(p.birthDate.Month()), p.birthDate.Year())
 	//bd := fmt.Sprintf("%02d/%02d/%04d", p.BirthDate().Day, p.BirthDate().Month, p.BirthDate().Year)
 	if err != nil {
@@ -97,6 +99,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 		ComunePartitaIva string
 		Documento        string
 		CartaCredito     string
+		Iban             string
 	}{
 		p.FirstName(),
 		p.LastName(),
@@ -110,6 +113,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 		county,
 		p.ID(),
 		cc,
+		iban,
 	}
 	return json.Marshal(wrapper)
 }
