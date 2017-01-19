@@ -1,6 +1,10 @@
 package identigen
 
 import (
+	"errors"
+	"fmt"
+	"log"
+	"math/big"
 	"strconv"
 
 	"github.com/empijei/identigen/identities/lists"
@@ -13,8 +17,22 @@ func (p *Person) IBAN() (iban string, err error) {
 
 	//bbac := fmt.Sprintf(rand.Int()%100000, rand.Int()%100000, rand.Int()%1000000000000)
 	bbac := "0542811101000000123456"
-	cci := checkDigit(BBAC(bbac))
-	return "a", nil
+	cci := checkDigit(BBAC(bbac)) + 10 //Convert letter to double digit number
+	country := 1930                    //IT converted with the (nth + 10) letter of the alphabet (I=19, T=30)
+
+	//	toCheck := strconv.Itoa(cci) + bbac + strconv.Itoa(country) + strconv.Itoa(checks) + strconv.Itoa(checks)
+
+	toCheck, ok := (&big.Int{}).SetString(strconv.Itoa(cci)+bbac+strconv.Itoa(country)+"00", 10)
+
+	if !ok {
+		return "", errors.New("Conversion to bigInt failed")
+	}
+	log.Println(toCheck)
+
+	checks := 98 - int((&big.Int{}).Mod(toCheck, big.NewInt(97)).Uint64())
+	sChecks := fmt.Sprintf("%02d", checks) //Padding
+	log.Println(sChecks)
+	return "IT" + sChecks + string(int('A')+cci-10) + bbac, nil
 }
 
 type BBAC string
