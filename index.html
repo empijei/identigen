@@ -1,20 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="/index.js"></script>
-</head>
-<body>
+	<head>
+		<title>Identigen</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<!-- The scrollable area -->
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active" href="#home"><a href="#">Home</a></li>
+						<li><a href="#docs">Documentazione</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"> API </a></li>
+						<li><a href="#"> Codice sorgente </a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-<div class="container">
-  <h1>TITOLO</h1>
-  <p>This is some text.</p> 
-</div>
+		<div class="container">
+			<div id="home">
+				<h1>TITOLO</h1>
+				<p>This is some text.</p>
+			</div>
+			<div id="docs">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#testo">Testo</a></li>
+					<li><a data-toggle="tab" href="#json">JSON</a></li>
+				</ul>
 
-</body>
+				<div class="tab-content">
+					<div id="testo" class="tab-pane fade in active">
+						<h3>TESTO</h3>
+						<form class="form-horizontal">
+							<div class="form-group" id="testo">
+							</div>
+						</form>
+					</div>
+					<div id="json" class="tab-pane fade">
+						<h3>JSON</h3>
+						<p>Some content in menu 1.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+var hr = document.getElementById("testo")
+hr.innerHtml = '<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif>'
+var jr = document.getElementById("json")
+jr.innerHtml = '<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif>'
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+	if (xhr.readyState == XMLHttpRequest.DONE) {
+		jr.innerText = xhr.responseText;
+		identity=JSON.parse(xhr.responseText);
+		var buf = "";
+		for (var key in identity) {
+			if (identity.hasOwnProperty(key)) {
+				buf += '<label class="control-label col-sm-2" >' +
+					key +
+					'</label><div class="col-sm-10"><p class="form-control-static">' +
+					identity[key] +
+					'</p></div>'
+			}
+		}
+		hr.innerHtml = buf
+	}
+}
+xhr.open('GET', 'https://identigen.herokuapp.com', true);
+xhr.send(null);
+		</script>
+	</body>
 </html>
