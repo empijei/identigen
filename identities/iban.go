@@ -28,8 +28,9 @@ func (p *Person) IBAN() (iban string, err error) {
 		return "", errors.New("Conversion to bigInt failed")
 	}
 	log.Println(toCheck)
-
+	//toCheck.SetString("330542811101000000123456193000", 10)
 	checks := 98 - int((&big.Int{}).Mod(toCheck, big.NewInt(97)).Uint64())
+
 	sChecks := fmt.Sprintf("%02d", checks) //Padding
 	log.Println(sChecks)
 	return "IT" + sChecks + string(int('A')+cci-10) + bbac, nil

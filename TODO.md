@@ -2,5 +2,4 @@
 Cvv + scadenza + prefissi standard cc 
 Iban 
 patente
-numero di telefono fisso
-Add address
+professione
