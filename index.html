@@ -7,10 +7,15 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+  #home {padding-top:50px;}
+  #docs {padding-top:50px;}
+		</style>
 	</head>
+
 	<!-- The scrollable area -->
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container-fluid">
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
@@ -26,36 +31,37 @@
 		</nav>
 
 		<div class="container">
-			<div id="home">
+
+			<div id="home" class="container-fluid">
 				<h1>TITOLO</h1>
 				<p>This is some text.</p>
-			</div>
-			<div id="docs">
-				<ul class="nav nav-tabs">
+				<ul class="nav nav-tabs nav-justified">
 					<li class="active"><a data-toggle="tab" href="#testo">Testo</a></li>
 					<li><a data-toggle="tab" href="#json">JSON</a></li>
 				</ul>
 
 				<div class="tab-content">
 					<div id="testo" class="tab-pane fade in active">
-						<h3>TESTO</h3>
 						<form class="form-horizontal">
-							<div class="form-group" id="testo">
+							<div class="form-group" id="campi">
+								<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
 							</div>
 						</form>
 					</div>
 					<div id="json" class="tab-pane fade">
-						<h3>JSON</h3>
-						<p>Some content in menu 1.</p>
+						<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
 					</div>
 				</div>
 			</div>
+
+			<div id="docs" class="container-fluid">
+				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h1>
+			</div>
 		</div>
+
 		<script>
-var hr = document.getElementById("testo")
-hr.innerHtml = '<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif>'
+var hr = document.getElementById("campi")
 var jr = document.getElementById("json")
-jr.innerHtml = '<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif>'
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
 	if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -71,7 +77,7 @@ xhr.onreadystatechange = function() {
 					'</p></div>'
 			}
 		}
-		hr.innerHtml = buf
+		hr.innerHTML = buf
 	}
 }
 xhr.open('GET', 'https://identigen.herokuapp.com', true);
