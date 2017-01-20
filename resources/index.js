@@ -1,6 +1,7 @@
 var hr = document.getElementById("text")
-hr.innerHtml = '<img src='
+hr.innerHtml = '<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif>'
 var jr = document.getElementById("json")
+jr.innerHtml = '<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif>'
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
 	if (xhr.readyState == XMLHttpRequest.DONE) {
