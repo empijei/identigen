@@ -98,7 +98,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 		PartitaIva       string
 		ComunePartitaIva string
 		Documento        string
-		CartaCredito     string
+		CartaDiCredito   string
 		Iban             string
 	}{
 		p.FirstName(),
