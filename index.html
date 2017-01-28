@@ -8,14 +8,101 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
-  #home {padding-top:50px;}
-  #docs {padding-top:50px;}
+			#home {padding-top:50px;}
+			#docs {padding-top:50px;}
+			.container {
+				max-width: 70%;
+			}
+			.testo {
+				text-align: left;
+			}
+			.btn {
+				background-color: #ff4900;
+			}
+			.tab-content {
+				color: #5e1f06;
+				background-color: #fce5a5;
+			}
+			.navbar-default {
+			  background-color: #ff9000;
+			  border-color: #ffbc00;
+			}
+			.navbar-default .navbar-brand {
+			  color: #5e1f06;
+			}
+			.navbar-default .navbar-brand:hover,
+			.navbar-default .navbar-brand:focus {
+			  color: #ff4900;
+			}
+			.navbar-default .navbar-text {
+			  color: #5e1f06;
+			}
+			.navbar-default .navbar-nav > li > a {
+			  color: #5e1f06;
+			}
+			.navbar-default .navbar-nav > li > a:hover,
+			.navbar-default .navbar-nav > li > a:focus {
+			  color: #ff4900;
+			}
+			.navbar-default .navbar-nav > .active > a,
+			.navbar-default .navbar-nav > .active > a:hover,
+			.navbar-default .navbar-nav > .active > a:focus {
+			  color: #ff4900;
+			  background-color: #ffbc00;
+			}
+			.navbar-default .navbar-nav > .open > a,
+			.navbar-default .navbar-nav > .open > a:hover,
+			.navbar-default .navbar-nav > .open > a:focus {
+			  color: #ff4900;
+			  background-color: #ffbc00;
+			}
+			.navbar-default .navbar-toggle {
+			  border-color: #ffbc00;
+			}
+			.navbar-default .navbar-toggle:hover,
+			.navbar-default .navbar-toggle:focus {
+			  background-color: #ffbc00;
+			}
+			.navbar-default .navbar-toggle .icon-bar {
+			  background-color: #5e1f06;
+			}
+			.navbar-default .navbar-collapse,
+			.navbar-default .navbar-form {
+			  border-color: #5e1f06;
+			}
+			.navbar-default .navbar-link {
+			  color: #5e1f06;
+			}
+			.navbar-default .navbar-link:hover {
+			  color: #ff4900;
+			}
+			
+			@media (max-width: 767px) {
+			  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+			    color: #5e1f06;
+			  }
+			  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+			  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+			    color: #ff4900;
+			  }
+			  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+			  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+			  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+			    color: #ff4900;
+			    background-color: #ffbc00;
+			  }
+			}
+			footer {
+				background-color: #5e1f06;
+				color: white;
+				padding: 15px;
+			}
 		</style>
 	</head>
 
 	<!-- The scrollable area -->
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<nav class="navbar navbar-default navbar-fixed-top" href="#navbar">
 			<div class="container-fluid">
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
@@ -33,8 +120,8 @@
 		<div class="container">
 
 			<div id="home" class="container-fluid">
-				<h1>TITOLO</h1>
-				<p>This is some text.</p>
+				<h1>IDENTIGEN</h1>
+				<p>Questa pagina genera identità random completamente fittizie.</p>
 				<ul class="nav nav-tabs nav-justified">
 					<li class="active"><a data-toggle="tab" href="#testo">Testo</a></li>
 					<li><a data-toggle="tab" href="#json">JSON</a></li>
@@ -53,11 +140,16 @@
 					</div>
 				</div>
 			</div>
+			<div class="text-center"> <button id="genbtn" class="btn btn-primary btn-lg">Genera</button> </div>
 
 			<div id="docs" class="container-fluid">
 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h1>
 			</div>
 		</div>
+
+		<footer class="container-fluid text-center">
+			<p>Made with <3 by Anna and Rob.</p>
+		</footer>
 
 		<script>
 var hr = document.getElementById("campi")
