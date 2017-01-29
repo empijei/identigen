@@ -144,7 +144,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="text-center"> <button id="genbtn" class="btn btn-primary btn-lg">Genera</button> </div>
+			<div class="text-center"> <button id="genbtn" class="btn btn-primary btn-lg" onclick=regen()>Genera</button> </div>
 
 			<div id="docs" class="container-fluid">
 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h1>
@@ -152,12 +152,13 @@
 		</div>
 
 		<footer class="container-fluid text-center">
-			<p>Made with <3 by Anna and Rob.</p>
+			<p>Made with &lt;3 by Anna and Rob.</p>
 		</footer>
 
 		<script>
 var hr = document.getElementById("campi")
 var jr = document.getElementById("json")
+function regen(){
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
 	if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -178,6 +179,8 @@ xhr.onreadystatechange = function() {
 }
 xhr.open('GET', 'https://identigen.herokuapp.com', true);
 xhr.send(null);
+}
+regen()
 		</script>
 	</body>
 </html>
