@@ -4,3 +4,6 @@ Cvv + scadenza + prefissi standard cc
 Iban 
 patente
 professione
+password
+
+salvare identità in locale
