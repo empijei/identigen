@@ -201,8 +201,8 @@ function regen(){
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
 	if (xhr.readyState == XMLHttpRequest.DONE) {
-		jr.innerText = xhr.responseText;
 		identity=JSON.parse(xhr.responseText)[0];
+		jr.innerHTML= "<pre>"+JSON.stringify(identity, null, 2) +"</pre>";
 		var buf = "";
 		for (var key in identity) {
 			if (identity.hasOwnProperty(key)) {
