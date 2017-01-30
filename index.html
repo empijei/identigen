@@ -8,6 +8,21 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
+.tab-pane {
+
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px;
+}
+		</style>
+<!--
+			Nota, ciò che segue è stato tolto per cercare di lavorare su un ambiente pulito durante le prove,
+			i colori poi li rimettiamo a lavoro finito, così come alcuni stili troppo nel dettaglio, le minuzie le farei
+			quando siamo sicuri di come lo vogliamo.
+
+
 .div-inline{
 			display:inline-block;
 }
@@ -30,6 +45,11 @@
 			.tab-content {
 				display: flex;
 				justify-content: center;
+			}
+			footer {
+				background-color: #5e1f06;
+				color: white;
+				padding: 15px;
 			}
 			.navbar-default {
 			  background-color: #ff9000;
@@ -100,12 +120,7 @@
 			    background-color: #ffbc00;
 			  }
 			}
-			footer {
-				background-color: #5e1f06;
-				color: white;
-				padding: 15px;
-			}
-		</style>
+-->
 	</head>
 <link rel="icon" href="favicon.ico" type="image/ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -116,14 +131,19 @@
 <meta name="theme-color" content="#ffffff">
 	<!-- The scrollable area -->
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
-		<nav class="navbar navbar-default navbar-fixed-top" href="#navbar">
+		<nav class="navbar navbar-default navbar-static-top" href="#navbar">
 			<div class="container-fluid">
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
 						<li class="active" href="#home"><a href="#">Home</a></li>
+						<!--TODO linkare alla godoc (trovar eil modo di generarla), non teniamolo qui-->
 						<li><a href="#docs">Documentazione</a></li>
+						<!--TODO aggiungere un link interno a "Cos'è" con una rapida descrizione come è ora-->
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
+								<!--Bisogna trovare un posto dove mettere la documentazione delle API, io piuttosto metterei questa
+								nella pagina piuttosto che la doc del codice che metterei esterna, quindi scambierei il menù API (che resterebbe interno)
+								con quello Documentazione, che diventerebbe esterno alla pagina.-->
 						<li><a href="#"> API </a></li>
 						<li><a href="#"> Codice sorgente </a></li>
 					</ul>
