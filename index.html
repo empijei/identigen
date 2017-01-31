@@ -1,232 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Identigen</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<style>
+			<head>
+						<title>Identigen</title>
+						<meta charset="utf-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1">
+						<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+						<style>
 .tab-pane {
-
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-radius: 0px 0px 5px 5px;
-    padding: 10px;
+			border-left: 1px solid #ddd;
+			border-right: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
+			border-radius: 0px 0px 5px 5px;
+			padding: 10px;
 }
 			.btn {
-				background-color: #ff4900;
-				margin-top: 2%;
+						background-color: #ff4900;
+						margin-top: 2%;
 			}
 			.tab-content {
-				color: #5e1f06;
-				background-color: #fce5a5;
-				display: flex;
-				justify-content: center;
+						color: #5e1f06;
+						background-color: #fce5a5;
+						display: flex;
+						justify-content: center;
 			}
 			pre{
-				color: #5e1f06;
-				background-color: #fce5a5;
-				border: none !important;
+						color: #5e1f06;
+						background-color: #fce5a5;
+						border: none;
+									font-size:14px;
 			}
 			footer {
-				background-color: #5e1f06;
-				color: white;
-				padding: 15px;
+						background-color: #5e1f06;
+						color: white;
+						padding: 2px;
 			}
 
-.divinline{
-			display:inline-block;
-}
-		</style>
-<!--
-			Nota, ciò che segue è stato tolto per cercare di lavorare su un ambiente pulito durante le prove,
-			i colori poi li rimettiamo a lavoro finito, così come alcuni stili troppo nel dettaglio, le minuzie le farei
-			quando siamo sicuri di come lo vogliamo.
+			.divinline{
+						display:inline-block;
+			}
+
+									#home {padding-top:50px;}
+									#docs{padding-bottom:70px;}
+						</style>
+						<!--
+									Nota, ciò che segue è stato tolto per cercare di lavorare su un ambiente pulito durante le prove,
+									i colori poi li rimettiamo a lavoro finito, così come alcuni stili troppo nel dettaglio, le minuzie le farei
+									quando siamo sicuri di come lo vogliamo.
 
 
-			#home {padding-top:50px;}
-			#docs {padding-top:50px;}
-			.container {
-				max-width: 70%;
-			}
-			.testo {
-				text-align: left;
-			}
-			.navbar-default {
-			  background-color: #ff9000;
-			  border-color: #ffbc00;
-			}
-			.navbar-default .navbar-brand {
-			  color: #5e1f06;
-			}
-			.navbar-default .navbar-brand:hover,
-			.navbar-default .navbar-brand:focus {
-			  color: #ff4900;
-			}
-			.navbar-default .navbar-text {
-			  color: #5e1f06;
-			}
-			.navbar-default .navbar-nav > li > a {
-			  color: #5e1f06;
-			}
-			.navbar-default .navbar-nav > li > a:hover,
-			.navbar-default .navbar-nav > li > a:focus {
-			  color: #ff4900;
-			}
-			.navbar-default .navbar-nav > .active > a,
-			.navbar-default .navbar-nav > .active > a:hover,
-			.navbar-default .navbar-nav > .active > a:focus {
-			  color: #ff4900;
-			  background-color: #ffbc00;
-			}
-			.navbar-default .navbar-nav > .open > a,
-			.navbar-default .navbar-nav > .open > a:hover,
-			.navbar-default .navbar-nav > .open > a:focus {
-			  color: #ff4900;
-			  background-color: #ffbc00;
-			}
-			.navbar-default .navbar-toggle {
-			  border-color: #ffbc00;
-			}
-			.navbar-default .navbar-toggle:hover,
-			.navbar-default .navbar-toggle:focus {
-			  background-color: #ffbc00;
-			}
-			.navbar-default .navbar-toggle .icon-bar {
-			  background-color: #5e1f06;
-			}
-			.navbar-default .navbar-collapse,
-			.navbar-default .navbar-form {
-			  border-color: #5e1f06;
-			}
-			.navbar-default .navbar-link {
-			  color: #5e1f06;
-			}
-			.navbar-default .navbar-link:hover {
-			  color: #ff4900;
-			}
-			
-			@media (max-width: 767px) {
-			  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-			    color: #5e1f06;
-			  }
-			  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-			  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-			    color: #ff4900;
-			  }
-			  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-			  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-			  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-			    color: #ff4900;
-			    background-color: #ffbc00;
-			  }
-			}
--->
-	</head>
-<link rel="icon" href="favicon.ico" type="image/ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
-	<!-- The scrollable area -->
-	<body data-spy="scroll" data-target=".navbar" data-offset="50">
-		<nav class="navbar navbar-default navbar-static-top" href="#navbar">
-			<div class="container-fluid">
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li class="active" href="#home"><a href="#">Home</a></li>
-						<!--TODO linkare alla godoc (trovar eil modo di generarla), non teniamolo qui-->
-						<li><a href="#docs">Documentazione</a></li>
-						<!--TODO aggiungere un link interno a "Cos'è" con una rapida descrizione come è ora-->
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-								<!--Bisogna trovare un posto dove mettere la documentazione delle API, io piuttosto metterei questa
-								nella pagina piuttosto che la doc del codice che metterei esterna, quindi scambierei il menù API (che resterebbe interno)
-								con quello Documentazione, che diventerebbe esterno alla pagina.-->
-						<li><a href="#"> API </a></li>
-						<li><a href="#"> Codice sorgente </a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+									#home {padding-top:50px;}
+									#docs {padding-top:50px;}
+									.container {
+									max-width: 70%;
+									}
+									.testo {
+									text-align: left;
+									}
+									.navbar-default {
+									background-color: #ff9000;
+									border-color: #ffbc00;
+									}
+									.navbar-default .navbar-brand {
+									color: #5e1f06;
+									}
+									.navbar-default .navbar-brand:hover,
+									.navbar-default .navbar-brand:focus {
+									color: #ff4900;
+									}
+									.navbar-default .navbar-text {
+									color: #5e1f06;
+									}
+									.navbar-default .navbar-nav > li > a {
+									color: #5e1f06;
+									}
+									.navbar-default .navbar-nav > li > a:hover,
+									.navbar-default .navbar-nav > li > a:focus {
+									color: #ff4900;
+									}
+									.navbar-default .navbar-nav > .active > a,
+									.navbar-default .navbar-nav > .active > a:hover,
+									.navbar-default .navbar-nav > .active > a:focus {
+									color: #ff4900;
+									background-color: #ffbc00;
+									}
+									.navbar-default .navbar-nav > .open > a,
+									.navbar-default .navbar-nav > .open > a:hover,
+									.navbar-default .navbar-nav > .open > a:focus {
+									color: #ff4900;
+									background-color: #ffbc00;
+									}
+									.navbar-default .navbar-toggle {
+									border-color: #ffbc00;
+									}
+									.navbar-default .navbar-toggle:hover,
+									.navbar-default .navbar-toggle:focus {
+									background-color: #ffbc00;
+									}
+									.navbar-default .navbar-toggle .icon-bar {
+									background-color: #5e1f06;
+									}
+									.navbar-default .navbar-collapse,
+									.navbar-default .navbar-form {
+									border-color: #5e1f06;
+									}
+									.navbar-default .navbar-link {
+									color: #5e1f06;
+									}
+									.navbar-default .navbar-link:hover {
+									color: #ff4900;
+									}
 
-		<div class="container">
+									@media (max-width: 767px) {
+									.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+									color: #5e1f06;
+									}
+									.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+									.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+									color: #ff4900;
+									}
+									.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+									.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+									.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+									color: #ff4900;
+									background-color: #ffbc00;
+									}
+									}
+						-->
+			</head>
+			<link rel="icon" href="favicon.ico" type="image/ico" />
+			<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+			<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+			<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+			<link rel="manifest" href="/manifest.json">
+			<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+			<meta name="theme-color" content="#ffffff">
+			<!-- The scrollable area -->
+			<body data-spy="scroll" data-target=".navbar" data-offset="50">
+						<nav class="navbar navbar-default navbar-fixed-top" href="#navbar">
+									<div class="container-fluid">
+												<div class="collapse navbar-collapse" id="myNavbar">
+															<ul class="nav navbar-nav">
+																		<li class="active" href="#home"><a href="#">Home</a></li>
+																		<!--TODO linkare alla godoc (trovar eil modo di generarla), non teniamolo qui-->
+																		<li><a href="#docs">Documentazione</a></li>
+																		<!--TODO aggiungere un link interno a "Cos'è" con una rapida descrizione come è ora-->
+															</ul>
+															<ul class="nav navbar-nav navbar-right">
+																		<!--Bisogna trovare un posto dove mettere la documentazione delle API, io piuttosto metterei questa
+																					nella pagina piuttosto che la doc del codice che metterei esterna, quindi scambierei il menù API (che resterebbe interno)
+																					con quello Documentazione, che diventerebbe esterno alla pagina.-->
+																					<li><a href="#"> API </a></li>
+																					<li><a href="#"> Codice sorgente </a></li>
+															</ul>
+												</div>
+									</div>
+						</nav>
 
-			<div id="home" class="container-fluid">
-				<h1>IDENTIGEN</h1>
-				<p>Questa pagina genera identità random completamente fittizie.</p>
-				<ul class="nav nav-tabs nav-justified">
-					<li class="active"><a data-toggle="tab" href="#testo">Testo</a></li>
-					<li><a data-toggle="tab" href="#json">JSON</a></li>
-				</ul>
+						<div class="container">
 
-				<div class="tab-content">
-					<div id="testo" class="tab-pane fade in active">
-						<form class="form-horizontal">
-							<div class="form-group" id="campi">
-								<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
-							</div>
-						</form>
-					</div>
-					<div id="json" class="tab-pane fade">
-						<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
-					</div>
-				</div>
-			</div>
-			<div class="text-center" style="margin:10px;"> <button id="genbtn" class="btn btn-primary btn-lg" onclick=regen()>Genera</button> </div>
+									<div id="home" class="container-fluid">
+												<h1>IDENTIGEN</h1>
+												<p>Identigen è un programma che genera dati di un'identità fittizia completamente casuali.</p>
+												<p>Tali dati non sono correlati tra loro e passano tutti i controlli di forma.</p>
+												<p>Il codice che genera queste identità si può trovare sulla pagina <a href="https://github.com/empijei/identigen">Github</a>.</p>
+												<ul class="nav nav-tabs nav-justified">
+															<li class="active"><a data-toggle="tab" href="#testo">Testo</a></li>
+															<li><a data-toggle="tab" href="#json">JSON</a></li>
+												</ul>
 
-			<div id="docs" class="container-fluid">
-				<p class="lead">Identigen è un programma che genera dati di un'identità fittizia completamente casuali.</p>
-				<p class="lead">Tali dati non sono correlati tra loro e passano tutti i controlli di forma.</p>
-				<p class="lead">Il codice che genera queste identità si può trovare sulla pagina <a href="https://github.com/empijei/identigen">Github</a>.</p>
-			</div>
-		</div>
+												<div class="tab-content">
+															<div id="testo" class="tab-pane fade in active">
+																		<form class="form-horizontal">
+																					<div class="form-group" id="campi">
+																								<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
+																					</div>
+																		</form>
+															</div>
+															<div id="json" class="tab-pane fade" style="border:none;">
+																		<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
+															</div>
+												</div>
+									</div>
+									<div class="text-center" style="margin:10px;"> <button id="genbtn" class="btn btn-primary btn-lg" onclick=regen()>Genera</button> </div>
 
-		<footer class="container-fluid text-center">
-					<div class="container">
-				<img class="divinline pull-left" style="visibility:hidden; max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
-					<p class="text-center divinline" style="margin-top:7px;">Made with &lt;3 by <a href="https://github.com/AnnaOpss/">Anna</a> and <a href="https://github.com/empijei">Rob</a>.
-					</p>
-						<a class="divinline pull-right" href="https://www.securenetwork.it/">
-				<img class="divinline pull-right" style="max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
-				</a>
-					</div>
-		</footer>
+									<div id="docs" class="container-fluid">
+												<p>
+												Esiste un programma CLI accessibile con `go get github.com/empijei/identigen` che accetta dei parametri.
+												</p>
+												<p>
+												TODO sono anche disponibili delle API web con gli stessi parametri, circa
+												</p>
+									</div>
+						</div>
 
-		<script>	
+						<footer class="container-fluid text-center navbar-static-bottom">
+									<div class="container">
+												<img class="divinline pull-left" style="visibility:hidden; max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
+												<p class="text-center divinline" style="margin-top:7px;">Made with &lt;3 by <a href="https://github.com/AnnaOpss/">Anna</a> and <a href="https://github.com/empijei">Rob</a>.
+												</p>
+												<a class="divinline pull-right" href="https://www.securenetwork.it/">
+															<img class="divinline pull-right" style="max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
+												</a>
+									</div>
+						</footer>
+
+						<script>	
 function spacer(key){
-	return key.replace(/([A-Z])/g, ' $1').trim()
+			return key.replace(/([A-Z])/g, ' $1').trim()
 }
 var hr = document.getElementById("campi")
 var jr = document.getElementById("json")
 function regen(){
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-	if (xhr.readyState == XMLHttpRequest.DONE) {
-		identity=JSON.parse(xhr.responseText)[0];
-		jr.innerHTML= "<pre>"+JSON.stringify(identity, null, 2) +"</pre>";
-		var buf = "";
-		for (var key in identity) {
-			if (identity.hasOwnProperty(key)) {
-				buf += '<label class="control-label col-sm-5" >' +
-					spacer(key) +
-					'</label><div class="col-sm-7"><p class="form-control-static">' +
-					identity[key] +
-					'</p></div>'
-			}
-		}
-		hr.innerHTML = buf
-	}
-}
-xhr.open('GET', 'https://identigen.herokuapp.com', true);
-xhr.send(null);
-}
-regen()
-		</script>
-	</body>
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+						if (xhr.readyState == XMLHttpRequest.DONE) {
+									identity=JSON.parse(xhr.responseText)[0];
+									jr.innerHTML= "<pre>"+JSON.stringify(identity, null, 2) +"</pre>";
+									var buf = "";
+									for (var key in identity) {
+									if (identity.hasOwnProperty(key)) {
+									buf += '<label class="control-label col-sm-5" >' +
+												spacer(key) +
+												'</label><div class="col-sm-7"><p class="form-control-static">' +
+												identity[key] +
+												'</p></div>'
+									}
+									}
+									hr.innerHTML = buf
+									}
+									}
+									xhr.open('GET', 'https://identigen.herokuapp.com', true);
+									xhr.send(null);
+									}
+									regen()
+						</script>
+			</body>
 </html>
