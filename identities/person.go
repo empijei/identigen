@@ -36,9 +36,9 @@ func (p *Person) LastName() string {
 }
 func (p *Person) Gender() string {
 	if p.genderIsFemale {
-		return "Female"
+		return "Donna"
 	} else {
-		return "Male"
+		return "Uomo"
 	}
 }
 func (p *Person) Address() string {
