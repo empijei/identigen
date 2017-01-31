@@ -37,6 +37,9 @@
 				padding: 15px;
 			}
 
+.divinline{
+			display:inline-block;
+}
 		</style>
 <!--
 			Nota, ciò che segue è stato tolto per cercare di lavorare su un ambiente pulito durante le prove,
@@ -44,9 +47,6 @@
 			quando siamo sicuri di come lo vogliamo.
 
 
-.div-inline{
-			display:inline-block;
-}
 			#home {padding-top:50px;}
 			#docs {padding-top:50px;}
 			.container {
@@ -188,11 +188,14 @@
 		</div>
 
 		<footer class="container-fluid text-center">
-					<p class="text-center">Made with &lt;3 by <a href="https://github.com/AnnaOpss/">Anna</a> and <a href="https://github.com/empijei">Rob</a>.
+					<div class="container">
+				<img class="divinline pull-left" style="visibility:hidden; max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
+					<p class="text-center divinline" style="margin-top:7px;">Made with &lt;3 by <a href="https://github.com/AnnaOpss/">Anna</a> and <a href="https://github.com/empijei">Rob</a>.
 					</p>
-						<a href="https://www.securenetwork.it/">
-				<img class="text-center" style="max-width:12%; margin-top:7px;" src="securenetworkLogo.png">
+						<a class="divinline pull-right" href="https://www.securenetwork.it/">
+				<img class="divinline pull-right" style="max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
 				</a>
+					</div>
 		</footer>
 
 		<script>	
