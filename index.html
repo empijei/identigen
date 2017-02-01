@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-			<head>
-						<title>Identigen</title>
-						<meta charset="utf-8">
-						<meta name="viewport" content="width=device-width, initial-scale=1">
-						<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
-						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-						<style>
-.tab-pane {
-			border-left: 1px solid #ddd;
-			border-right: 1px solid #ddd;
-			border-bottom: 1px solid #ddd;
-			border-radius: 0px 0px 5px 5px;
-			padding: 10px;
-}
+	<head>
+		<title>Identigen</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			.tab-pane {
+				padding: 10px;
+			}
 			.btn {
 						background-color: #ff4900;
 						margin-top: 2%;
 			}
 			.tab-content {
-						color: #5e1f06;
-						background-color: #fce5a5;
-						display: flex;
-						justify-content: center;
+				color: #5e1f06;
+				background-color: #fce5a5;
+				display: flex;
+				justify-content: center;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				border-bottom: 1px solid #ddd;
+				border-radius: 0px 0px 5px 5px;
 			}
 			pre{
 						color: #5e1f06;
 						background-color: #fce5a5;
 						border: none;
-									font-size:14px;
+						font-size:14px;
 			}
 			footer {
 						background-color: #5e1f06;
@@ -41,9 +41,26 @@
 						display:inline-block;
 			}
 
-									#home {padding-top:50px;}
-									#docs{padding-bottom:70px;}
-						</style>
+			#home {padding-top:50px;}
+			#docs{padding-bottom:70px;}
+			@media (max-width: 767px) {
+				#json{
+					display: none;
+				}
+				#testo{
+					max-width:90%;
+				}
+				.tab-content{
+					border-top: 1px solid #ddd;
+				}
+				#jsontab{
+					display: none;
+				}
+				#texttab{
+					
+				}
+			}
+		</style>
 						<!--
 									Nota, ciò che segue è stato tolto per cercare di lavorare su un ambiente pulito durante le prove,
 									i colori poi li rimettiamo a lavoro finito, così come alcuni stili troppo nel dettaglio, le minuzie le farei
@@ -144,15 +161,15 @@
 															<ul class="nav navbar-nav">
 																		<li class="active" href="#home"><a href="#">Home</a></li>
 																		<!--TODO linkare alla godoc (trovar eil modo di generarla), non teniamolo qui-->
-																		<li><a href="#docs">Documentazione</a></li>
+																		<li><a href="#docs">API</a></li>
 																		<!--TODO aggiungere un link interno a "Cos'è" con una rapida descrizione come è ora-->
 															</ul>
 															<ul class="nav navbar-nav navbar-right">
 																		<!--Bisogna trovare un posto dove mettere la documentazione delle API, io piuttosto metterei questa
 																					nella pagina piuttosto che la doc del codice che metterei esterna, quindi scambierei il menù API (che resterebbe interno)
 																					con quello Documentazione, che diventerebbe esterno alla pagina.-->
-																					<li><a href="#"> API </a></li>
-																					<li><a href="#"> Codice sorgente </a></li>
+																					<li><a href="#"> Documentazione </a></li>
+																					<li><a href="https://github.com/empijei/identigen"> Codice sorgente </a></li>
 															</ul>
 												</div>
 									</div>
@@ -166,8 +183,8 @@
 												<p>Tali dati non sono correlati tra loro e passano tutti i controlli di forma.</p>
 												<p>Il codice che genera queste identità si può trovare sulla pagina <a href="https://github.com/empijei/identigen">Github</a>.</p>
 												<ul class="nav nav-tabs nav-justified">
-															<li class="active"><a data-toggle="tab" href="#testo">Testo</a></li>
-															<li><a data-toggle="tab" href="#json">JSON</a></li>
+															<li class="active"><a id="testotab" data-toggle="tab" href="#testo">Testo</a></li>
+															<li><a data-toggle="tab" href="#json" id="jsontab">JSON</a></li>
 												</ul>
 
 												<div class="tab-content">
@@ -187,10 +204,10 @@
 
 									<div id="docs" class="container-fluid">
 												<p>
-												Esiste un programma CLI accessibile con <code>go get github.com/empijei/identigen</code> che accetta dei parametri.
+												Esiste un programma CLI installabile con <code>go get github.com/empijei/identigen</code> che accetta dei parametri sui limiti di età della persona generata e sul numero di identià richieste.
 												</p>
 												<p>
-												TODO sono anche disponibili delle API web con gli stessi parametri, circa
+												TODO sono anche disponibili delle API web con gli stessi parametri, circa.
 												</p>
 									</div>
 						</div>
