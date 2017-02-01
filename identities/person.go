@@ -14,18 +14,18 @@ func init() {
 
 type Person struct {
 	//TODO protect these fields, use accessor and cache data
-	firstName, lastName string
-	genderIsFemale      bool
-	birthDate           time.Time
-	town, townCode      string
-	residence           string
-	fiscalCode          string
-	partitaIva          string
-	partitaIvaCounty    string
-	cc                  string
-	mobilePhone         string
-	id                  string
-	iban                string
+	firstName, lastName           string
+	genderIsFemale                bool
+	birthDate                     time.Time
+	town, townCode, birthDistrict string
+	residence                     string
+	fiscalCode                    string
+	partitaIva                    string
+	partitaIvaCounty              string
+	cc                            string
+	mobilePhone                   string
+	id                            string
+	iban                          string
 }
 
 func (p *Person) FirstName() string {
@@ -104,7 +104,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 		p.FirstName(),
 		p.LastName(),
 		p.Gender(),
-		p.BirthTown(),
+		p.BirthTown() + " " + p.birthDistrict,
 		p.Address(),
 		p.Phone(),
 		bd,

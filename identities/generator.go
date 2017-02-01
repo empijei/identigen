@@ -3,7 +3,6 @@ package identigen
 import (
 	"errors"
 	"math/rand"
-	"strings"
 	"time"
 
 	"github.com/empijei/identigen/identities/lists"
@@ -32,9 +31,10 @@ func RandomPeople(minage, maxage int, count int) (people []Person, err error) {
 		}
 		person.birthDate = time.Date(time.Now().Year()-age, time.Month(rand.Int()%12+1), rand.Int()%28+1, 12, 0, 0, 0, time.UTC)
 		person.lastName = lists.ItalianSurnames[rand.Int()%len(lists.ItalianSurnames)]
-		townAndCode := strings.Split(lists.Comuni[rand.Int()%len(lists.Comuni)], "|")
-		person.town = townAndCode[0]
-		person.townCode = townAndCode[1]
+		birthInfo := lists.BirthInfo[rand.Int()%len(lists.Comuni)]
+		person.town = birthInfo.Paese
+		person.townCode = birthInfo.CodiceCatasto
+		person.birthDistrict = birthInfo.Provincia
 		person.mobilePhone = "3" + randString([]rune("1234567890"), 9)
 		people = append(people, person)
 		count--
