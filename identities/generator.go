@@ -31,7 +31,7 @@ func RandomPeople(minage, maxage int, count int) (people []Person, err error) {
 		}
 		person.birthDate = time.Date(time.Now().Year()-age, time.Month(rand.Int()%12+1), rand.Int()%28+1, 12, 0, 0, 0, time.UTC)
 		person.lastName = lists.ItalianSurnames[rand.Int()%len(lists.ItalianSurnames)]
-		birthInfo := lists.BirthInfo[rand.Int()%len(lists.Comuni)]
+		birthInfo := lists.BirthInfo[rand.Int()%len(lists.BirthInfo)]
 		person.town = birthInfo.Paese
 		person.townCode = birthInfo.CodiceCatasto
 		person.birthDistrict = birthInfo.Provincia
