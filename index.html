@@ -155,78 +155,84 @@
 			<meta name="theme-color" content="#ffffff">
 			<!-- The scrollable area -->
 			<body data-spy="scroll" data-target=".navbar" data-offset="50">
-						<nav class="navbar navbar-default navbar-fixed-top" href="#navbar">
-									<div class="container-fluid">
-												<div class="collapse navbar-collapse" id="myNavbar">
-															<ul class="nav navbar-nav">
-																		<li class="active" href="#home"><a href="#">Home</a></li>
-																		<!--TODO linkare alla godoc (trovar eil modo di generarla), non teniamolo qui-->
-																		<li><a href="#docs">API</a></li>
-																		<!--TODO aggiungere un link interno a "Cos'è" con una rapida descrizione come è ora-->
-															</ul>
-															<ul class="nav navbar-nav navbar-right">
-																		<!--Bisogna trovare un posto dove mettere la documentazione delle API, io piuttosto metterei questa
-																					nella pagina piuttosto che la doc del codice che metterei esterna, quindi scambierei il menù API (che resterebbe interno)
-																					con quello Documentazione, che diventerebbe esterno alla pagina.-->
-																					<li><a href="#"> Documentazione </a></li>
-																					<li><a href="https://github.com/empijei/identigen"> Codice sorgente </a></li>
-															</ul>
-												</div>
-									</div>
-						</nav>
-
-						<div class="container">
-
-									<div id="home" class="container-fluid">
-												<h1>IDENTIGEN</h1>
-												<p>Identigen è un programma che genera dati di un'identità fittizia completamente casuali.</p>
-												<p>Tali dati non sono correlati tra loro e passano tutti i controlli di forma.</p>
-												<p>Il codice che genera queste identità si può trovare sulla pagina <a href="https://github.com/empijei/identigen">Github</a>.</p>
-												<ul class="nav nav-tabs nav-justified">
-															<li class="active"><a id="testotab" data-toggle="tab" href="#testo">Testo</a></li>
-															<li><a data-toggle="tab" href="#json" id="jsontab">JSON</a></li>
-												</ul>
-
-												<div class="tab-content">
-															<div id="testo" class="tab-pane fade in active">
-																		<form class="form-horizontal">
-																					<div class="form-group" id="campi">
-																								<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
-																					</div>
-																		</form>
-															</div>
-															<div id="json" class="tab-pane fade" style="border:none;">
-																		<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
-															</div>
-												</div>
-									</div>
-									<div class="text-center" style="margin:10px;"> <button id="genbtn" class="btn btn-primary btn-lg" onclick=regen()>Genera</button> </div>
-
-									<div id="docs" class="container-fluid">
-												<p>
-												Esiste un programma CLI installabile con <code>go get github.com/empijei/identigen</code> che accetta dei parametri sui limiti di età della persona generata e sul numero di identià richieste.
-												</p>
-												<p>
-												TODO sono anche disponibili delle API web con gli stessi parametri, circa.
-												</p>
-									</div>
+				<nav class="navbar navbar-default navbar-fixed-top" href="#navbar" role="navigation">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#">Identigen</a>
 						</div>
+						<div class="collapse navbar-collapse" id="navigationbar">
+							<ul class="nav navbar-nav">
+								<li class="active" href="#home"><a href="#">Home</a></li>
+								<!--TODO linkare alla godoc (trovar eil modo di generarla), non teniamolo qui-->
+								<li><a href="#docs">API</a></li>
+								<!--TODO aggiungere un link interno a "Cos'è" con una rapida descrizione come è ora-->
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+							<!--Bisogna trovare un posto dove mettere la documentazione delle API, io piuttosto metterei questa
+								nella pagina piuttosto che la doc del codice che metterei esterna, quindi scambierei il menù API (che resterebbe interno)
+								con quello Documentazione, che diventerebbe esterno alla pagina.-->
+								<li><a href="#"> Documentazione </a></li>
+								<li><a href="https://github.com/empijei/identigen"> Codice sorgente </a></li>
+							</ul>
+						</div> <!-- navbar-collapse -->
+					</div> <!-- container-fluid -->
+				</nav>
 
-						<footer class="container-fluid text-center navbar-static-bottom">
-									<div class="container">
-												<img class="divinline pull-left" style="visibility:hidden; max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
-												<p class="text-center divinline" style="margin-top:7px;">Made with &lt;3 by <a href="https://github.com/AnnaOpss/">Anna</a> and <a href="https://github.com/empijei">Rob</a>.
-												</p>
-												<a class="divinline pull-right" href="https://www.securenetwork.it/">
-															<img class="divinline pull-right" style="max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
-												</a>
+				<div class="container">
+
+					<div id="home" class="container-fluid">
+						<h1>IDENTIGEN</h1>
+						<p>Identigen è un programma che genera dati di un'identità fittizia completamente casuali.</p>
+						<p>Tali dati non sono correlati tra loro e passano tutti i controlli di forma.</p>
+						<p>Il codice che genera queste identità si può trovare sulla pagina <a href="https://github.com/empijei/identigen">Github</a>.</p>
+						<ul class="nav nav-tabs nav-justified">
+							<li class="active"><a id="testotab" data-toggle="tab" href="#testo">Testo</a></li>
+							<li><a data-toggle="tab" href="#json" id="jsontab">JSON</a></li>
+						</ul>
+
+						<div class="tab-content">
+							<div id="testo" class="tab-pane fade in active">
+								<form class="form-horizontal">
+									<div class="form-group" id="campi">
+										<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
 									</div>
-						</footer>
+								</form>
+							</div> <!-- testo -->
+							<div id="json" class="tab-pane fade" style="border:none;">
+								<img src=https://github.com/empijei/identigen/raw/master/resources/spin.gif class="img-responsive center-block">
+							</div> <!-- json -->
+						</div> <!-- tab-content -->
+					</div> <!-- home -->
+					<div class="text-center" style="margin:10px;">
+						<button id="genbtn" class="btn btn-primary btn-lg" onclick=regen()>Genera</button>
+					</div>
 
-						<script>	
-function spacer(key){
-			return key.replace(/([A-Z])/g, ' $1').trim()
-}
+					<div id="docs" class="container-fluid">
+						<p> Esiste un programma CLI installabile con <code>go get github.com/empijei/identigen</code> che accetta dei parametri sui limiti di età della persona generata e sul numero di identià richieste.</p>
+						<p> TODO sono anche disponibili delle API web con gli stessi parametri, circa.</p>
+					</div> <!-- docs -->
+				</div> <!-- container -->
+
+				<footer class="container-fluid text-center navbar-static-bottom">
+					<div class="container">
+						<img class="divinline pull-left" style="visibility:hidden; max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
+						<p class="text-center divinline" style="margin-top:7px;">Made with &lt;3 by <a href="https://github.com/AnnaOpss/">Anna</a> and <a href="https://github.com/empijei">Rob</a>.</p>
+						<a class="divinline pull-right" href="https://www.securenetwork.it/">
+							<img class="divinline pull-right" style="max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
+						</a>
+					</div>
+				</footer>
+
+				<script>
+					function spacer(key){
+					return key.replace(/([A-Z])/g, ' $1').trim()
+					}
 var hr = document.getElementById("campi")
 var jr = document.getElementById("json")
 function regen(){
