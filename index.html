@@ -41,6 +41,10 @@
 						display:inline-block;
 			}
 
+			#mobilesecnetlogo{
+				display: none;
+			}
+
 			#home {padding-top:50px;}
 			#docs{padding-bottom:70px;}
 			@media (max-width: 767px) {
@@ -60,6 +64,13 @@
 					display: none;
 				}
 				#schifo{
+					display: none;
+				}
+				#mobilesecnetlogo{
+					display: inline;
+					text-align: center;
+				}
+				#secnetlogo{
 					display: none;
 				}
 			}
@@ -235,9 +246,14 @@ ga('send', 'pageview');
 					<div class="container">
 						<img class="divinline pull-left" id="schifo" style="visibility:hidden; max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
 						<p class="text-center divinline" style="margin-top:7px;">Made with &lt;3 by <a href="https://github.com/AnnaOpss/">Anna</a> and <a href="https://github.com/empijei">Rob</a>.</p>
-						<a class="divinline pull-right" href="https://www.securenetwork.it/">
+						<a class="divinline pull-right" id="secnetlogo" href="https://www.securenetwork.it/">
 							<img class="divinline pull-right" style="max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
 						</a>
+					</div>
+					<div class="text-center" id="mobilesecnetlogo">
+					<a class="divinline text-center" href="https://www.securenetwork.it/">
+						<img class="divinline pull-right" style="max-width:100pt; margin-top:7px;" src="securenetworkLogo.png">
+					</a>
 					</div>
 				</footer>
 
