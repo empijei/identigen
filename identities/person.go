@@ -71,7 +71,7 @@ func (p Person) String() string {
 	_, _ = buf.WriteString(p.lastName)
 	_, _ = buf.WriteString(", ")
 	_, _ = buf.WriteString(p.Gender())
-	_, _ = buf.WriteString(fmt.Sprintf(" %d/%d/%d ", p.birthDate.Day(), int(p.birthDate.Month()), p.birthDate.Year()))
+	_, _ = buf.WriteString(p.birthDate.Format(LocalizDate.Format()))
 	_, _ = buf.WriteString(p.town)
 	return buf.String()
 }
@@ -82,7 +82,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 	cc, err := p.CartaCredito()
 	iban, err := p.IBAN()
 	user, err := p.Username()
-	bd := fmt.Sprintf("%02d/%02d/%04d", p.birthDate.Day(), int(p.birthDate.Month()), p.birthDate.Year())
+	bd := fmt.Sprintf(p.birthDate.Format(LocalizDate.Format()))
 	//bd := fmt.Sprintf("%02d/%02d/%04d", p.BirthDate().Day, p.BirthDate().Month, p.BirthDate().Year)
 	if err != nil {
 		return

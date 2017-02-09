@@ -14,12 +14,14 @@ import (
 var minage = flag.Int("minage", 25, "The minimum age for random people generation. Must be positive and less than maxage.")
 var maxage = flag.Int("maxage", 55, "The maximum age for random people generation. Must be positive and more than minage.")
 var n = flag.Int("n", 1, "The amount of random people to generate. Must be positive.")
+var dateformat = flag.String("dateformat", "eu", "The format of the dates. Supports: 'eu','us','ja'")
 
 func main() {
 	flag.Parse()
 	if *minage >= *maxage || *n <= 0 {
 		flag.PrintDefaults()
 	}
+	identigen.LocalizDate = identigen.NewDateFormat(*dateformat)
 	people, err := identigen.RandomPeople(*minage, *maxage, *n)
 	if err != nil {
 		fmt.Println(err)
