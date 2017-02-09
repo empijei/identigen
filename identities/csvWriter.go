@@ -1,15 +1,13 @@
-package main
+package identigen
 
 import (
 	"encoding/csv"
 	"io"
-
-	identigen "github.com/empijei/identigen/identities"
 )
 
 var header = []string{"Nome", "Cognome", "Gender", "PaeseDiNascita", "Indirizzo", "NumeroDiTelefono", "DataDiNascita", "CodiceFiscale", "PartitaIva", "ComunePartitaIva", "Documento", "CartaDiCredito", "Iban", "Username"}
 
-func MarshalCSV(people []identigen.Person, out io.Writer) (err error) {
+func MarshalCSV(people []Person, out io.Writer) (err error) {
 	w := csv.NewWriter(out)
 
 	if err := w.Write(header); err != nil {

@@ -89,25 +89,27 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 	}
 
 	var wrapper = struct {
-		Nome             string
-		Cognome          string
-		Gender           string
-		PaeseDiNascita   string
-		Indirizzo        string
-		NumeroDiTelefono string
-		DataDiNascita    string
-		CodiceFiscale    string
-		PartitaIva       string
-		ComunePartitaIva string
-		Documento        string
-		CartaDiCredito   string
-		Iban             string
-		Username         string
+		Nome               string
+		Cognome            string
+		Gender             string
+		PaeseDiNascita     string
+		ProvinciaDiNascita string
+		Indirizzo          string
+		NumeroDiTelefono   string
+		DataDiNascita      string
+		CodiceFiscale      string
+		PartitaIva         string
+		ComunePartitaIva   string
+		Documento          string
+		CartaDiCredito     string
+		Iban               string
+		Username           string
 	}{
 		p.FirstName(),
 		p.LastName(),
 		p.Gender(),
-		p.BirthTown() + " " + p.birthDistrict,
+		p.BirthTown(),
+		p.birthDistrict,
 		p.Address(),
 		p.Phone(),
 		bd,
@@ -140,7 +142,8 @@ func (p Person) MarshalCSV() []string {
 		p.FirstName(),
 		p.LastName(),
 		p.Gender(),
-		p.BirthTown() + " " + p.birthDistrict,
+		p.BirthTown(),
+		p.birthDistrict,
 		p.Address(),
 		p.Phone(),
 		bd,

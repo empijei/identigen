@@ -36,7 +36,7 @@ func main() {
 		}
 		_, _ = os.Stdout.Write(b)
 	} else if *f == "csv" {
-		err := MarshalCSV(people, os.Stdout)
+		err := identigen.MarshalCSV(people, os.Stdout)
 		if err != nil {
 			fmt.Println("error:", err)
 			return
