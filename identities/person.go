@@ -121,3 +121,36 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 	}
 	return json.Marshal(wrapper)
 }
+
+func (p Person) MarshalCSV() []string {
+
+	cf, err := p.CodiceFiscale()
+	pi, county, err := p.PartitaIva()
+	cc, err := p.CartaCredito()
+	iban, err := p.IBAN()
+	user, err := p.Username()
+	bd := fmt.Sprintf(p.birthDate.Format(LocalizDate.Format()))
+	//bd := fmt.Sprintf("%02d/%02d/%04d", p.BirthDate().Day, p.BirthDate().Month, p.BirthDate().Year)
+	if err != nil {
+		return nil
+	}
+
+	//FIXME: make this dynamic
+	var tmp = []string{
+		p.FirstName(),
+		p.LastName(),
+		p.Gender(),
+		p.BirthTown() + " " + p.birthDistrict,
+		p.Address(),
+		p.Phone(),
+		bd,
+		cf,
+		pi,
+		county,
+		p.ID(),
+		cc,
+		iban,
+		user,
+	}
+	return tmp
+}
