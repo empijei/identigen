@@ -5,7 +5,7 @@
 *.o
 *.a
 *.so
-identigen
+bin
 
 # Folders
 _obj
@@ -23,6 +23,5 @@ _cgo_export.*
 
 _testmain.go
 
-*.exe
 *.test
 *.prof
