@@ -1,4 +1,4 @@
-package identigen
+package identities
 
 import (
 	"testing"

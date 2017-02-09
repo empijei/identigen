@@ -22,8 +22,8 @@ func main() {
 	if *minage >= *maxage || *n <= 0 {
 		flag.PrintDefaults()
 	}
-	identigen.LocalizDate = identigen.NewDateFormat(*dateformat)
-	people, err := identigen.RandomPeople(*minage, *maxage, *n)
+	identities.LocalizDate = identities.NewDateFormat(*dateformat)
+	people, err := identities.RandomPeople(*minage, *maxage, *n)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -36,7 +36,7 @@ func main() {
 		}
 		_, _ = os.Stdout.Write(b)
 	} else if *f == "csv" {
-		err := identigen.MarshalCSV(people, os.Stdout)
+		err := identities.MarshalCSV(people, os.Stdout)
 		if err != nil {
 			fmt.Println("error:", err)
 			return
