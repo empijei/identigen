@@ -9,3 +9,4 @@ sigla provincia di residenza
 salvare identità in locale
 csv output
 select fields
+separare provincia paese da paese

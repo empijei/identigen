@@ -30,7 +30,7 @@ func (p *Person) PartitaIva() (pi string, county string, err error) {
 func transformation(num, len int) int {
 	var digit, evenSum, oddSum int
 	for pos := 0; pos < len; pos++ {
-		digit = nthdigit(num, pos)
+		digit = nthdigit(int64(num), pos)
 		if pos%2 == 0 {
 			tmp := digit * 2
 			if tmp > 9 {
