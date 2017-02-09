@@ -2,11 +2,10 @@
 Cvv + scadenza + prefissi standard cc 
 Iban 
 patente
-username+password
-professione
 password
+professione
 sigla provincia di residenza
+separare provincia paese da paese
 salvare identità in locale
 csv output
 select fields
-separare provincia paese da paese
