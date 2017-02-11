@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"log"
 	"math/rand"
 	"time"
 )
@@ -55,7 +56,6 @@ func (p *Person) Phone() string {
 	return p.mobilePhone
 }
 func (p *Person) ID() string {
-	//TODO
 	if p.id != "" {
 		return p.id
 	}
@@ -63,7 +63,6 @@ func (p *Person) ID() string {
 	return p.id
 }
 
-//TODO test
 func (p Person) String() string {
 	var buf bytes.Buffer
 	_, _ = buf.WriteString(p.firstName)
@@ -77,83 +76,67 @@ func (p Person) String() string {
 }
 
 func (p *Person) MarshalJSON() (b []byte, err error) {
-	cf, err := p.CodiceFiscale()
-	pi, county, err := p.PartitaIva()
-	cc, err := p.CartaCredito()
-	iban, err := p.IBAN()
-	user, err := p.Username()
-	bd := fmt.Sprintf(p.birthDate.Format(LocalizDate.Format()))
-	//bd := fmt.Sprintf("%02d/%02d/%04d", p.BirthDate().Day, p.BirthDate().Month, p.BirthDate().Year)
-	if err != nil {
-		return
-	}
-
-	var wrapper = struct {
-		Nome               string
-		Cognome            string
-		Gender             string
-		PaeseDiNascita     string
-		ProvinciaDiNascita string
-		Indirizzo          string
-		NumeroDiTelefono   string
-		DataDiNascita      string
-		CodiceFiscale      string
-		PartitaIva         string
-		ComunePartitaIva   string
-		Documento          string
-		CartaDiCredito     string
-		Iban               string
-		Username           string
-	}{
-		p.FirstName(),
-		p.LastName(),
-		p.Gender(),
-		p.BirthTown(),
-		p.birthDistrict,
-		p.Address(),
-		p.Phone(),
-		bd,
-		cf,
-		pi,
-		county,
-		p.ID(),
-		cc,
-		iban,
-		user,
-	}
-	return json.Marshal(wrapper)
+	return json.Marshal(p.toMap())
 }
 
 func (p Person) MarshalCSV() []string {
+	m := p.toMap()
+	var out []string
+	for _, f := range Fields {
+		out = append(out, m[f])
+	}
+	return out
+}
 
-	cf, err := p.CodiceFiscale()
-	pi, county, err := p.PartitaIva()
-	cc, err := p.CartaCredito()
-	iban, err := p.IBAN()
-	user, err := p.Username()
-	bd := fmt.Sprintf(p.birthDate.Format(LocalizDate.Format()))
-	//bd := fmt.Sprintf("%02d/%02d/%04d", p.BirthDate().Day, p.BirthDate().Month, p.BirthDate().Year)
+func (p *Person) toMap() map[string]string {
+	toret := make(map[string]string)
+	for _, f := range Fields {
+		switch f {
+		case "Nome":
+			toret[f] = p.FirstName()
+		case "Cognome":
+			toret[f] = p.LastName()
+		case "Gender":
+			toret[f] = p.Gender()
+		case "PaeseDiNascita":
+			toret[f] = p.BirthTown()
+		case "ProvinciaDiNascita":
+			toret[f] = p.birthDistrict
+		case "Indirizzo":
+			toret[f] = p.Address()
+		case "NumeroDiTelefono":
+			toret[f] = p.Phone()
+		case "DataDiNascita":
+			toret[f] = fmt.Sprintf(p.birthDate.Format(LocalizDate.Format()))
+		case "CodiceFiscale":
+			toret[f] = logErr(p.CodiceFiscale)
+		case "PartitaIva":
+			toret[f] = logErr(func() (string, error) {
+				pi, _, err := p.PartitaIva()
+				return pi, err
+			})
+		case "ComunePartitaIva":
+			toret[f] = logErr(func() (string, error) {
+				_, county, err := p.PartitaIva()
+				return county, err
+			})
+		case "Documento":
+			toret[f] = p.ID()
+		case "CartaDiCredito":
+			toret[f] = logErr(p.CartaCredito)
+		case "Iban":
+			toret[f] = logErr(p.IBAN)
+		case "Username":
+			toret[f] = logErr(p.Username)
+		}
+	}
+	return toret
+}
+
+func logErr(f func() (string, error)) string {
+	toret, err := f()
 	if err != nil {
-		return nil
+		log.Println(err)
 	}
-
-	//FIXME: make this dynamic
-	var tmp = []string{
-		p.FirstName(),
-		p.LastName(),
-		p.Gender(),
-		p.BirthTown(),
-		p.birthDistrict,
-		p.Address(),
-		p.Phone(),
-		bd,
-		cf,
-		pi,
-		county,
-		p.ID(),
-		cc,
-		iban,
-		user,
-	}
-	return tmp
+	return toret
 }
