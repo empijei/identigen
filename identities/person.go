@@ -44,6 +44,9 @@ func (p *Person) Gender() string {
 	}
 }
 func (p *Person) Address() string {
+	if p.residence == "" {
+		p.PartitaIva()
+	}
 	return p.residence
 }
 func (p *Person) BirthDate() time.Time {
@@ -64,14 +67,14 @@ func (p *Person) ID() string {
 }
 
 func (p Person) String() string {
+	m := p.toMap()
 	var buf bytes.Buffer
-	_, _ = buf.WriteString(p.firstName)
-	_, _ = buf.WriteString(" ")
-	_, _ = buf.WriteString(p.lastName)
-	_, _ = buf.WriteString(", ")
-	_, _ = buf.WriteString(p.Gender())
-	_, _ = buf.WriteString(p.birthDate.Format(LocalizDate.Format()))
-	_, _ = buf.WriteString(p.town)
+	for _, field := range fields {
+		_, _ = buf.WriteString(field)
+		_, _ = buf.WriteString(": ")
+		_, _ = buf.WriteString(m[field])
+		_, _ = buf.WriteString(",\n")
+	}
 	return buf.String()
 }
 
