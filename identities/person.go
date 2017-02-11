@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"math/rand"
+	"regexp"
 	"time"
 )
 
@@ -68,9 +69,10 @@ func (p *Person) ID() string {
 
 func (p Person) String() string {
 	m := p.toMap()
+	re := regexp.MustCompile("([a-z])([A-Z]+)")
 	var buf bytes.Buffer
 	for _, field := range fields {
-		_, _ = buf.WriteString(field)
+		_, _ = buf.WriteString(re.ReplaceAllString(field, "$1 $2"))
 		_, _ = buf.WriteString(": ")
 		_, _ = buf.WriteString(m[field])
 		_, _ = buf.WriteString(",\n")
