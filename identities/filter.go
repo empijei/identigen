@@ -1,5 +1,7 @@
 package identities
 
+import "errors"
+
 var AllFields = []string{
 	"Nome",
 	"Cognome",
@@ -17,4 +19,18 @@ var AllFields = []string{
 	"Iban",
 	"Username",
 }
-var Fields = AllFields
+var fields = AllFields
+
+func SetFilter(newFields []string) error {
+	set := make(map[string]struct{})
+	for _, allowedField := range AllFields {
+		set[allowedField] = struct{}{}
+	}
+	for _, field := range newFields {
+		if _, ok := set[field]; !ok {
+			return errors.New("Unknown Field: " + field)
+		}
+	}
+	fields = newFields
+	return nil
+}

@@ -82,7 +82,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 func (p Person) MarshalCSV() []string {
 	m := p.toMap()
 	var out []string
-	for _, f := range Fields {
+	for _, f := range fields {
 		out = append(out, m[f])
 	}
 	return out
@@ -90,7 +90,7 @@ func (p Person) MarshalCSV() []string {
 
 func (p *Person) toMap() map[string]string {
 	toret := make(map[string]string)
-	for _, f := range Fields {
+	for _, f := range fields {
 		switch f {
 		case "Nome":
 			toret[f] = p.FirstName()

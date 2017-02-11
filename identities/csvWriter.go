@@ -5,12 +5,10 @@ import (
 	"io"
 )
 
-var header = []string{"Nome", "Cognome", "Gender", "PaeseDiNascita", "Indirizzo", "NumeroDiTelefono", "DataDiNascita", "CodiceFiscale", "PartitaIva", "ComunePartitaIva", "Documento", "CartaDiCredito", "Iban", "Username"}
-
 func MarshalCSV(people []Person, out io.Writer) (err error) {
 	w := csv.NewWriter(out)
 
-	if err := w.Write(header); err != nil {
+	if err := w.Write(fields); err != nil {
 		return err
 	}
 
