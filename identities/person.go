@@ -24,7 +24,7 @@ type Person struct {
 	fiscalCode                    string
 	partitaIva                    string
 	partitaIvaCounty              string
-	cc                            string
+	cc                            *CartaCredito
 	mobilePhone                   string
 	id                            string
 	iban                          string
@@ -116,19 +116,14 @@ func (p *Person) toMap() map[string]string {
 		case "CodiceFiscale":
 			toret[f] = logErr(p.CodiceFiscale)
 		case "PartitaIva":
-			toret[f] = logErr(func() (string, error) {
-				pi, _, err := p.PartitaIva()
-				return pi, err
-			})
+			toret[f], _ = p.PartitaIva()
 		case "ComunePartitaIva":
-			toret[f] = logErr(func() (string, error) {
-				_, county, err := p.PartitaIva()
-				return county, err
-			})
+			_, toret[f] = p.PartitaIva()
 		case "Documento":
 			toret[f] = p.ID()
 		case "CartaDiCredito":
-			toret[f] = logErr(p.CartaCredito)
+			cc := p.CartaCredito()
+			toret[f] = cc.issuer + " " + cc.n + ", " + cc.cvv + ", " + cc.expDate
 		case "Iban":
 			toret[f] = logErr(p.IBAN)
 		case "Username":

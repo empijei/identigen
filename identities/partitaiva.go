@@ -8,9 +8,9 @@ import (
 	"github.com/empijei/identigen/identities/lists"
 )
 
-func (p *Person) PartitaIva() (pi string, county string, err error) {
+func (p *Person) PartitaIva() (pi string, county string) {
 	if p.partitaIva != "" {
-		return p.partitaIva, p.partitaIvaCounty, nil
+		return p.partitaIva, p.partitaIvaCounty
 	}
 	var location int
 	//Getting a random element from the map.
