@@ -15,7 +15,10 @@ func (p *Person) IBAN() (iban string, err error) {
 	//}
 
 	//bbac := fmt.Sprintf(rand.Int()%100000, rand.Int()%100000, rand.Int()%1000000000000)
-	bbac := "0542811101000000123456"
+	// bbac := "0542811101000000123456" // cci should be X and CCI 60
+	// bbac := "1234512345123456789012" // cci should be L and CCI 02
+	// bbac := "0326848670052319093140"   // cci should be A and CCI 07
+	bbac := "0301503200000003564232"   // cci should be W and CCI 24
 	cci := checkDigit(BBAC(bbac)) + 10 //Convert letter to double digit number
 	country := 1930                    //IT converted with the (nth + 10) letter of the alphabet (I=19, T=30)
 

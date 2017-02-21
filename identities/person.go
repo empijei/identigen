@@ -28,7 +28,7 @@ type Person struct {
 	mobilePhone                   string
 	id                            string
 	iban                          string
-	username                      string
+	up                            *Credentials
 }
 
 func (p *Person) FirstName() string {
@@ -95,6 +95,7 @@ func (p Person) MarshalCSV() []string {
 
 func (p *Person) toMap() map[string]string {
 	toret := make(map[string]string)
+	up := p.Credentials()
 	for _, f := range fields {
 		switch f {
 		case "Nome":
@@ -127,7 +128,9 @@ func (p *Person) toMap() map[string]string {
 		case "Iban":
 			toret[f] = logErr(p.IBAN)
 		case "Username":
-			toret[f] = logErr(p.Username)
+			toret[f] = up.username
+		case "Password":
+			toret[f] = up.password
 		}
 	}
 	return toret

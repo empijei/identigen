@@ -18,6 +18,7 @@ var AllFields = []string{
 	"CartaDiCredito",
 	"Iban",
 	"Username",
+	"Password",
 }
 var fields = AllFields
 
