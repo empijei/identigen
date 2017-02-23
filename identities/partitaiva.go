@@ -4,26 +4,20 @@ import (
 	"fmt"
 	"math/rand"
 	"strconv"
-
-	"github.com/empijei/identigen/identities/lists"
 )
 
 func (p *Person) PartitaIva() (pi string, county string) {
 	if p.partitaIva != "" {
 		return p.partitaIva, p.partitaIvaCounty
 	}
-	var location int
-	//Getting a random element from the map.
-	for location, county = range lists.Cities {
-		break
+	if p.locationCode == 0 {
+		_ = p.Address()
 	}
-	pi = fmt.Sprintf("%07d%03d", rand.Int()%1000000, location)
+	pi = fmt.Sprintf("%07d%03d", rand.Int()%1000000, p.locationCode)
 	num, _ := strconv.Atoi(pi)
 	lastDigit := transformation(num, 10)
 	pi = fmt.Sprintf("%s%d", pi, lastDigit)
 	p.partitaIva = pi
-	p.partitaIvaCounty = county
-	p.residence = lists.Addresses[county]
 	return
 }
 

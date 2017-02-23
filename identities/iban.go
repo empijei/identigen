@@ -8,9 +8,9 @@ import (
 
 const country = "IT" // iso for italy
 
-func (p *Person) IBAN() (iban string, err error) {
+func (p *Person) IBAN() (iban string) {
 	if p.iban != "" {
-		return p.iban, nil
+		return p.iban
 	}
 
 	abi := randString([]rune("1234567890"), 5) //"05428"
@@ -73,15 +73,13 @@ func checkDigit(bban string) string {
 }
 
 func cin(abi, cab, cc string) string {
-	w_even := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28}
 	w_odd := []int{1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 12, 14, 16, 10, 22, 25, 24, 23, 27, 28, 26}
 
-	var p int
 	iban_tmp := abi + cab + cc
 	total_weight := 0
 
 	for i, elem := range iban_tmp {
-
+		var p int
 		if unicode.IsLetter(elem) {
 			p = int(elem - 65)
 		} else {
@@ -91,7 +89,7 @@ func cin(abi, cab, cc string) string {
 		if (i % 2) == 0 { // if i is even i+1 is odd
 			total_weight += w_odd[p]
 		} else {
-			total_weight += w_even[p]
+			total_weight += p
 		}
 	}
 	return string((total_weight % 26) + 65)

@@ -23,6 +23,7 @@ type Person struct {
 	residence                     string
 	fiscalCode                    string
 	partitaIva                    string
+	locationCode                  int
 	partitaIvaCounty              string
 	cc                            *CartaCredito
 	mobilePhone                   string
@@ -43,12 +44,6 @@ func (p *Person) Gender() string {
 	} else {
 		return "Uomo"
 	}
-}
-func (p *Person) Address() string {
-	if p.residence == "" {
-		p.PartitaIva()
-	}
-	return p.residence
 }
 func (p *Person) BirthDate() time.Time {
 	return p.birthDate
@@ -126,7 +121,7 @@ func (p *Person) toMap() map[string]string {
 			cc := p.CartaCredito()
 			toret[f] = cc.issuer + " " + cc.n + ", " + cc.cvv + ", " + cc.expDate
 		case "Iban":
-			toret[f] = logErr(p.IBAN)
+			toret[f] = p.IBAN()
 		case "Username":
 			toret[f] = up.username
 		case "Password":
