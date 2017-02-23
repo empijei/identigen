@@ -15,6 +15,7 @@ var AllFields = []string{
 	"PartitaIva",
 	"ComunePartitaIva",
 	"Documento",
+	"Patente",
 	"CartaDiCredito",
 	"Iban",
 	"Username",

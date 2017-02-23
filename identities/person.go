@@ -21,6 +21,7 @@ type Person struct {
 	birthDate                     time.Time
 	town, townCode, birthDistrict string
 	residence                     string
+	drvLicense                    string
 	fiscalCode                    string
 	partitaIva                    string
 	locationCode                  int
@@ -90,7 +91,6 @@ func (p Person) MarshalCSV() []string {
 
 func (p *Person) toMap() map[string]string {
 	toret := make(map[string]string)
-	up := p.Credentials()
 	for _, f := range fields {
 		switch f {
 		case "Nome":
@@ -117,15 +117,17 @@ func (p *Person) toMap() map[string]string {
 			_, toret[f] = p.PartitaIva()
 		case "Documento":
 			toret[f] = p.ID()
+		case "Patente":
+			toret[f] = p.DrivingLicense()
 		case "CartaDiCredito":
 			cc := p.CartaCredito()
 			toret[f] = cc.issuer + " " + cc.n + ", " + cc.cvv + ", " + cc.expDate
 		case "Iban":
 			toret[f] = p.IBAN()
 		case "Username":
-			toret[f] = up.username
+			toret[f] = p.Credentials().username
 		case "Password":
-			toret[f] = up.password
+			toret[f] = p.Credentials().password
 		}
 	}
 	return toret
