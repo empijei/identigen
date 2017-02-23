@@ -13,12 +13,10 @@ func (p *Person) IBAN() (iban string, err error) {
 		return p.iban, nil
 	}
 
-	abi := "05428"
-	cab := "11101"
-	cc := "000000123456"
-	// bbac := "0542811101000000123456" // cci should be X and CCI 60
-	// bbac := "0326848670052319093140"   // cci should be A and CCI 07
-	//bbac := "0301503200000003564232"   // cci should be W and CCI 24
+	abi := randString([]rune("1234567890"), 5) //"05428"
+	cab := randString([]rune("1234567890"), 5) //"11101"
+	cc := randString([]rune("1234567890"), 12) //"000000123456"
+
 	iban = GenerateIban(abi, cab, cc)
 	p.iban = iban
 	return
