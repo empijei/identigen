@@ -40,19 +40,8 @@ var cfTests = []struct {
 
 func TestCodiceFiscale(t *testing.T) {
 	for _, tc := range cfTests {
-		if cf, _ := tc.input.CodiceFiscale(); cf != tc.expected {
+		if cf := tc.input.CodiceFiscale(); cf != tc.expected {
 			t.Fatalf("Failed test with %v\n, calculated: %v, expected: %v", tc.input, cf, tc.expected)
 		}
 	}
 }
-
-func TestCodiceFiscaleErr(t *testing.T) {
-	var person Person
-	_, err := person.CodiceFiscale()
-	if err != nil {
-		return
-	}
-	t.Fatal("Expected error")
-}
-
-//TODO test with ÀÈÒÌÉ AND with less data than necessary

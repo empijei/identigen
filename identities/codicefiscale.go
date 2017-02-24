@@ -1,22 +1,13 @@
 package identities
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
-	"time"
 )
 
-//Returns a valid fiscal code related to the person's name and birth date.
-func (p *Person) CodiceFiscale() (cf string, err error) {
+func (p *Person) CodiceFiscale() (cf string) {
 	if p.fiscalCode != "" {
-		return p.fiscalCode, nil
-	}
-
-	var startTime time.Time
-	if p.firstName == "" || p.lastName == "" || p.birthDate == startTime || p.town == "" {
-		err = fmt.Errorf("Missing fields in person")
-		return
+		return p.fiscalCode
 	}
 
 	getVowels := func(input string) (output string) {

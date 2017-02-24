@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"log"
 	"math/rand"
 	"regexp"
 	"time"
@@ -14,6 +13,7 @@ func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
+//Represents a person object. It must be initialized by the generator.
 type Person struct {
 	//TODO protect these fields, use accessor and cache data
 	firstName, lastName           string
@@ -33,6 +33,7 @@ type Person struct {
 	up                            *Credentials
 }
 
+//Returns the first name of the person
 func (p *Person) FirstName() string {
 	return p.firstName
 }
@@ -92,51 +93,7 @@ func (p Person) MarshalCSV() []string {
 func (p *Person) toMap() map[string]string {
 	toret := make(map[string]string)
 	for _, f := range fields {
-		switch f {
-		case "Nome":
-			toret[f] = p.FirstName()
-		case "Cognome":
-			toret[f] = p.LastName()
-		case "Gender":
-			toret[f] = p.Gender()
-		case "PaeseDiNascita":
-			toret[f] = p.BirthTown()
-		case "ProvinciaDiNascita":
-			toret[f] = p.birthDistrict
-		case "Indirizzo":
-			toret[f] = p.Address()
-		case "NumeroDiTelefono":
-			toret[f] = p.Phone()
-		case "DataDiNascita":
-			toret[f] = fmt.Sprintf(p.birthDate.Format(LocalizDate.Format()))
-		case "CodiceFiscale":
-			toret[f] = logErr(p.CodiceFiscale)
-		case "PartitaIva":
-			toret[f], _ = p.PartitaIva()
-		case "ComunePartitaIva":
-			_, toret[f] = p.PartitaIva()
-		case "Documento":
-			toret[f] = p.ID()
-		case "Patente":
-			toret[f] = p.DrivingLicense()
-		case "CartaDiCredito":
-			cc := p.CartaCredito()
-			toret[f] = cc.issuer + " " + cc.n + ", " + cc.cvv + ", " + cc.expDate
-		case "Iban":
-			toret[f] = p.IBAN()
-		case "Username":
-			toret[f] = p.Credentials().username
-		case "Password":
-			toret[f] = p.Credentials().password
-		}
-	}
-	return toret
-}
-
-func logErr(f func() (string, error)) string {
-	toret, err := f()
-	if err != nil {
-		log.Println(err)
+		toret[f] = printers[f](p)
 	}
 	return toret
 }
