@@ -93,7 +93,7 @@ func (p Person) MarshalCSV() []string {
 func (p *Person) toMap() map[string]string {
 	toret := make(map[string]string)
 	for _, f := range fields {
-		toret[f] = printers[f](p)
+		toret[f] = printerMap[f](p)
 	}
 	return toret
 }
