@@ -8,6 +8,7 @@ import (
 
 const country = "IT" // iso for italy
 
+//Returns an Italian valid IBAN with random bank details.
 func (p *Person) IBAN() (iban string) {
 	if p.iban != "" {
 		return p.iban
@@ -17,21 +18,16 @@ func (p *Person) IBAN() (iban string) {
 	cab := randString([]rune("1234567890"), 5) //"11101"
 	cc := randString([]rune("1234567890"), 12) //"000000123456"
 
-	iban = GenerateIban(abi, cab, cc)
+	cin := cin(abi, cab, cc)
+	bban := cin + abi + cab + cc
+	cd := checkDigit(bban)
+	iban = country + cd + cin + abi + cab + cc
+
 	p.iban = iban
 	return
 }
 
-func GenerateIban(abi, cab, cc string) string { // Expecting ABI, CAB and cc to be padded with zeros
-	cin := cin(abi, cab, cc)
-	bban := cin + abi + cab + cc
-	cd := checkDigit(bban)
-	iban := country + cd + cin + abi + cab + cc
-
-	return iban
-
-}
-
+//Returns the EU standard check digits for the IBAN.
 func checkDigit(bban string) string {
 	iban_tmp := bban + "IT00"
 	var ret string
@@ -51,13 +47,11 @@ func checkDigit(bban string) string {
 		}
 	}
 
-	// Idk what i'm doing
 	bf_number := new(big.Int)
 	mod := new(big.Int)
 	result := new(big.Int)
 	div := big.NewInt(97)
 	sub := big.NewInt(98)
-	// SO MANY BIGINT
 
 	bf_number.SetString(aux, 10)
 
@@ -72,6 +66,7 @@ func checkDigit(bban string) string {
 	return ret
 }
 
+//Returns custom Italian check digit for the IBAN.
 func cin(abi, cab, cc string) string {
 	w_odd := []int{1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 12, 14, 16, 10, 22, 25, 24, 23, 27, 28, 26}
 

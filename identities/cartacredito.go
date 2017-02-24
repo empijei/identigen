@@ -35,6 +35,7 @@ var ccs = map[string]ccChecker{
 	},
 }
 
+//Returns a valid CartaCredito object with credit card number, cvv, issuer and expiration date.
 func (p *Person) CartaCredito() *CartaCredito {
 	if p.cc != nil {
 		return p.cc
@@ -63,6 +64,7 @@ func (p *Person) CartaCredito() *CartaCredito {
 	return cc
 }
 
+//Calculate the check digit of a credit card number
 func transform(num int64) int {
 	cclen := fmt.Sprintf("%d", num)
 	summed := 0

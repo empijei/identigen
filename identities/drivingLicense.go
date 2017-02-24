@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+//Returns a Italian driving license number
 func (p *Person) DrivingLicense() string {
 	if p.drvLicense != "" {
 		return p.drvLicense

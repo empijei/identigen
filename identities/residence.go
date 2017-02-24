@@ -4,6 +4,7 @@ import (
 	"github.com/empijei/identigen/identities/lists"
 )
 
+//Returns a person's address and sets the location for the partita iva field.
 func (p *Person) Address() string {
 	var location int
 	var county string

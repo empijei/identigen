@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+//Returns a valid fiscal code related to the person's name and birth date.
 func (p *Person) CodiceFiscale() (cf string, err error) {
 	if p.fiscalCode != "" {
 		return p.fiscalCode, nil
