@@ -13,10 +13,10 @@ var printers = []printer{
 	{"Cognome", (*Person).LastName},
 	{"Gender", (*Person).Gender},
 	{"PaeseDiNascita", (*Person).BirthTown},
-	{"ProvinciaDiNascita", func(p *Person) string { return p.birthDistrict }},
+	{"ProvinciaDiNascita", (*Person).BirthDistrict},
 	{"Indirizzo", (*Person).Address},
 	{"NumeroDiTelefono", (*Person).Phone},
-	{"DataDiNascita", func(p *Person) string { return p.birthDate.Format(LocalizDate.Format()) }},
+	{"DataDiNascita", (*Person).BirthDate},
 	{"CodiceFiscale", (*Person).CodiceFiscale},
 	{"PartitaIva", func(p *Person) string {
 		pi, _ := p.PartitaIva()

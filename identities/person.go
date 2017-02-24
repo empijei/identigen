@@ -47,11 +47,14 @@ func (p *Person) Gender() string {
 		return "Uomo"
 	}
 }
-func (p *Person) BirthDate() time.Time {
-	return p.birthDate
+func (p *Person) BirthDate() string {
+	return p.birthDate.Format(LocalizDate.Format())
 }
 func (p *Person) BirthTown() string {
 	return p.town
+}
+func (p *Person) BirthDistrict() string {
+	return p.birthDistrict
 }
 func (p *Person) Phone() string {
 	return p.mobilePhone
