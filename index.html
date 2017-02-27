@@ -262,34 +262,34 @@ ga('send', 'pageview');
 				</footer>
 
 				<script>
-					function spacer(key){
-					return key.replace(/([A-Z])/g, ' $1').trim()
-					}
 var hr = document.getElementById("campi")
 var jr = document.getElementById("json")
+var xhr = new XMLHttpRequest();
 function regen(){
-			var xhr = new XMLHttpRequest();
 			xhr.onreadystatechange = function() {
 						if (xhr.readyState == XMLHttpRequest.DONE) {
-									identity=JSON.parse(xhr.responseText)[0];
+									var tmp= xhr.responseText.split("]");
+									var jsn= tmp[0]+"]";
+									var humanReadable=tmp[1];
+									identity=JSON.parse(jsn)[0];
 									jr.innerHTML= "<pre>"+JSON.stringify(identity, null, 2) +"</pre>";
 									var buf = "";
-									for (var key in identity) {
-									if (identity.hasOwnProperty(key)) {
-									buf += '<label class="control-label col-sm-5" >' +
-												spacer(key) +
-												'</label><div class="col-sm-7"><p class="form-control-static">' +
-												identity[key] +
-												'</p></div>'
+									humanReadable = humanReadable.split("\n");
+									for (var i=1;i<humanReadable.length-2;i++){
+												var line = humanReadable[i].split(":");
+												buf += '<label class="control-label col-sm-5" >' +
+												line[0] +
+												':</label><div class="col-sm-7"><p class="form-control-static">' +
+												line[1]+
+												'</p></div>';
 									}
-									}
-									hr.innerHTML = buf
-									}
-									}
-									xhr.open('GET', 'https://identigen.herokuapp.com', true);
-									xhr.send(null);
-									}
-									regen()
-						</script>
-			</body>
+									hr.innerHTML = buf;
+						}
+			}
+			xhr.open('GET', 'https://identigen.herokuapp.com?format=json,human', true);
+			xhr.send(null);
+}
+regen();
+</script>
+</body>
 </html>
