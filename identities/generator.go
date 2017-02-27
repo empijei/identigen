@@ -13,12 +13,11 @@ import (
 	"github.com/empijei/identigen/identities/lists"
 )
 
-func MainModule(args map[string]interface{}, out io.WriteCloser) {
+func MainModule(args map[string]interface{}, out io.Writer) {
 	defer func() {
 		if r := recover(); r != nil {
 			fmt.Fprintln(out, "Error occurred: ", r)
 		}
-		_ = out.Close()
 	}()
 	minage := args["minage"].(int)
 	maxage := args["maxage"].(int)
