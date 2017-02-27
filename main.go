@@ -1,11 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
-	"fmt"
 	"os"
-	"strings"
 
 	"github.com/empijei/identigen/identities"
 )
@@ -19,44 +16,13 @@ var filter = flag.String("fields", "all", "The comma separated list of fields to
 
 func main() {
 	flag.Parse()
-	if *minage >= *maxage || *n <= 0 {
-		flag.PrintDefaults()
-	}
-	if *filter != "all" {
-		tmp := strings.Split(*filter, ",")
-		err := identities.SetFilter(tmp)
-		if err != nil {
-			fmt.Println(err)
-			flag.PrintDefaults()
-		}
-	}
+	args := make(map[string]interface{})
+	args["minage"] = *minage
+	args["maxage"] = *maxage
+	args["n"] = *n
+	args["dateformat"] = *dateformat
+	args["format"] = *format
+	args["filter"] = *filter
 
-	identities.LocalizDate = identities.NewDateFormat(*dateformat)
-	people, err := identities.RandomPeople(*minage, *maxage, *n)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	formats := strings.Split(*format, ",")
-	for _, f := range formats {
-		switch f {
-		case "json":
-			b, err := json.MarshalIndent(&people, "", "\t")
-			if err != nil {
-				fmt.Println("error:", err)
-				return
-			}
-			_, _ = os.Stdout.Write(b)
-		case "csv":
-			err := identities.MarshalCSV(people, os.Stdout)
-			if err != nil {
-				fmt.Println("error:", err)
-				return
-			}
-		default:
-			for _, person := range people {
-				fmt.Println(person)
-			}
-		}
-	}
+	identities.MainModule(args, os.Stdout)
 }
