@@ -44,7 +44,17 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 		fmt.Println(err)
 		return
 	}
-	formats := strings.Split(format, ",")
+	tmpArray := strings.Split(format, ",")
+
+	//I don't want to have duplicate formats, this is me creating an array with unique items
+	tmpMap := make(map[string]struct{})
+	var formats []string
+	for _, f := range tmpArray {
+		if _, ok := tmpMap[f]; !ok {
+			formats = append(formats, f)
+			tmpMap[f] = struct{}{}
+		}
+	}
 	for _, f := range formats {
 		switch f {
 		case "json":
@@ -54,15 +64,17 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 				return
 			}
 			_, _ = out.Write(b)
+			fmt.Fprintln(out)
 		case "csv":
 			err := MarshalCSV(people, out)
 			if err != nil {
 				fmt.Println("error:", err)
 				return
 			}
+			fmt.Fprintln(out)
 		default:
 			for _, person := range people {
-				fmt.Println(person)
+				fmt.Fprintln(out, person)
 			}
 		}
 	}
