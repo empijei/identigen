@@ -198,7 +198,7 @@ ga('send', 'pageview');
 								<li class="active" href="#home"><a href="#">Home</a></li>
 								<li><a href="#docs">API</a></li>
 								<!--TODO aggiungere un link interno a "Cos'è" con una rapida descrizione come è ora-->
-								<li><a href="#exec">ESEGUIBILI</a></li>
+								<li><a href="#exec">Eseguibili</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="https://godoc.org/github.com/empijei/identigen/identities"> Documentazione </a></li>
@@ -242,15 +242,15 @@ ga('send', 'pageview');
 						<p>È possibile utilizzare direttamente le API esposte all'indirizzo <mark> identigen.herokuapp.com</mark>.<br>
 						I parametri che possono essere utilizzati sono i seguenti:</p>
 						<dl class="dl-horizontal">
-							<dt>dateformat </dt> <dd>Il formato delle date. Supporta: 'eu','us','ja' (default "eu") <dd>
+							<dt>dt_fmt </dt> <dd>Il formato delle date. Supporta: 'eu','us','ja' (default "eu") <dd>
 							<dt>fields </dt> <dd>I campi da stampare, devono essere separati da una virgola. Usare 'all' per stamparli tutti (default "all") <dd>
 							<dt>format </dt> <dd>Il formato dell'output desiderato. Supports: 'json', 'csv', 'human' (default "human") <dd>
 							<dt>maxage </dt> <dd>L'età massima dell'identità da generare. Deve essere positiva e maggiore di minage. (default 55)<dd>
 							<dt>minage </dt> <dd>L'età minima dell'identità da generare. Deve essere positiva e minore di maxage. (default 25)<dd>
-							<dt>n </dt> <dd>Il numero di identità da generare. Deve essere positivo e minore di 15. (default 1)<dd>
+							<dt>number </dt> <dd>Il numero di identità da generare. Deve essere positivo e minore di 15. (default 1)<dd>
 						</dl>
-						<p> Per esempio il seguente link restituisce una lista di due identità con nome, cognome in formato 'human': <br>
-							<a href="https://identigen.herokuapp.com/?format=human&fields=nome,cognome&n=2">identigen.herokuapp.com/?format=human&fields=nome,cognome,datadinascita&n=2</a>
+						<p> Per esempio il seguente link restituisce una lista di tre identità con nome, cognome in formato 'human': <br>
+							<a href="https://identigen.herokuapp.com/?format=human&fields=Nome,Cognome&number=3">https://identigen.herokuapp.com/?format=human&fields=Nome,Cognome&number=3</a>
 						</p>
 					</div> <!-- docs -->
 					<div id="exec" class="container-fluid">
