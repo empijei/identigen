@@ -50,7 +50,7 @@
 			}
 
 			#home {padding-top:50px;}
-			#docs{padding-bottom:70px;}
+			#exec{padding-bottom:70px;}
 			@media (max-width: 767px) {
 				#json{
 					display: none;
@@ -196,14 +196,11 @@ ga('send', 'pageview');
 						<div class="collapse navbar-collapse" id="navigationbar">
 							<ul class="nav navbar-nav">
 								<li class="active" href="#home"><a href="#">Home</a></li>
-								<!--TODO linkare alla godoc (trovar eil modo di generarla), non teniamolo qui-->
 								<li><a href="#docs">API</a></li>
 								<!--TODO aggiungere un link interno a "Cos'è" con una rapida descrizione come è ora-->
+								<li><a href="#exec">ESEGUIBILI</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
-							<!--Bisogna trovare un posto dove mettere la documentazione delle API, io piuttosto metterei questa
-								nella pagina piuttosto che la doc del codice che metterei esterna, quindi scambierei il menù API (che resterebbe interno)
-								con quello Documentazione, che diventerebbe esterno alla pagina.-->
 								<li><a href="https://godoc.org/github.com/empijei/identigen/identities"> Documentazione </a></li>
 								<li><a href="https://github.com/empijei/identigen"> Codice sorgente </a></li>
 							</ul>
@@ -216,8 +213,8 @@ ga('send', 'pageview');
 					<div id="home" class="container-fluid">
 						<h1>IDENTIGEN</h1>
 						<p>Identigen è un programma che genera dati di un'identità fittizia completamente casuali.</p>
-						<p>Tali dati non sono correlati tra loro e passano tutti i controlli di forma.</p>
-						<p>Il codice che genera queste identità si può trovare sulla pagina <a href="https://github.com/empijei/identigen">Github</a>.</p>
+						<p>Tali dati <b>non</b> sono correlati tra loro e passano tutti i controlli di forma.</p>
+						<p class="bg-warning text-center lead"> I dati di seguito generati sono interamente fittizi. <p>
 						<ul class="nav nav-tabs nav-justified">
 							<li class="active"><a id="testotab" data-toggle="tab" href="#testo">Testo</a></li>
 							<li><a data-toggle="tab" href="#json" id="jsontab">JSON</a></li>
@@ -241,9 +238,25 @@ ga('send', 'pageview');
 					</div>
 
 					<div id="docs" class="container-fluid">
-						<p> Esiste un programma CLI installabile con <code>go get github.com/empijei/identigen</code> che accetta dei parametri sui limiti di età della persona generata e sul numero di identià richieste.</p>
-						<p> TODO sono anche disponibili delle API web con gli stessi parametri, circa.</p>
+						<h3> API</h3>
+						<p>È possibile utilizzare direttamente le API esposte all'indirizzo <mark> identigen.herokuapp.com</mark>.<br>
+						I parametri che possono essere utilizzati sono i seguenti:</p>
+						<dl class="dl-horizontal">
+							<dt>dateformat </dt> <dd>Il formato delle date. Supporta: 'eu','us','ja' (default "eu") <dd>
+							<dt>fields </dt> <dd>I campi da stampare, devono essere separati da una virgola. Usare 'all' per stamparli tutti (default "all") <dd>
+							<dt>format </dt> <dd>Il formato dell'output desiderato. Supports: 'json', 'csv', 'human' (default "human") <dd>
+							<dt>maxage </dt> <dd>L'età massima dell'identità da generare. Deve essere positiva e maggiore di minage. (default 55)<dd>
+							<dt>minage </dt> <dd>L'età minima dell'identità da generare. Deve essere positiva e minore di maxage. (default 25)<dd>
+							<dt>n </dt> <dd>Il numero di identità da generare. Deve essere positivo e minore di 15. (default 1)<dd>
+						</dl>
+						<p> Per esempio il seguente link restituisce una lista di due identità con nome, cognome in formato 'human': <br>
+							<a href="https://identigen.herokuapp.com/?format=human&fields=nome,cognome&n=2">identigen.herokuapp.com/?format=human&fields=nome,cognome,datadinascita&n=2</a>
+						</p>
 					</div> <!-- docs -->
+					<div id="exec" class="container-fluid">
+						<h3> ESEGUIBILI</h3>
+						<p>Gli eseguibili per poter utilizzare Identigen senza una connessione ad internet sono presenti nella sezione <a href="https://github.com/empijei/identigen/releases"><i>Release</i></a>.</p>
+					</div> <!-- exec -->
 				</div> <!-- container -->
 
 				<footer class="container-fluid text-center navbar-static-bottom">
