@@ -30,11 +30,11 @@ var printers = []printer{
 	{"Patente", (*Person).DrivingLicense},
 	{"CartaDiCredito", func(p *Person) string {
 		cc := p.CartaCredito()
-		return cc.issuer + " " + cc.n + ", " + cc.cvv + ", " + cc.expDate
+		return cc.Issuer + " " + cc.Number + ", " + cc.Cvv + ", " + cc.ExpDate
 	}},
 	{"Iban", (*Person).IBAN},
-	{"Username", func(p *Person) string { return p.Credentials().username }},
-	{"Password", func(p *Person) string { return p.Credentials().password }},
+	{"Username", func(p *Person) string { return p.Credentials().Username }},
+	{"Password", func(p *Person) string { return p.Credentials().Password }},
 }
 var AllFields []string
 var printerMap map[string]func(*Person) string

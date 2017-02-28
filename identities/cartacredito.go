@@ -9,10 +9,10 @@ import (
 )
 
 type CartaCredito struct {
-	n       string
-	cvv     string
-	issuer  string
-	expDate string
+	Number  string
+	Cvv     string
+	Issuer  string
+	ExpDate string
 }
 
 type ccChecker func(string) bool
@@ -43,23 +43,23 @@ func (p *Person) CartaCredito() *CartaCredito {
 	num := rand.Int63n(10000000000)
 	lastDigit := transform(num)
 	cc := &CartaCredito{
-		n: fmt.Sprintf("%d%d", num, lastDigit),
+		Number: fmt.Sprintf("%d%d", num, lastDigit),
 	}
 	for iss, chk := range ccs {
-		if chk(cc.n) {
-			cc.issuer = iss
+		if chk(cc.Number) {
+			cc.Issuer = iss
 			break
 		}
 	}
-	if cc.issuer == "" {
-		cc.issuer = "Other"
+	if cc.Issuer == "" {
+		cc.Issuer = "Other"
 	}
 	//This generates a 4 chars long CVV for Amex, 3 in all other cases
-	cc.cvv = randString([]rune("0123456789"),
-		map[bool]int{true: 4, false: 3}[cc.issuer == "American Express"])
+	cc.Cvv = randString([]rune("0123456789"),
+		map[bool]int{true: 4, false: 3}[cc.Issuer == "American Express"])
 
 	//CC expires in 6 years, 6 months 6 days from now
-	cc.expDate = time.Now().AddDate(6, 6, 6).Format("01/06")
+	cc.ExpDate = time.Now().AddDate(6, 6, 6).Format("01/06")
 	p.cc = cc
 	return cc
 }
