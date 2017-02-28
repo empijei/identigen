@@ -1,7 +1,7 @@
 # Identigen
 This software is meant to create fake Italian identities to provide test accounts.
 
-We provide binaries, but it is strongly suggested to obtain this package via 
+We provide [binaries](https://github.com/empijei/identigen/releases), but it is strongly suggested to obtain this package via 
 ```
 go get github.com/empijei/identigen
 ```
