@@ -3,7 +3,6 @@ package identities
 import (
 	"encoding/json"
 	"errors"
-	"flag"
 	"fmt"
 	"io"
 	"math/rand"
@@ -19,30 +18,28 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 			fmt.Fprintln(out, "Error occurred: ", r)
 		}
 	}()
+	dt_fmt := args["dt_fmt"].(string)
 	minage := args["minage"].(int)
 	maxage := args["maxage"].(int)
-	n := args["n"].(int)
-	dateformat := args["dateformat"].(string)
+	number := args["number"].(int)
 	format := args["format"].(string)
-	filter := args["filter"].(string)
+	fields := args["fields"].(string)
 
-	if minage >= maxage || n <= 0 {
-		flag.PrintDefaults()
+	if minage >= maxage || number <= 0 {
+		panic("'minage' should be less than or equal to 'maxage'")
 	}
-	if filter != "all" {
-		tmp := strings.Split(filter, ",")
+	if fields != "all" {
+		tmp := strings.Split(fields, ",")
 		err := SetFilter(tmp)
 		if err != nil {
-			fmt.Println(err)
-			flag.PrintDefaults()
+			panic(err)
 		}
 	}
 
-	LocalizDate = NewDateFormat(dateformat)
-	people, err := RandomPeople(minage, maxage, n)
+	LocalizDate = NewDateFormat(dt_fmt)
+	people, err := RandomPeople(minage, maxage, number)
 	if err != nil {
-		fmt.Println(err)
-		return
+		panic(err)
 	}
 	tmpArray := strings.Split(format, ",")
 
@@ -60,16 +57,14 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 		case "json":
 			b, err := json.MarshalIndent(&people, "", "\t")
 			if err != nil {
-				fmt.Println("error:", err)
-				return
+				panic(err)
 			}
 			_, _ = out.Write(b)
 			fmt.Fprintln(out)
 		case "csv":
 			err := MarshalCSV(people, out)
 			if err != nil {
-				fmt.Println("error:", err)
-				return
+				panic(err)
 			}
 			fmt.Fprintln(out)
 		default:
