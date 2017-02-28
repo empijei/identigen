@@ -11,8 +11,8 @@ var minage = flag.Int("minage", 25, "The minimum age for random people generatio
 var maxage = flag.Int("maxage", 55, "The maximum age for random people generation. Must be positive and more than minage.")
 var number = flag.Int("number", 1, "The amount of random people to generate. Must be positive.")
 var dt_fmt = flag.String("dt_fmt", "eu", "The format of the dates. Supports: 'eu','us','ja'")
-var format = flag.String("format", "human", "The comma separated list of formats for the output. Supports: 'json', 'csv', 'human'")
-var fields = flag.String("fields", "all", "The comma separated list of fields to print. Use 'all' to print all of them")
+var format = flag.String("format", "human", "The comma separated list of formats for the output. Supports: 'json', 'csv', 'human'.")
+var fields = flag.String("fields", "all", "The comma separated case-sensitive list of fields to print. Use 'all' to print all of them.")
 
 func main() {
 	flag.Parse()
