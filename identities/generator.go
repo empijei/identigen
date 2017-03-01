@@ -25,8 +25,8 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 	format := args["format"].(string)
 	fields := args["fields"].(string)
 
-	if minage >= maxage || number <= 0 {
-		panic("'minage' should be less than or equal to 'maxage'")
+	if number <= 0 {
+		panic("'number' should be positive")
 	}
 	if fields != "all" {
 		tmp := strings.Split(fields, ",")
