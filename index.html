@@ -4,6 +4,7 @@
 		<title>Identigen</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -45,6 +46,13 @@
 						display:inline-block;
 			}
 
+			dd {
+				font-family: 'Anonymous Pro', monospace;
+			}
+
+			dt {
+				font-family: 'Anonymous Pro', monospace, bold;
+			}
 			#mobilesecnetlogo{
 				display: none;
 			}
@@ -243,11 +251,11 @@ ga('send', 'pageview');
 						I parametri che possono essere utilizzati sono i seguenti:</p>
 						<dl class="dl-horizontal">
 							<dt>dt_fmt </dt> <dd>Il formato delle date. Supporta: 'eu','us','ja' (default "eu") <dd>
-							<dt>fields </dt> <dd>I campi da stampare, devono essere separati da una virgola. Usare 'all' per stamparli tutti (default "all") <dd>
 							<dt>format </dt> <dd>Il formato dell'output desiderato. Supports: 'json', 'csv', 'human' (default "human") <dd>
 							<dt>maxage </dt> <dd>L'età massima dell'identità da generare. Deve essere positiva e maggiore di minage. (default 55)<dd>
 							<dt>minage </dt> <dd>L'età minima dell'identità da generare. Deve essere positiva e minore di maxage. (default 25)<dd>
 							<dt>number </dt> <dd>Il numero di identità da generare. Deve essere positivo e minore di 15. (default 1)<dd>
+							<dt>fields </dt> <dd>I campi da stampare, devono essere separati da una virgola. Usare 'all' per stamparli tutti (default "all"). I possibili valori sono: Nome Cognome Gender PaeseDiNascita ProvinciaDiNascita Indirizzo NumeroDiTelefono DataDiNascita CodiceFiscale PartitaIva ComunePartitaIva Documento Patente CartaDiCredito Iban Username Password <dd>
 						</dl>
 						<p> Per esempio il seguente link restituisce una lista di tre identità con nome, cognome in formato 'human': <br>
 							<a href="https://identigen.herokuapp.com/?format=human&fields=Nome,Cognome&number=3">https://identigen.herokuapp.com/?format=human&fields=Nome,Cognome&number=3</a>
