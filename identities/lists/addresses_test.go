@@ -5,8 +5,8 @@ import "testing"
 func TestAddresses(t *testing.T) {
 	cities := make(map[string]struct{}, len(Cities))
 	for _, city := range Cities {
-		cities[city] = struct{}{}
-		_, ok := Addresses[city]
+		cities[city.Name] = struct{}{}
+		_, ok := Addresses[city.Name]
 		if !ok {
 			t.Errorf("%s doesn't have an address!", city)
 		}
