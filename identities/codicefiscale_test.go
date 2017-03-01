@@ -41,7 +41,7 @@ var cfTests = []struct {
 func TestCodiceFiscale(t *testing.T) {
 	for _, tc := range cfTests {
 		if cf := tc.input.CodiceFiscale(); cf != tc.expected {
-			t.Fatalf("Failed test with %v\n, calculated: %v, expected: %v", tc.input, cf, tc.expected)
+			t.Errorf("Failed test with %v\n, calculated: %v, expected: %v", tc.input, cf, tc.expected)
 		}
 	}
 }
