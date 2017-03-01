@@ -39,7 +39,7 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 		panic("'number' should be positive")
 	}
 	if fields != "all" {
-		tmp := strings.Split(fields, ",")
+		tmp := uniqSlice(strings.Split(fields, ","))
 		err := SetFilter(tmp)
 		if err != nil {
 			panic(err)
@@ -51,17 +51,8 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 	if err != nil {
 		panic(err)
 	}
-	tmpArray := strings.Split(format, ",")
 
-	//I don't want to have duplicate formats, this is me creating an array with unique items
-	tmpMap := make(map[string]struct{})
-	var formats []string
-	for _, f := range tmpArray {
-		if _, ok := tmpMap[f]; !ok {
-			formats = append(formats, f)
-			tmpMap[f] = struct{}{}
-		}
-	}
+	formats := uniqSlice(strings.Split(format, ","))
 	for _, f := range formats {
 		switch f {
 		case "json":
@@ -83,6 +74,18 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 			}
 		}
 	}
+}
+
+func uniqSlice(in []string) []string {
+	out := make([]string, 0, len(in))
+	supportMap := make(map[string]struct{})
+	for _, f := range in {
+		if _, ok := supportMap[f]; !ok {
+			out = append(out, f)
+			supportMap[f] = struct{}{}
+		}
+	}
+	return out
 }
 
 //TODO test
