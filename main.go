@@ -9,7 +9,7 @@ import (
 )
 
 var minage = flag.Int("minage", 25, "The minimum age for random people generation. Must be positive and less than maxage.")
-var maxage = flag.Int("maxage", 55, "The maximum age for random people generation. Must be positive and more than minage.")
+var maxage = flag.Int("maxage", 55, "The maximum age for random people generation. Must be positive, less or equal than 200 and more than minage.")
 var number = flag.Int("number", 1, "The amount of random people to generate. Must be positive.")
 var dt_fmt = flag.String("dt_fmt", "eu", "The format of the dates. Supports: 'eu','us','ja'")
 var format = flag.String("format", "human", "The comma separated list of formats for the output. Supports: 'json', 'csv', 'human'.")

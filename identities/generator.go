@@ -18,9 +18,19 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 			fmt.Fprintln(out, "Error occurred: ", r)
 		}
 	}()
+	clamp := func(val, min, max int) int {
+		if val < min {
+			return min
+		}
+		if val > max {
+			return max
+		}
+		return val
+	}
+
 	dt_fmt := args["dt_fmt"].(string)
-	minage := args["minage"].(int)
-	maxage := args["maxage"].(int)
+	minage := clamp(args["minage"].(int), 1, 200)
+	maxage := clamp(args["maxage"].(int), 1, 200)
 	number := args["number"].(int)
 	format := args["format"].(string)
 	fields := args["fields"].(string)
@@ -78,7 +88,7 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 //TODO test
 func RandomPeople(minage, maxage int, count int) (people []Person, err error) {
 	if minage > maxage {
-		return nil, errors.New("maxage should not be less than minage")
+		return nil, errors.New(fmt.Sprintf("maxage (%d) should not be less than minage(%d)", maxage, minage))
 	}
 	for count > 0 {
 		person := Person{}
