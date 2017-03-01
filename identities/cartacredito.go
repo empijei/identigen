@@ -109,7 +109,7 @@ func luhn(num int64) int {
 		multiplied = dig
 		if i%2 == 0 {
 			multiplied = dig * 2
-			if multiplied > 10 {
+			if multiplied >= 10 {
 				multiplied = multiplied - 9
 			}
 		}
