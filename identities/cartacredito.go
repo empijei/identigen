@@ -35,15 +35,21 @@ var ccs = map[string]ccChecker{
 	},
 }
 
+func ccformatter(cc string) string {
+	var toret string
+	toret = strings.Join([]string{cc[:4], cc[4:8], cc[8:12], cc[12:16]}, "-")
+	return toret
+}
+
 //Returns a valid CartaCredito object with credit card number, cvv, issuer and expiration date.
 func (p *Person) CartaCredito() *CartaCredito {
 	if p.cc != nil {
 		return p.cc
 	}
-	num := rand.Int63n(10000000000)
+	num := rand.Int63n(10e15)
 	lastDigit := transform(num)
 	cc := &CartaCredito{
-		Number: fmt.Sprintf("%d%d", num, lastDigit),
+		Number: fmt.Sprintf("%015d%d", num, lastDigit),
 	}
 	for iss, chk := range ccs {
 		if chk(cc.Number) {
@@ -54,6 +60,7 @@ func (p *Person) CartaCredito() *CartaCredito {
 	if cc.Issuer == "" {
 		cc.Issuer = "Other"
 	}
+	cc.Number = ccformatter(cc.Number)
 	//This generates a 4 chars long CVV for Amex, 3 in all other cases
 	cc.Cvv = randString([]rune("0123456789"),
 		map[bool]int{true: 4, false: 3}[cc.Issuer == "American Express"])
