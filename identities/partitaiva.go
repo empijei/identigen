@@ -7,12 +7,14 @@ import (
 )
 
 func (p *Person) PartitaIva() (pi string, county string) {
+	//Need to know where you are to compute your P.I.
+	if p.locationCode == 0 || p.partitaIvaCounty == "" {
+		_ = p.Address()
+	}
 	if p.partitaIva != "" {
 		return p.partitaIva, p.partitaIvaCounty
 	}
-	if p.locationCode == 0 {
-		_ = p.Address()
-	}
+	county = p.partitaIvaCounty
 	pi = fmt.Sprintf("%07d%03d", rand.Int()%1000000, p.locationCode)
 	num, _ := strconv.Atoi(pi)
 	lastDigit := transformation(num, 10)

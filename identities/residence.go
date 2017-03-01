@@ -8,7 +8,7 @@ import (
 func (p *Person) Address() string {
 	var location int
 	var county string
-	//Getting a random element from the map.
+	//FIXME this is not really random
 	for location, county = range lists.Cities {
 		break
 	}

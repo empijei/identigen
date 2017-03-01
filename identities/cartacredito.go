@@ -3,7 +3,6 @@ package identities
 import (
 	"fmt"
 	"math/rand"
-	"regexp"
 	"strings"
 	"time"
 )
@@ -15,23 +14,21 @@ type CartaCredito struct {
 	ExpDate string
 }
 
-type ccChecker func(string) bool
+type ccGen func() int
 
-var ccs = map[string]ccChecker{
-	"American Express": func(cc string) bool {
-		re := regexp.MustCompile("^3(4|7)")
-		return re.Match([]byte(cc))
+//Source: https://en.wikipedia.org/wiki/Payment_card_number
+var ccGens = map[string]ccGen{
+	"American Express": func() int {
+		return rand.Intn(300) + 3400
 	},
-	"Maestro": func(cc string) bool {
-		re := regexp.MustCompile("^((5(0|[678]))|6)")
-		return re.Match([]byte(cc))
+	"Maestro": func() int {
+		return rand.Intn(1000) + 6000
 	},
-	"MasterCard": func(cc string) bool {
-		re := regexp.MustCompile("^(5[1-5])")
-		return re.Match([]byte(cc)) || (cc[:4] <= "2720" && "2221" <= cc[:4])
+	"MasterCard": func() int {
+		return rand.Intn(400) + 5100
 	},
-	"Visa": func(cc string) bool {
-		return strings.HasPrefix(cc, "4")
+	"Visa": func() int {
+		return rand.Intn(1000) + 4000
 	},
 }
 
@@ -46,21 +43,19 @@ func (p *Person) CartaCredito() *CartaCredito {
 	if p.cc != nil {
 		return p.cc
 	}
-	num := rand.Int63n(10e15)
+
+	cc := &CartaCredito{}
+	num := rand.Int63n(10e11)
+	//FIXME this is not really random
+	for emit, val := range ccGens {
+		cc.Issuer = emit
+		num += int64(val()) * 10e11
+		break
+	}
 	lastDigit := transform(num)
-	cc := &CartaCredito{
-		Number: fmt.Sprintf("%015d%d", num, lastDigit),
-	}
-	for iss, chk := range ccs {
-		if chk(cc.Number) {
-			cc.Issuer = iss
-			break
-		}
-	}
-	if cc.Issuer == "" {
-		cc.Issuer = "Other"
-	}
+	cc.Number = fmt.Sprintf("%015d%d", num, lastDigit)
 	cc.Number = ccformatter(cc.Number)
+
 	//This generates a 4 chars long CVV for Amex, 3 in all other cases
 	cc.Cvv = randString([]rune("0123456789"),
 		map[bool]int{true: 4, false: 3}[cc.Issuer == "American Express"])
