@@ -2,7 +2,9 @@ package identities
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -14,22 +16,57 @@ type CartaCredito struct {
 	ExpDate string
 }
 
-type ccGen func() int
+type ccSeed struct {
+	issuer                             string
+	base, delta, bodylength, cvvlength int
+}
 
 //Source: https://en.wikipedia.org/wiki/Payment_card_number
-var ccGens = map[string]ccGen{
-	"American Express": func() int {
-		return rand.Intn(300) + 3400
+var ccData = []ccSeed{
+	{
+		"American Express",
+		3400,
+		300,
+		15,
+		4,
 	},
-	"Maestro": func() int {
-		return rand.Intn(1000) + 6000
+	{
+		"Maestro",
+		6000,
+		1000,
+		16,
+		3,
 	},
-	"MasterCard": func() int {
-		return rand.Intn(400) + 5100
+	{
+		"MasterCard",
+		5100,
+		400,
+		16,
+		3},
+	{
+		"Visa",
+		4000,
+		1000,
+		16,
+		3,
 	},
-	"Visa": func() int {
-		return rand.Intn(1000) + 4000
-	},
+}
+
+func ccBuilder(seed ccSeed) *CartaCredito {
+	cc := &CartaCredito{}
+	prefix := rand.Int63n(int64(seed.delta)) + int64(seed.base)
+	prefixShift := int64(math.Pow10(seed.bodylength - len(fmt.Sprintf("%d", prefix)) - 1))
+	body := rand.Int63n(prefixShift)
+	body += prefix * prefixShift
+	checkSum := luhn(body)
+	cc.Number = fmt.Sprintf("%0"+strconv.Itoa(seed.bodylength-1)+"d%d", body, checkSum)
+	if seed.bodylength == 16 {
+		cc.Number = ccformatter(cc.Number)
+	}
+	cc.Issuer = seed.issuer
+	cc.Cvv = randString([]rune("0123456789"), seed.cvvlength)
+	cc.ExpDate = time.Now().AddDate(6, 6, 6).Format("01/06")
+	return cc
 }
 
 func ccformatter(cc string) string {
@@ -43,31 +80,12 @@ func (p *Person) CartaCredito() *CartaCredito {
 	if p.cc != nil {
 		return p.cc
 	}
-
-	cc := &CartaCredito{}
-	num := rand.Int63n(10e11)
-	//FIXME this is not really random
-	for emit, val := range ccGens {
-		cc.Issuer = emit
-		num += int64(val()) * 10e11
-		break
-	}
-	lastDigit := transform(num)
-	cc.Number = fmt.Sprintf("%015d%d", num, lastDigit)
-	cc.Number = ccformatter(cc.Number)
-
-	//This generates a 4 chars long CVV for Amex, 3 in all other cases
-	cc.Cvv = randString([]rune("0123456789"),
-		map[bool]int{true: 4, false: 3}[cc.Issuer == "American Express"])
-
-	//CC expires in 6 years, 6 months 6 days from now
-	cc.ExpDate = time.Now().AddDate(6, 6, 6).Format("01/06")
-	p.cc = cc
-	return cc
+	p.cc = ccBuilder(ccData[rand.Intn(len(ccData))])
+	return p.cc
 }
 
 //Calculate the check digit of a credit card number
-func transform(num int64) int {
+func luhn(num int64) int {
 	cclen := fmt.Sprintf("%d", num)
 	summed := 0
 	multiplied := 0
