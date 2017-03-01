@@ -1,8 +1,8 @@
 package identities
 
 import (
-	"bytes"
 	"encoding/json"
+	"encoding/xml"
 	"errors"
 	"fmt"
 	"io"
@@ -64,14 +64,13 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 			_, _ = out.Write(b)
 			fmt.Fprintln(out)
 		case "xml":
-			buf := bytes.NewBuffer(nil)
-			//TODO add indentation
-			buf.WriteString("<people>")
-			for _, person := range people {
-				_, _ = buf.Write(person.MarshalXML())
+			_, _ = out.Write([]byte("<People>\n"))
+			b, err := xml.MarshalIndent(&people, "\t", "\t")
+			if err != nil {
+				panic(err)
 			}
-			buf.WriteString("</people>")
-			_, _ = out.Write(buf.Bytes())
+			_, _ = out.Write(b)
+			_, _ = out.Write([]byte("\n</People>"))
 			fmt.Fprintln(out)
 		case "csv":
 			err := MarshalCSV(people, out)

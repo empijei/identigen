@@ -3,6 +3,7 @@ package identities
 import (
 	"bytes"
 	"encoding/json"
+	"encoding/xml"
 	"fmt"
 	"math/rand"
 	"regexp"
@@ -84,20 +85,31 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 }
 
 //TODO add sanitization
-func (p *Person) MarshalXML() []byte {
-	buf := bytes.NewBuffer(nil)
-	buf.WriteString("<person>")
-	for node, value := range p.toMap() {
-		_, _ = buf.WriteString("<")
-		_, _ = buf.WriteString(node)
-		_, _ = buf.WriteString(">")
-		_, _ = buf.WriteString(value)
-		_, _ = buf.WriteString("</")
-		_, _ = buf.WriteString(node)
-		_, _ = buf.WriteString(">")
+func (p *Person) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+
+	tokens := []xml.Token{start}
+
+	for key, value := range p.toMap() {
+		t := xml.StartElement{Name: xml.Name{"", key}}
+		tokens = append(tokens, t, xml.CharData(value), xml.EndElement{t.Name})
 	}
-	buf.WriteString("</person>")
-	return buf.Bytes()
+
+	tokens = append(tokens, xml.EndElement{start.Name})
+
+	for _, t := range tokens {
+		err := e.EncodeToken(t)
+		if err != nil {
+			return err
+		}
+	}
+
+	// flush to ensure tokens are written
+	err := e.Flush()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (p Person) MarshalCSV() []string {
