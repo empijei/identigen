@@ -83,8 +83,21 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 	return json.Marshal(p.toMap())
 }
 
-func (p *Person) MarshalXML() (b []byte, err error) {
-	return
+//TODO add sanitization
+func (p *Person) MarshalXML() []byte {
+	buf := bytes.NewBuffer(nil)
+	buf.WriteString("<person>")
+	for node, value := range p.toMap() {
+		_, _ = buf.WriteString("<")
+		_, _ = buf.WriteString(node)
+		_, _ = buf.WriteString(">")
+		_, _ = buf.WriteString(value)
+		_, _ = buf.WriteString("</")
+		_, _ = buf.WriteString(node)
+		_, _ = buf.WriteString(">")
+	}
+	buf.WriteString("</person>")
+	return buf.Bytes()
 }
 
 func (p Person) MarshalCSV() []string {
