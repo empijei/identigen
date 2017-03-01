@@ -15,7 +15,6 @@ func init() {
 
 //Represents a person object. It must be initialized by the generator.
 type Person struct {
-	//TODO protect these fields, use accessor and cache data
 	firstName, lastName           string
 	genderIsFemale                bool
 	birthDate                     time.Time
@@ -82,6 +81,10 @@ func (p Person) String() string {
 
 func (p *Person) MarshalJSON() (b []byte, err error) {
 	return json.Marshal(p.toMap())
+}
+
+func (p *Person) MarshalXML() (b []byte, err error) {
+	return
 }
 
 func (p Person) MarshalCSV() []string {

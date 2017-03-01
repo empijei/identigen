@@ -1,6 +1,7 @@
 package identities
 
 import (
+	"bytes"
 	"strconv"
 	"strings"
 )
@@ -96,17 +97,13 @@ func (p *Person) CodiceFiscale() (cf string) {
 		}
 		return tmp
 	}
+	composer := bytes.NewBuffer(make([]byte, 0, 16))
 
-	cf += threePad(getConsonants(p.lastName), p.lastName)
-	cf += threePad(fixFirstNameConsonants(getConsonants(p.firstName)), p.firstName)
-	cf += birthDayStringCalc(p)
-	if p.townCode == "" {
-		//TODO
-	}
-	cf += p.townCode
-	cf += checksum(cf)
-	p.fiscalCode = cf
-	return
+	composer.WriteString(threePad(getConsonants(p.lastName), p.lastName))
+	composer.WriteString(threePad(fixFirstNameConsonants(getConsonants(p.firstName)), p.firstName))
+	composer.WriteString(birthDayStringCalc(p))
+	composer.WriteString(p.townCode)
+	composer.WriteString(checksum(composer.String()))
+	p.fiscalCode = composer.String()
+	return p.fiscalCode
 }
-
-//TODO create a cfbuilder, move function to its methods, use a slice or buffer

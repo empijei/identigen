@@ -2,6 +2,7 @@ package identities
 
 import (
 	"encoding/json"
+	"encoding/xml"
 	"errors"
 	"fmt"
 	"io"
@@ -57,6 +58,13 @@ func MainModule(args map[string]interface{}, out io.Writer) {
 		switch f {
 		case "json":
 			b, err := json.MarshalIndent(&people, "", "\t")
+			if err != nil {
+				panic(err)
+			}
+			_, _ = out.Write(b)
+			fmt.Fprintln(out)
+		case "xml":
+			b, err := xml.MarshalIndent(&people, "", "\t")
 			if err != nil {
 				panic(err)
 			}
