@@ -52,6 +52,26 @@ func generateFilters() []string {
 	return AllFields
 }
 
+/*
+This function sets a filter for the fields to be printed. Supported values are:
+Nome
+Cognome
+Gender
+PaeseDiNascita
+ProvinciaDiNascita
+Indirizzo
+NumeroDiTelefono
+DataDiNascita
+CodiceFiscale
+PartitaIva
+ComunePartitaIva
+Documento
+Patente
+CartaDiCredito
+Iban
+Username
+Password
+*/
 func SetFilter(newFields []string) error {
 	set := make(map[string]struct{})
 	for _, allowedField := range AllFields {
