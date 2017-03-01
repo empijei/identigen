@@ -30,7 +30,7 @@ var ccTests = []struct {
 
 func TestCartaCredito(t *testing.T) {
 	for _, tc := range ccTests {
-		if cc := transform(tc.input); cc != tc.expected {
+		if cc := luhn(tc.input); cc != tc.expected {
 			t.Fatalf("Failed test with %v, calculated: %v, expected: %v", tc.input, cc, tc.expected)
 		}
 	}

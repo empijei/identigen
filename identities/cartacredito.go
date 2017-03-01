@@ -54,25 +54,39 @@ var ccData = []ccSeed{
 
 func ccBuilder(seed ccSeed) *CartaCredito {
 	cc := &CartaCredito{}
+	//Compute the first digits, these determine the issuer
 	prefix := rand.Int63n(int64(seed.delta)) + int64(seed.base)
+	//Compute how much the prefix needs to be shifted (base10) to the
+	//left in order to fall right on the left of the random body.
 	prefixShift := int64(math.Pow10(seed.bodylength - len(fmt.Sprintf("%d", prefix)) - 1))
+	//Generate random sequence between prefix and checksum
 	body := rand.Int63n(prefixShift)
+	//Add the prefix on the left
 	body += prefix * prefixShift
+	//Compute luhn checksum
 	checkSum := luhn(body)
+	//Concat the checksum and cast to string
 	cc.Number = fmt.Sprintf("%0"+strconv.Itoa(seed.bodylength-1)+"d%d", body, checkSum)
-	if seed.bodylength == 16 {
-		cc.Number = ccformatter(cc.Number)
-	}
+	//Beautify CC number
+	cc.Number = ccformatter(cc.Number)
+	//Set Issuer
 	cc.Issuer = seed.issuer
+	//Set CVV
 	cc.Cvv = randString([]rune("0123456789"), seed.cvvlength)
+	//Set expiration date
 	cc.ExpDate = time.Now().AddDate(6, 6, 6).Format("01/06")
 	return cc
 }
 
 func ccformatter(cc string) string {
-	var toret string
-	toret = strings.Join([]string{cc[:4], cc[4:8], cc[8:12], cc[12:16]}, "-")
-	return toret
+	switch len(cc) {
+	case 16:
+		cc = strings.Join([]string{cc[:4], cc[4:8], cc[8:12], cc[12:16]}, "-")
+	case 15:
+		cc = strings.Join([]string{cc[:5], cc[5:10], cc[10:15]}, "-")
+	default:
+	}
+	return cc
 }
 
 //Returns a valid CartaCredito object with credit card number, cvv, issuer and expiration date.
