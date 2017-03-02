@@ -16,9 +16,9 @@ func (p *Person) PartitaIva() (pi string, county string) {
 		return p.partitaIva, p.partitaIvaCounty
 	}
 	county = p.partitaIvaCounty
-	pi = fmt.Sprintf("%07d%03d", rand.Intn(10e7), p.locationCode)
+	pi = fmt.Sprintf("%07d%03d", rand.Intn(10e6), p.locationCode)
 	lastDigit := piCheckDigit(pi)
-	pi = fmt.Sprintf("%s%d", pi, lastDigit)
+	pi = fmt.Sprintf("IT%s%d", pi, lastDigit)
 	p.partitaIva = pi
 	return
 }
