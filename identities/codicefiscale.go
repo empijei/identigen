@@ -18,7 +18,7 @@ func (p *Person) CodiceFiscale() (cf string) {
 			if strings.ContainsAny(c, "AEIOU") {
 				output += c
 			}
-			if i := strings.Index("ÀÌÈÉÒ", c); i >= 0 {
+			if i := strings.Index("ÀÌÈÉÒÙ", c); i >= 0 {
 				switch c {
 				case "À":
 					output += "A"
@@ -30,6 +30,8 @@ func (p *Person) CodiceFiscale() (cf string) {
 					output += "E"
 				case "Ò":
 					output += "O"
+				case "Ù":
+					output += "U"
 				}
 			}
 		}
