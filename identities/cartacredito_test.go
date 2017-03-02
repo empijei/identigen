@@ -1,6 +1,9 @@
 package identities
 
 import (
+	"fmt"
+	"strconv"
+	"strings"
 	"testing"
 )
 
@@ -26,12 +29,33 @@ var ccTests = []struct {
 		expected: 1},
 	{input: 401288888888188,
 		expected: 1},
+	{input: 37828224631000,
+		expected: 5},
+	{input: 37144963539843,
+		expected: 1},
 }
 
-func TestCartaCredito(t *testing.T) {
+func TestLuhn(t *testing.T) {
 	for _, tc := range ccTests {
 		if cc := luhn(tc.input); cc != tc.expected {
 			t.Errorf("Failed test with %v, calculated: %v, expected: %v", tc.input, cc, tc.expected)
+		}
+	}
+}
+
+func TestCcBuilder(t *testing.T) {
+	for _, cct := range ccData {
+		cc := ccBuilder(cct)
+		n := strings.Join(strings.Split(cc.Number, "-"), "")
+		p, _ := strconv.Atoi(n[:len(fmt.Sprintf("%d", cct.base))])
+		if p > cct.base+cct.delta || p < cct.base {
+			t.Errorf("Failed prefix test: value out of bound. %d !<= %d !< %d", cct.base, p, cct.base+cct.delta)
+		}
+		if l := len(n); l != cct.bodylength {
+			t.Errorf("Failed length test: expected %d, obtained %d", cct.bodylength, l)
+		}
+		if cvv := len(cc.Cvv); cvv != cct.cvvlength {
+			t.Errorf("Failed cvv length test: expected %d, obtained %d", cct.cvvlength, cvv)
 		}
 	}
 }
