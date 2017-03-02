@@ -13,10 +13,10 @@ func (p *Person) Credentials() *Credentials {
 	if p.up != nil {
 		return p.up
 	}
-
+	//This supposes no Names/Surnames are shorter than 3
 	up := &Credentials{
 		Username: fmt.Sprintf("%s%s%d", p.firstName[:3], p.lastName[:3], p.birthDate.Year()),
-		Password: randString([]rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.!-"), 8),
+		Password: randString([]rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 6) + randString([]rune(".-!"), 2),
 	}
 	p.up = up
 	return up

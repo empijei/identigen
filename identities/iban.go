@@ -9,6 +9,7 @@ import (
 const country = "IT" // iso for italy
 
 //Returns an Italian valid IBAN with random bank details.
+//TESTTHIS
 func (p *Person) IBAN() (iban string) {
 	if p.iban != "" {
 		return p.iban
@@ -28,6 +29,7 @@ func (p *Person) IBAN() (iban string) {
 }
 
 //Returns the EU standard check digits for the IBAN.
+//TESTTHIS
 func checkDigit(bban string) string {
 	iban_tmp := bban + "IT00"
 	var ret string
@@ -67,6 +69,7 @@ func checkDigit(bban string) string {
 }
 
 //Returns custom Italian check digit for the IBAN.
+//TESTTHIS
 func cin(abi, cab, cc string) string {
 	w_odd := []int{1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 12, 14, 16, 10, 22, 25, 24, 23, 27, 28, 26}
 

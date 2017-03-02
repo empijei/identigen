@@ -34,6 +34,7 @@ type Person struct {
 	up                            *Credentials
 }
 
+//TODO comment ALLL the getters
 //Returns the first name of the person
 func (p *Person) FirstName() string {
 	return p.firstName
@@ -121,6 +122,7 @@ func (p Person) MarshalCSV() []string {
 	return out
 }
 
+//TESTTHIS (try every field alone)
 func (p *Person) toMap() map[string]string {
 	toret := make(map[string]string)
 	for _, f := range fields {

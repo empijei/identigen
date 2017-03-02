@@ -19,7 +19,7 @@ func (p *Person) CodiceFiscale() (cf string) {
 				output += c
 			}
 			if i := strings.Index("ÀÌÈÉÒ", c); i >= 0 {
-				//TODO testme
+				//TESTTHIS
 				output += string("AIEEO"[i])
 			}
 		}

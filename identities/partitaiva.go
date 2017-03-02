@@ -6,6 +6,8 @@ import (
 	"strconv"
 )
 
+//TESTTHIS
+//Comment this
 func (p *Person) PartitaIva() (pi string, county string) {
 	//Need to know where you are to compute your P.I.
 	if p.locationCode == 0 || p.partitaIvaCounty == "" {
@@ -23,6 +25,7 @@ func (p *Person) PartitaIva() (pi string, county string) {
 	return
 }
 
+//TESTTHIS
 func transformation(num, len int) int {
 	var digit, evenSum, oddSum int
 	for pos := 0; pos < len; pos++ {
