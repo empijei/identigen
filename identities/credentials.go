@@ -2,7 +2,7 @@ package identities
 
 import (
 	"fmt"
-	"strings"
+	"regexp"
 )
 
 type Credentials struct {
@@ -16,7 +16,7 @@ func (p *Person) Credentials() *Credentials {
 	if p.up != nil {
 		return p.up
 	}
-	name := p.firstName
+	name := normalize(p.firstName)
 	if len(name) < 3 {
 		name = padding(p.firstName)
 	}
@@ -25,7 +25,6 @@ func (p *Person) Credentials() *Credentials {
 	if len(lastName) < 3 {
 		lastName = padding(p.lastName)
 	}
-	//This supposes no Names/Surnames are shorter than 3
 	up := &Credentials{
 		Username: fmt.Sprintf("%s%s%d", name[:3], lastName[:3], p.birthDate.Year()),
 		Password: randString([]rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 6) +
@@ -36,9 +35,13 @@ func (p *Person) Credentials() *Credentials {
 }
 
 func normalize(name string) string {
-	return strings.Join(strings.Split(name, "'"), "X")
+	re := regexp.MustCompile("('| )")
+	return string(re.ReplaceAll([]byte(name), []byte("X")))
 }
 
 func padding(name string) string {
-	return fmt.Sprintf("%x3s", name)
+	for len(name) < 3 {
+		name += "X"
+	}
+	return name
 }
