@@ -2,7 +2,6 @@ package identities
 
 import (
 	"bytes"
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -20,9 +19,18 @@ func (p *Person) CodiceFiscale() (cf string) {
 				output += c
 			}
 			if i := strings.Index("ÀÌÈÉÒ", c); i >= 0 {
-				//TESTTHIS
-				fmt.Println(i)
-				output += string("AIEEO"[i])
+				switch c {
+				case "À":
+					output += "A"
+				case "Ì":
+					output += "I"
+				case "È":
+					fallthrough
+				case "É":
+					output += "E"
+				case "Ò":
+					output += "O"
+				}
 			}
 		}
 		return
