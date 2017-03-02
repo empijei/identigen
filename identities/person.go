@@ -35,13 +35,17 @@ type Person struct {
 }
 
 //TODO comment ALLL the getters
-//Returns the first name of the person
+//Person first name
 func (p *Person) FirstName() string {
 	return p.firstName
 }
+
+//Person last name
 func (p *Person) LastName() string {
 	return p.lastName
 }
+
+//Person gender in Italian
 func (p *Person) Gender() string {
 	if p.genderIsFemale {
 		return "Donna"
@@ -49,18 +53,28 @@ func (p *Person) Gender() string {
 		return "Uomo"
 	}
 }
+
+//Person birth date formatted using the globally specified format
 func (p *Person) BirthDate() string {
 	return p.birthDate.Format(LocalizDate.Format())
 }
+
+//Person birth town
 func (p *Person) BirthTown() string {
 	return p.town
 }
+
+//The name and label of the city the person was birth in
 func (p *Person) BirthDistrict() string {
 	return p.birthDistrict
 }
+
+//The phone number (Without the +39 italian prefix)
 func (p *Person) Phone() string {
 	return p.mobilePhone
 }
+
+//Identity card number
 func (p *Person) ID() string {
 	if p.id != "" {
 		return p.id
@@ -69,6 +83,7 @@ func (p *Person) ID() string {
 	return p.id
 }
 
+//String representation, the human readable serialization of a Person object
 func (p Person) String() string {
 	m := p.toMap()
 	re := regexp.MustCompile("([a-z])([A-Z]+)")
@@ -82,11 +97,12 @@ func (p Person) String() string {
 	return buf.String()
 }
 
+//Implementation of encoding/json.Marshaler
 func (p *Person) MarshalJSON() (b []byte, err error) {
 	return json.Marshal(p.toMap())
 }
 
-//TODO add sanitization
+//Implementation of encoding/xml.Marshaler
 func (p *Person) MarshalXML(e *xml.Encoder, start xml.StartElement) (err error) {
 	defer func() {
 		if r := recover(); r != nil {
@@ -113,6 +129,7 @@ func (p *Person) MarshalXML(e *xml.Encoder, start xml.StartElement) (err error) 
 	return e.Flush()
 }
 
+//Returns a []string that can be passed to an encoding/csv.Writer.Write() call
 func (p Person) MarshalCSV() []string {
 	m := p.toMap()
 	var out []string
