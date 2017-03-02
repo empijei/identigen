@@ -17,8 +17,17 @@ type CartaCredito struct {
 }
 
 type ccSeed struct {
-	issuer                             string
-	base, delta, bodylength, cvvlength int
+	//The issuer name
+	issuer string
+	//The base value for a CC prefix for the given issuer (e.g. 4000 for Visas)
+	base int
+	//The range to add to base to obtain a random issuer prefix
+	//(e.g. 1000 for Visas, to range from 4000 to 4999)
+	delta int
+	//The TOTAL length of the credit card number
+	bodylength int
+	//Length of CVV
+	cvvlength int
 }
 
 //Source: https://en.wikipedia.org/wiki/Payment_card_number
