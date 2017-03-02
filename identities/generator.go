@@ -94,7 +94,6 @@ func uniqSlice(in []string) []string {
 	return out
 }
 
-//TODO test
 func RandomPeople(minage, maxage int, count int) (people []Person, err error) {
 	if minage > maxage {
 		return nil, errors.New(fmt.Sprintf("maxage (%d) should not be less than minage(%d)", maxage, minage))

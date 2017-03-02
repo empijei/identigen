@@ -62,7 +62,6 @@ func NewPerson(minage, maxage int) *Person {
 	return person
 }
 
-//TODO comment ALLL the getters
 //Person first name
 func (p *Person) FirstName() string {
 	return p.firstName
