@@ -61,7 +61,6 @@ var ccData = []ccSeed{
 	},
 }
 
-//TESTTHIS
 func ccBuilder(seed ccSeed) *CartaCredito {
 	cc := &CartaCredito{}
 	//Compute the first digits, these determine the issuer
