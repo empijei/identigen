@@ -9,6 +9,8 @@ import (
 	"math/rand"
 	"regexp"
 	"time"
+
+	"github.com/empijei/identigen/identities/lists"
 )
 
 func init() {
@@ -32,6 +34,32 @@ type Person struct {
 	id                            string
 	iban                          string
 	up                            *Credentials
+}
+
+func NewPerson(minage, maxage int) *Person {
+	person := &Person{}
+	person.genderIsFemale = rand.Int()%2 == 0
+	var names []string
+	if person.genderIsFemale {
+		names = lists.ItalianFemaleNames
+	} else {
+		names = lists.ItalianMaleNames
+	}
+	person.firstName = names[rand.Int()%len(names)]
+	var age int
+	if minage == maxage {
+		age = minage
+	} else {
+		age = rand.Int()%(maxage-minage) + minage
+	}
+	person.birthDate = time.Date(time.Now().Year()-age, time.Month(rand.Int()%12+1), rand.Int()%28+1, 12, 0, 0, 0, time.UTC)
+	person.lastName = lists.ItalianSurnames[rand.Int()%len(lists.ItalianSurnames)]
+	birthInfo := lists.BirthInfo[rand.Int()%len(lists.BirthInfo)]
+	person.town = birthInfo.Paese
+	person.townCode = birthInfo.CodiceCatasto
+	person.birthDistrict = birthInfo.Provincia
+	person.mobilePhone = "3" + randString([]rune("1234567890"), 9)
+	return person
 }
 
 //TODO comment ALLL the getters
