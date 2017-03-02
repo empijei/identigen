@@ -27,7 +27,10 @@ var printers = []printer{
 		return cpi
 	}},
 	{"Documento", (*Person).ID},
-	{"Patente", (*Person).DrivingLicense},
+	{"Patente", func(p *Person) string {
+		drv := p.DrivingLicense()
+		return drv.Number + " " + drv.Issuer + " " + drv.ExpDate
+	}},
 	{"CartaDiCredito", func(p *Person) string {
 		cc := p.CartaCredito()
 		return cc.Issuer + " " + cc.Number + ", " + cc.Cvv + ", " + cc.ExpDate

@@ -24,7 +24,7 @@ type Person struct {
 	birthDate                     time.Time
 	town, townCode, birthDistrict string
 	residence                     string
-	drvLicense                    string
+	drv                           *DrivingLicense
 	fiscalCode                    string
 	partitaIva                    string
 	locationCode                  int
