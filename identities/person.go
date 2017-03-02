@@ -167,7 +167,6 @@ func (p Person) MarshalCSV() []string {
 	return out
 }
 
-//TESTTHIS (try every field alone)
 func (p *Person) toMap() map[string]string {
 	toret := make(map[string]string)
 	for _, f := range fields {

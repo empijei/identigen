@@ -36,6 +36,8 @@ var cfTests = []struct {
 		expected: "MLLSNT82P65Z404U"},
 	{input: Person{firstName: "Na", lastName: "OOO", town: "Murica", townCode: "Z404", genderIsFemale: true, birthDate: time.Date(1982, time.September, 25, 12, 0, 0, 0, time.UTC)},
 		expected: "OOONAX82P65Z404D"},
+	{input: Person{firstName: "Nà", lastName: "ÒOO", town: "Murica", townCode: "Z404", genderIsFemale: true, birthDate: time.Date(1982, time.September, 25, 12, 0, 0, 0, time.UTC)},
+		expected: "OOONAX82P65Z404D"},
 }
 
 func TestCodiceFiscale(t *testing.T) {
