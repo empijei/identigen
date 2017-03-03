@@ -1,5 +1,7 @@
 package identities
 
+import "testing"
+
 /*
 Here there are some test cases found on the internet:
 IT 30 R 03268 10001 100000000000
@@ -9,57 +11,46 @@ IT 02 D 03268 02801 052879623060
 */
 
 var cinTests = []struct {
-	abi      string
-	cab      string
-	cc       string
-	expected string
+	abi         string
+	cab         string
+	cc          string
+	expectedCIN string
+	expectedCD  string
 }{
 	{abi: "03268",
-		cab:      "10001",
-		cc:       "100000000000",
-		expected: "R"},
+		cab:         "10001",
+		cc:          "100000000000",
+		expectedCIN: "R",
+		expectedCD:  "30",
+	},
 	{abi: "06055",
-		cab:      "02100",
-		cc:       "000001234567",
-		expected: "D"},
+		cab:         "02100",
+		cc:          "000001234567",
+		expectedCIN: "D",
+		expectedCD:  "14",
+	},
 	{abi: "05428",
-		cab:      "11101",
-		cc:       "000000123456",
-		expected: "X"},
+		cab:         "11101",
+		cc:          "000000123456",
+		expectedCIN: "X",
+		expectedCD:  "60",
+	},
 	{abi: "03268",
-		cab:      "02801",
-		cc:       "052879623060",
-		expected: "D"},
+		cab:         "02801",
+		cc:          "052879623060",
+		expectedCIN: "D",
+		expectedCD:  "02",
+	},
 }
 
-var ibanTests = []struct {
-	input    string
-	expected string
-}{
-	{input: "R0326810001100000000000",
-		expected: "30"},
-	{input: "D0605502100000001234567",
-		expected: "14"},
-	{input: "X0542811101000000123456",
-		expected: "60"},
-	{input: "D0326802801052879623060",
-		expected: "02"},
-}
-
-/*
-func TestCheckDigit(t *testing.T) {
-	for _, tc := range ibanTests {
-		if iban := checkDigit(tc.input); iban != tc.expected {
-			t.Errorf("Failed test with %v, calculated: %v, expected: %v", tc.input, iban, tc.expected)
+func TestIban(t *testing.T) {
+	for _, tc := range cinTests {
+		tmpIban := &Iban{abi: tc.abi, cab: tc.cab, cc: tc.cc}
+		if cin := tmpIban.cin(); cin != tc.expectedCIN {
+			t.Errorf("Failed cin test, calculated: %s, expected: %s", cin, tc.expectedCIN)
+		}
+		if cd := tmpIban.cd(); cd != tc.expectedCD {
+			t.Errorf("Failed cd test, calculated: %s, expected: %s", cd, tc.expectedCD)
 		}
 	}
 }
-
-func TestCin(t *testing.T) {
-	for _, bban := range cinTests {
-		if cin := cin(bban.abi, bban.cab, bban.cc); cin != bban.expected {
-			t.Errorf("Failed cin test, calculated: %s, expected: %s", cin, bban.expected)
-		}
-	}
-}
-*/
