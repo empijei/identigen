@@ -28,14 +28,14 @@ var printers = []printer{
 	}},
 	{"Documento", (*Person).ID},
 	{"Patente", func(p *Person) string {
-		drv := p.DrivingLicense()
-		return drv.Number + " " + drv.Issuer + " " + drv.ExpDate
+		return p.DrivingLicense().String()
 	}},
 	{"CartaDiCredito", func(p *Person) string {
-		cc := p.CartaCredito()
-		return cc.Issuer + " " + cc.Number + ", " + cc.Cvv + ", " + cc.ExpDate
+		return p.CartaCredito().String()
 	}},
-	{"Iban", (*Person).IBAN},
+	{"Iban", func(p *Person) string {
+		return p.IBAN().String()
+	}},
 	{"Username", func(p *Person) string { return p.Credentials().Username }},
 	{"Password", func(p *Person) string { return p.Credentials().Password }},
 }

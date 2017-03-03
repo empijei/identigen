@@ -32,7 +32,7 @@ type Person struct {
 	cc                            *CartaCredito
 	mobilePhone                   string
 	id                            string
-	iban                          string
+	iban                          *Iban
 	up                            *Credentials
 }
 

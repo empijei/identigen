@@ -16,6 +16,10 @@ type CartaCredito struct {
 	ExpDate string
 }
 
+func (cc *CartaCredito) String() string {
+	return cc.Issuer + " " + cc.Number + ", " + cc.Cvv + ", " + cc.ExpDate
+}
+
 type ccSeed struct {
 	//The issuer name
 	issuer string

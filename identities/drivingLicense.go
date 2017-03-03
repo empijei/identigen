@@ -26,3 +26,7 @@ func (p *Person) DrivingLicense() *DrivingLicense {
 	}
 	return p.drv
 }
+
+func (drv *DrivingLicense) String() string {
+	return drv.Number + " " + drv.Issuer + " " + drv.ExpDate
+}

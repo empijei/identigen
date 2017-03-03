@@ -1,35 +1,106 @@
 package identities
 
 import (
+	"bytes"
 	"math/big"
+	"math/rand"
 	"strconv"
 	"unicode"
+
+	"github.com/empijei/identigen/identities/lists"
 )
 
 const country = "IT" // iso for italy
 
+//Represents an IBAN object
+type Iban struct {
+	BankName   string
+	Iban       string
+	abi        string
+	cab        string
+	cc         string
+	cin_cache  string
+	bban_cache string
+}
+
+//Returns custom Italian check digit for the IBAN.
+func (i *Iban) cin() string {
+	if i.cin_cache != "" {
+		return i.cin_cache
+	}
+	w_odd := []int{1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 12, 14, 16, 10, 22, 25, 24, 23, 27, 28, 26}
+
+	sb := bytes.NewBuffer(make([]byte, 0, 22))
+	sb.WriteString(i.abi)
+	sb.WriteString(i.cab)
+	sb.WriteString(i.cc)
+	iban_tmp := sb.String()
+
+	total_weight := 0
+
+	for i, elem := range iban_tmp {
+		p, _ := strconv.Atoi(string(elem))
+
+		if (i % 2) == 0 {
+			total_weight += w_odd[p]
+		} else {
+			total_weight += p
+		}
+	}
+	i.cin_cache = string((total_weight % 26) + 65)
+	return i.cin_cache
+}
+
+func (i *Iban) bban() string {
+	if i.bban_cache != "" {
+		return i.bban_cache
+	}
+	sb := bytes.NewBuffer(make([]byte, 0, 23))
+	sb.WriteString(i.cin())
+	sb.WriteString(i.abi)
+	sb.WriteString(i.cab)
+	sb.WriteString(i.cc)
+	i.bban_cache = sb.String()
+	return i.bban_cache
+}
+
+//Gives a string representation of the Iban struct
+func (i *Iban) String() string {
+	return i.Iban + ", " + i.BankName
+}
+
 //Returns an Italian valid IBAN with random bank details.
-func (p *Person) IBAN() (iban string) {
-	if p.iban != "" {
+func (p *Person) IBAN() *Iban {
+	if p.iban != nil {
 		return p.iban
 	}
-
-	abi := randString([]rune("1234567890"), 5) //"05428"
-	cab := randString([]rune("1234567890"), 5) //"11101"
-	cc := randString([]rune("1234567890"), 12) //"000000123456"
-
-	cin := cin(abi, cab, cc)
-	bban := cin + abi + cab + cc
-	cd := checkDigit(bban)
-	iban = country + cd + cin + abi + cab + cc
-
-	p.iban = iban
-	return
+	bank := lists.Banks[rand.Intn(len(lists.Banks))]
+	branch := bank.Branches[rand.Intn(len(bank.Branches))]
+	i := &Iban{
+		BankName: bank.Name,
+		abi:      branch.ABI,
+		cab:      branch.CAB[rand.Intn(len(branch.CAB))],
+		cc:       randString([]rune("1234567890"), 12),
+	}
+	sb := bytes.NewBuffer(make([]byte, 0, 31))
+	sb.WriteString(country)
+	sb.WriteString(i.cd())
+	sb.WriteString(" ")
+	sb.WriteString(i.cin())
+	sb.WriteString(" ")
+	sb.WriteString(i.abi)
+	sb.WriteString(" ")
+	sb.WriteString(i.cab)
+	sb.WriteString(" ")
+	sb.WriteString(i.cc)
+	i.Iban = sb.String()
+	p.iban = i
+	return p.iban
 }
 
 //Returns the EU standard check digits for the IBAN.
-func checkDigit(bban string) string {
-	iban_tmp := bban + "IT00"
+func (i *Iban) cd() string {
+	iban_tmp := i.bban() + country + "00"
 	var ret string
 	aux := ""
 
@@ -64,28 +135,4 @@ func checkDigit(bban string) string {
 		ret = "0" + ret
 	}
 	return ret
-}
-
-//Returns custom Italian check digit for the IBAN.
-func cin(abi, cab, cc string) string {
-	w_odd := []int{1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 12, 14, 16, 10, 22, 25, 24, 23, 27, 28, 26}
-
-	iban_tmp := abi + cab + cc
-	total_weight := 0
-
-	for i, elem := range iban_tmp {
-		var p int
-		if unicode.IsLetter(elem) {
-			p = int(elem - 65)
-		} else {
-			p = int(elem - 48)
-		}
-
-		if (i % 2) == 0 { // if i is even i+1 is odd
-			total_weight += w_odd[p]
-		} else {
-			total_weight += p
-		}
-	}
-	return string((total_weight % 26) + 65)
 }
