@@ -25,5 +25,5 @@ func main() {
 	args["format"] = *format
 	args["fields"] = *fields
 
-	identities.MainModule(args, os.Stdout)
+	_ = identities.MainModule(args, os.Stdout)
 }
