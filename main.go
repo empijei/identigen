@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"os"
 	"strings"
 
@@ -25,5 +26,8 @@ func main() {
 	args["format"] = *format
 	args["fields"] = *fields
 
-	_ = identities.MainModule(args, os.Stdout)
+	err := identities.MainModule(args, os.Stdout)
+	if err != nil {
+		fmt.Println(err)
+	}
 }

@@ -10,12 +10,6 @@ import (
 )
 
 func MainModule(args map[string]interface{}, out io.Writer) (err error) {
-	defer func() {
-		if r := recover(); r != nil {
-			fmt.Fprintln(out, "Error occurred: ", r)
-			err = errors.New(fmt.Sprintf("%s", r))
-		}
-	}()
 	clamp := func(val, min, max int) int {
 		if val < min {
 			return min
@@ -34,20 +28,20 @@ func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 	fields := args["fields"].(string)
 
 	if number <= 0 {
-		panic("'number' should be positive")
+		return errors.New("'number' should be positive")
 	}
 	if fields != "all" {
 		tmp := uniqSlice(strings.Split(fields, ","))
 		err := SetFilter(tmp)
 		if err != nil {
-			panic(err)
+			return err
 		}
 	}
 
 	LocalizDate = NewDateFormat(dt_fmt)
 	people, err := RandomPeople(minage, maxage, number)
 	if err != nil {
-		panic(err)
+		return err
 	}
 
 	formats := uniqSlice(strings.Split(format, ","))
@@ -56,7 +50,7 @@ func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 		case "json":
 			b, err := json.MarshalIndent(&people, "", "\t")
 			if err != nil {
-				panic(err)
+				return err
 			}
 			_, _ = out.Write(b)
 			fmt.Fprintln(out)
@@ -64,7 +58,7 @@ func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 			_, _ = out.Write([]byte("<People>\n"))
 			b, err := xml.MarshalIndent(&people, "\t", "\t")
 			if err != nil {
-				panic(err)
+				return err
 			}
 			_, _ = out.Write(b)
 			_, _ = out.Write([]byte("\n</People>"))
@@ -72,7 +66,7 @@ func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 		case "csv":
 			err := MarshalCSV(people, out)
 			if err != nil {
-				panic(err)
+				return err
 			}
 			fmt.Fprintln(out)
 		default:
@@ -98,7 +92,7 @@ func uniqSlice(in []string) []string {
 
 func RandomPeople(minage, maxage int, count int) (people []Person, err error) {
 	if minage > maxage {
-		return nil, errors.New(fmt.Sprintf("maxage (%d) should not be less than minage(%d)", maxage, minage))
+		return nil, errors.New(fmt.Sprintf("maxage(%d) should not be less than minage(%d)", maxage, minage))
 	}
 	for count > 0 {
 		people = append(people, *NewPerson(minage, maxage))
