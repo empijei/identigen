@@ -13,7 +13,7 @@ func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 	defer func() {
 		if r := recover(); r != nil {
 			fmt.Fprintln(out, "Error occurred: ", r)
-			err = errors.new(fmt.Sprintf("%s", r))
+			err = errors.New(fmt.Sprintf("%s", r))
 		}
 	}()
 	clamp := func(val, min, max int) int {
