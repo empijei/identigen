@@ -3,7 +3,6 @@ package identities
 import (
 	"encoding/json"
 	"encoding/xml"
-	"errors"
 	"fmt"
 	"io"
 	"strings"
@@ -28,7 +27,7 @@ func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 	fields := args["fields"].(string)
 
 	if number <= 0 {
-		return errors.New("'number' should be positive")
+		return fmt.Errorf("'number' should be positive")
 	}
 	if fields != "all" {
 		tmp := uniqSlice(strings.Split(fields, ","))
@@ -92,7 +91,7 @@ func uniqSlice(in []string) []string {
 
 func RandomPeople(minage, maxage int, count int) (people []Person, err error) {
 	if minage > maxage {
-		return nil, errors.New(fmt.Sprintf("maxage(%d) should not be less than minage(%d)", maxage, minage))
+		return nil, fmt.Errorf("maxage(%d) should not be less than minage(%d)", maxage, minage)
 	}
 	for count > 0 {
 		people = append(people, *NewPerson(minage, maxage))

@@ -1,6 +1,6 @@
 package identities
 
-import "errors"
+import "fmt"
 
 type printer struct {
 	fieldName string
@@ -82,7 +82,7 @@ func SetFilter(newFields []string) error {
 	}
 	for _, field := range newFields {
 		if _, ok := set[field]; !ok {
-			return errors.New("Unknown Field: " + field)
+			return fmt.Errorf("Unknown Field: %s", field)
 		}
 	}
 	fields = newFields

@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"encoding/xml"
-	"errors"
 	"fmt"
 	"math/rand"
 	"regexp"
@@ -133,7 +132,7 @@ func (p *Person) MarshalJSON() (b []byte, err error) {
 func (p *Person) MarshalXML(e *xml.Encoder, start xml.StartElement) (err error) {
 	defer func() {
 		if r := recover(); r != nil {
-			err = errors.New(fmt.Sprintf("%v", r))
+			err = fmt.Errorf("%v", r)
 		}
 	}()
 	_panic := func(e error) {
