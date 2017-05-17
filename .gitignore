@@ -28,3 +28,4 @@ _testmain.go
 
 # Gopherjs mapping for debug purposes
 identigen.js.map
+identigen.js
