@@ -27,3 +27,7 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+# gopherjs stuff
+identigen.js
+identigen.js.map
