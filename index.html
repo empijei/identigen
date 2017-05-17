@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="https://empijei.science/assets/js/identigen.js></script>
+		<script src="https://empijei.science/assets/js/identigen.js"></script>
 		<style>
 			.navbar-default {
 				background-color: #3DA5D9;
@@ -109,7 +109,7 @@ ga('send', 'pageview');
 			<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 			<meta name="theme-color" content="#ffffff">
 			<!-- The scrollable area -->
-			<body data-spy="scroll" data-target=".navbar" data-offset="50">
+			<body data-spy="scroll" data-target=".navbar" data-offset="50" onload=regen()>
 				<nav class="navbar navbar-default navbar-fixed-top" href="#navbar" role="navigation">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -205,11 +205,17 @@ ga('send', 'pageview');
 				<script>
 var hr = document.getElementById("campi")
 var jr = document.getElementById("json")
-var xhr = new XMLHttpRequest();
 function regen(){
-			xhr.onreadystatechange = function() {
-						if (xhr.readyState == XMLHttpRequest.DONE) {
-									var tmp= xhr.responseText.split("]");
+									out = identigen.MainModule(
+									{
+												"number":1,
+												"maxage":20,
+												"minage":10,
+												"format":"json,human",
+												"fields":"all",
+												"dt_fmt":"eu"
+									})
+									var tmp= out.split("]");
 									var jsn= tmp[0]+"]";
 									var humanReadable=tmp[1];
 									identity=JSON.parse(jsn)[0];
@@ -226,11 +232,6 @@ function regen(){
 									}
 									hr.innerHTML = buf;
 						}
-			}
-			xhr.open('GET', 'https://identigen.herokuapp.com?format=json,human', true);
-			xhr.send(null);
-}
-regen();
 </script>
 </body>
 </html>
