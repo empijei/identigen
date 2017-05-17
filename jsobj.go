@@ -1,5 +1,7 @@
 // +build js
 
+//compile with gopherjs build -m
+
 package main
 
 import (
