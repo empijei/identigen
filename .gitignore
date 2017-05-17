@@ -25,3 +25,6 @@ _testmain.go
 
 *.test
 *.prof
+
+# Gopherjs mapping for debug purposes
+identigen.js.map
