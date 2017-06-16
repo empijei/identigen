@@ -1,4 +1,9 @@
 # Identigen
+
+[![Changelog](https://img.shields.io/github/release/empijei/identigen.svg?style=flat-square)](https://github.com/empijei/identigen/releases)
+[![Build Status](https://travis-ci.org/empijei/identigen.svg?branch=master)](https://travis-ci.org/empijei/identigen) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/empijei/identigen)](https://goreportcard.com/report/github.com/empijei/identigen)
+
 This software is meant to create fake Italian identities to provide test accounts.
 
 We provide [binaries](https://github.com/empijei/identigen/releases), but it is strongly suggested to obtain this package via 
@@ -27,8 +32,10 @@ Usage of identigen:
 ```
 
 Sample output:
-```json
+```sh
 $ identigen -number 2 -fields Nome,Cognome,DataDiNascita -dt_fmt ja -format json
+```
+```json
 [
 	{
 		"Cognome": "Sammartano",
