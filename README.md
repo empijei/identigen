@@ -1,6 +1,6 @@
 # Identigen
 
-[![Changelog](https://img.shields.io/github/release/empijei/identigen.svg?style=flat-square)](https://github.com/empijei/identigen/releases)
+[![Changelog](https://img.shields.io/github/release/empijei/identigen.svg)](https://github.com/empijei/identigen/releases)
 [![Build Status](https://travis-ci.org/empijei/identigen.svg?branch=master)](https://travis-ci.org/empijei/identigen) 
 [![Go Report Card](https://goreportcard.com/badge/github.com/empijei/identigen)](https://goreportcard.com/report/github.com/empijei/identigen)
 
