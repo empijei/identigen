@@ -10,7 +10,7 @@ type Credentials struct {
 	Password string
 }
 
-//Returns ficticious credentials for an identity.
+//Returns fictitious credentials for an identity.
 //The username is correlated at the person's name  and year of birth.
 func (p *Person) Credentials() *Credentials {
 	if p.up != nil {
