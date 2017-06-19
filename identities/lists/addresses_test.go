@@ -8,7 +8,7 @@ func TestAddresses(t *testing.T) {
 		cities[city.Name] = struct{}{}
 		_, ok := Addresses[city.Name]
 		if !ok {
-			t.Errorf("%s doesn't have an address!", city)
+			t.Errorf("%s doesn't have an address!", city.Name)
 		}
 	}
 	addresses := make(map[string]struct{}, len(Addresses))

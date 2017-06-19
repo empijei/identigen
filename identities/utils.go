@@ -6,9 +6,14 @@ import (
 	"time"
 )
 
-// DateFormat exports the format of the date
+// DateFormat exports the format of the date. Can be 1,2 or anything else.
+// 1 (us format) is MM/DD/YYYY
+// 2 (ja format) is YYYY/MM/DD
+// anything else is formatted in the european style (default) DD/MM/YYYY
 type DateFormat int
 
+// LocalizDate is a variable containing the format to use. Set this variable to
+// change the way dates are formatted. See "DateFormat" for more.
 var LocalizDate DateFormat
 
 // Format returns the date formatted as the DateFormat variable is set

@@ -46,33 +46,41 @@ func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 
 	formats := uniqSlice(strings.Split(format, ","))
 	for _, f := range formats {
-		switch f {
-		case "json":
-			b, err := json.MarshalIndent(&people, "", "\t")
-			if err != nil {
-				return err
-			}
-			_, _ = out.Write(b)
-			fmt.Fprintln(out)
-		case "xml":
-			_, _ = out.Write([]byte("<People>\n"))
-			b, err := xml.MarshalIndent(&people, "\t", "\t")
-			if err != nil {
-				return err
-			}
-			_, _ = out.Write(b)
-			_, _ = out.Write([]byte("\n</People>"))
-			fmt.Fprintln(out)
-		case "csv":
-			err := MarshalCSV(people, out)
-			if err != nil {
-				return err
-			}
-			fmt.Fprintln(out)
-		default:
-			for _, person := range people {
-				fmt.Fprintln(out, person)
-			}
+		err := printFormatted(f, people, out)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func printFormatted(format string, people []Person, out io.Writer) error {
+	switch format {
+	case "json":
+		b, err := json.MarshalIndent(&people, "", "\t")
+		if err != nil {
+			return err
+		}
+		_, _ = out.Write(b)
+		fmt.Fprintln(out)
+	case "xml":
+		_, _ = out.Write([]byte("<People>\n"))
+		b, err := xml.MarshalIndent(&people, "\t", "\t")
+		if err != nil {
+			return err
+		}
+		_, _ = out.Write(b)
+		_, _ = out.Write([]byte("\n</People>"))
+		fmt.Fprintln(out)
+	case "csv":
+		err := MarshalCSV(people, out)
+		if err != nil {
+			return err
+		}
+		fmt.Fprintln(out)
+	default:
+		for _, person := range people {
+			fmt.Fprintln(out, person)
 		}
 	}
 	return nil

@@ -76,9 +76,8 @@ func (p *Person) LastName() string {
 func (p *Person) Gender() string {
 	if p.genderIsFemale {
 		return "Donna"
-	} else {
-		return "Uomo"
 	}
+	return "Uomo"
 }
 
 // BirthDate is a person birth date formatted using the globally specified format
@@ -150,7 +149,7 @@ func (p *Person) MarshalXML(e *xml.Encoder, start xml.StartElement) (err error) 
 		_panic(e.EncodeToken(xml.EndElement{Name: xml.Name{Local: key}}))
 	}
 
-	_panic(e.EncodeToken(xml.EndElement{start.Name}))
+	_panic(e.EncodeToken(xml.EndElement{Name: start.Name}))
 
 	// flush to ensure tokens are written
 	return e.Flush()
