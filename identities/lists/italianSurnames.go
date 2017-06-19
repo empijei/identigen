@@ -1,5 +1,6 @@
 package lists
 
+// ItalianSurnames exports a list of common Italian surnames
 var ItalianSurnames = []string{
 	"Abatangelo",
 	"Abatantuono",

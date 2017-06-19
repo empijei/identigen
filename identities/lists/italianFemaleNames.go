@@ -1,5 +1,6 @@
 package lists
 
+// ItalianFemaleNames exports a list of Italian female names
 var ItalianFemaleNames = []string{
 	"Abbondanza",
 	"Ada",

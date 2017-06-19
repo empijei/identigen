@@ -16,7 +16,7 @@ func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
-//Represents a person object. It must be initialized by the generator.
+// Person represents a person object. It must be initialized by the generator.
 type Person struct {
 	firstName, lastName           string
 	genderIsFemale                bool
@@ -35,6 +35,7 @@ type Person struct {
 	up                            *Credentials
 }
 
+// NewPerson generates a new identity
 func NewPerson(minage, maxage int) *Person {
 	person := &Person{}
 	person.genderIsFemale = rand.Int()%2 == 0
@@ -61,17 +62,17 @@ func NewPerson(minage, maxage int) *Person {
 	return person
 }
 
-//Person first name
+// FirstName is a person first name
 func (p *Person) FirstName() string {
 	return p.firstName
 }
 
-//Person last name
+// LastName is a person last name
 func (p *Person) LastName() string {
 	return p.lastName
 }
 
-//Person gender in Italian
+// Gender is the gender of a person in Italian
 func (p *Person) Gender() string {
 	if p.genderIsFemale {
 		return "Donna"
@@ -80,27 +81,27 @@ func (p *Person) Gender() string {
 	}
 }
 
-//Person birth date formatted using the globally specified format
+// BirthDate is a person birth date formatted using the globally specified format
 func (p *Person) BirthDate() string {
 	return p.birthDate.Format(LocalizDate.Format())
 }
 
-//Person birth town
+// BirthTown is a person birth town
 func (p *Person) BirthTown() string {
 	return p.town
 }
 
-//The name and label of the city the person was birth in
+// BirthDistrict is the name and label of the city the person was birth in
 func (p *Person) BirthDistrict() string {
 	return p.birthDistrict
 }
 
-//The phone number (Without the +39 italian prefix)
+// Phone is the phone number (Without the +39 italian prefix)
 func (p *Person) Phone() string {
 	return p.mobilePhone
 }
 
-//Identity card number
+// ID is the identity card number
 func (p *Person) ID() string {
 	if p.id != "" {
 		return p.id
@@ -123,12 +124,12 @@ func (p Person) String() string {
 	return buf.String()
 }
 
-//Implementation of encoding/json.Marshaler
+// MarshalJSON is the implementation of encoding/json.Marshaler
 func (p *Person) MarshalJSON() (b []byte, err error) {
 	return json.Marshal(p.toMap())
 }
 
-//Implementation of encoding/xml.Marshaler
+// MarshalXML is the implementation of encoding/xml.Marshaler
 func (p *Person) MarshalXML(e *xml.Encoder, start xml.StartElement) (err error) {
 	defer func() {
 		if r := recover(); r != nil {
@@ -155,7 +156,7 @@ func (p *Person) MarshalXML(e *xml.Encoder, start xml.StartElement) (err error) 
 	return e.Flush()
 }
 
-//Returns a []string that can be passed to an encoding/csv.Writer.Write() call
+// MarshalCSV returns a []string that can be passed to an encoding/csv.Writer.Write() call
 func (p Person) MarshalCSV() []string {
 	m := p.toMap()
 	var out []string

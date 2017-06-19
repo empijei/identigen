@@ -5,6 +5,7 @@ import (
 	"io"
 )
 
+// MarshalCSV prints a marshaled CSV
 func MarshalCSV(people []Person, out io.Writer) (err error) {
 	w := csv.NewWriter(out)
 

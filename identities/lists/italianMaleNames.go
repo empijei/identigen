@@ -1,5 +1,6 @@
 package lists
 
+// ItalianMaleNames exports a list of Italian male names
 var ItalianMaleNames = []string{
 	"Abelardo",
 	"Abele",

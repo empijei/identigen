@@ -1,5 +1,6 @@
 package lists
 
+// CCI maps the numbers to compute the check digit algorithm for Italian IBANs
 var CCI = map[int]int{
 	0: 1,
 	1: 0,

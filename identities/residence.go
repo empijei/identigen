@@ -6,7 +6,7 @@ import (
 	"github.com/empijei/identigen/identities/lists"
 )
 
-//Returns a person's address and sets the location for the partita iva field.
+// Address returns a person's address and sets the location for the partita iva field.
 func (p *Person) Address() string {
 	randCity := lists.Cities[rand.Intn(len(lists.Cities))]
 	p.locationCode = randCity.Code

@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// CodiceFiscale generates a valid italian codice fiscale
 func (p *Person) CodiceFiscale() (cf string) {
 	if p.fiscalCode != "" {
 		return p.fiscalCode

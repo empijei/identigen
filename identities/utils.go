@@ -6,10 +6,12 @@ import (
 	"time"
 )
 
+// DateFormat exports the format of the date
 type DateFormat int
 
 var LocalizDate DateFormat
 
+// Format returns the date formatted as the DateFormat variable is set
 func (d DateFormat) Format() string {
 	switch int(d) {
 	case 1:
@@ -21,6 +23,7 @@ func (d DateFormat) Format() string {
 	}
 }
 
+// NewDateFormat sets DateFormat as an int from a passed string
 func NewDateFormat(fmt string) DateFormat {
 	switch fmt {
 	case "us":

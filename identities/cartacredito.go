@@ -9,6 +9,7 @@ import (
 	"time"
 )
 
+// CartaCredito exports the number, CVV, Issuer and expiry date of a credit card
 type CartaCredito struct {
 	Number  string
 	Cvv     string
@@ -102,7 +103,7 @@ func ccformatter(cc string) string {
 	return cc
 }
 
-//Returns a valid CartaCredito object with credit card number, cvv, issuer and expiration date.
+//CartaCredito returns a valid CartaCredito object with credit card number, cvv, issuer and expiration date.
 func (p *Person) CartaCredito() *CartaCredito {
 	if p.cc != nil {
 		return p.cc

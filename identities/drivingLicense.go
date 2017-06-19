@@ -5,13 +5,14 @@ import (
 	"time"
 )
 
+// DrivingLicense exports the number, issuer and the expiration date
 type DrivingLicense struct {
 	Number  string
 	Issuer  string
 	ExpDate string
 }
 
-//Returns a Italian driving license number
+// DrivingLicense returns a Italian driving license number
 func (p *Person) DrivingLicense() *DrivingLicense {
 	if p.drv != nil {
 		return p.drv

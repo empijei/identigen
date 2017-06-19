@@ -1,5 +1,6 @@
 package lists
 
+// BirthInfo exports the code of the codice fiscale and the relative city
 var BirthInfo = []struct {
 	CodiceCatasto string
 	Paese         string

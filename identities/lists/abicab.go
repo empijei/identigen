@@ -1,15 +1,18 @@
 package lists
 
+// Bank is the name and branches of Italian banks
 type Bank struct {
 	Name     string
 	Branches []Branch
 }
 
+// Branch is the ABI and CABs of a branch of an Italian bank
 type Branch struct {
 	ABI string
 	CAB []string
 }
 
+// Banks is the list of Italian banks
 var Banks = []Bank{
 	{
 		"Banca Nazionale del Lavoro Spa a Venezia (VE)",

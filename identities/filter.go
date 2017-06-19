@@ -39,6 +39,8 @@ var printers = []printer{
 	{"Username", func(p *Person) string { return p.Credentials().Username }},
 	{"Password", func(p *Person) string { return p.Credentials().Password }},
 }
+
+// AllFields exports a []string with all the fiels set
 var AllFields []string
 var printerMap map[string]func(*Person) string
 var fields = generateFilters()
@@ -56,7 +58,7 @@ func generateFilters() []string {
 }
 
 /*
-This function sets a filter for the fields to be printed. Supported values are:
+SetFilter sets a filter for the fields to be printed. Supported values are:
 Nome
 Cognome
 Gender

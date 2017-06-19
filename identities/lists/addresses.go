@@ -1,5 +1,6 @@
 package lists
 
+// Addresses exports an address for a city where a Partita Iva can be created
 var Addresses = map[string]string{
 	"Torino":                         "Piazza Castello, 15, 10124 Torino, Italia",
 	"Vercelli-Biella":                "Piazza Cesare Battisti, 6, 13100 Vercelli VC, Italia",

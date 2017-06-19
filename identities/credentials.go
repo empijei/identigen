@@ -5,13 +5,14 @@ import (
 	"regexp"
 )
 
+// Credentials exports username and password
 type Credentials struct {
 	Username string
 	Password string
 }
 
-//Returns fictitious credentials for an identity.
-//The username is correlated at the person's name  and year of birth.
+// Credentials returns fictitious credentials for an identity.
+// The username is correlated at the person's name  and year of birth.
 func (p *Person) Credentials() *Credentials {
 	if p.up != nil {
 		return p.up

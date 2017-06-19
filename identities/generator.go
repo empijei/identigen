@@ -8,6 +8,7 @@ import (
 	"strings"
 )
 
+// MainModule gets the arguments from CLI and launches the appropriate functions
 func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 	clamp := func(val, min, max int) int {
 		if val < min {
@@ -19,7 +20,7 @@ func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 		return val
 	}
 
-	dt_fmt := args["dt_fmt"].(string)
+	dtFmt := args["dt_fmt"].(string)
 	minage := clamp(args["minage"].(int), 1, 200)
 	maxage := clamp(args["maxage"].(int), 1, 200)
 	number := args["number"].(int)
@@ -37,7 +38,7 @@ func MainModule(args map[string]interface{}, out io.Writer) (err error) {
 		}
 	}
 
-	LocalizDate = NewDateFormat(dt_fmt)
+	LocalizDate = NewDateFormat(dtFmt)
 	people, err := RandomPeople(minage, maxage, number)
 	if err != nil {
 		return err
@@ -89,6 +90,7 @@ func uniqSlice(in []string) []string {
 	return out
 }
 
+// RandomPeople generates 'count' people with the same restriction of age
 func RandomPeople(minage, maxage int, count int) (people []Person, err error) {
 	if minage > maxage {
 		return nil, fmt.Errorf("maxage(%d) should not be less than minage(%d)", maxage, minage)
