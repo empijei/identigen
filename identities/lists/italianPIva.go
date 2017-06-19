@@ -1,10 +1,12 @@
 package lists
 
+// City is just a city name with its associated code used to calculate PartitaIva
 type City struct {
 	Code int
 	Name string
 }
 
+// Cities is a list of cities with their own Codes.
 var Cities = []City{
 	{1, "Torino"},
 	{2, "Vercelli-Biella"},
