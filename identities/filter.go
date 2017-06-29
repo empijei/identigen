@@ -40,7 +40,7 @@ var printers = []printer{
 	{"Password", func(p *Person) string { return p.Credentials().Password }},
 }
 
-// AllFields exports a []string with all the fiels set
+// AllFields exports a []string with all the fields set
 var AllFields []string
 var printerMap map[string]func(*Person) string
 var fields = generateFilters()

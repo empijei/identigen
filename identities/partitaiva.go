@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-// PartitaIva returns a valid partita iva number and palce of issue.
+// PartitaIva returns a valid partita iva number and place of issue.
 func (p *Person) PartitaIva() (pi string, county string) {
 	//Need to know where you are to compute your P.I.
 	if p.locationCode == 0 || p.partitaIvaCounty == "" {
