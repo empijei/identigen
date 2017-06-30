@@ -4,6 +4,7 @@
 [![Changelog](https://img.shields.io/github/release/empijei/identigen.svg)](https://github.com/empijei/identigen/releases)
 [![Build Status](https://travis-ci.org/empijei/identigen.svg?branch=master)](https://travis-ci.org/empijei/identigen) 
 [![Go Report Card](https://goreportcard.com/badge/github.com/empijei/identigen)](https://goreportcard.com/report/github.com/empijei/identigen)
+[![identities](https://gocover.io/_badge/github.com/empijei/identigen/identities)](http://gocover.io/github.com/empijei/identigen/identities)
 
 This software is meant to create fake Italian identities to provide test accounts.
 
