@@ -2,6 +2,7 @@ package identities
 
 import (
 	"bytes"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -117,6 +118,6 @@ func birthDayStringCalc(p *Person) (seq string) {
 	if p.genderIsFemale {
 		tmp += 40
 	}
-	seq += strconv.Itoa(tmp)
+	seq += fmt.Sprintf("%02d", tmp)
 	return
 }
